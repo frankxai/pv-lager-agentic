@@ -12,13 +12,12 @@ import {
   ArrowLeft,
   CheckCircle,
   FileText,
-  DollarSign,
   Building2,
   Sun,
   Sparkles,
-  ChevronRight,
   Send
 } from 'lucide-react';
+import { pvlagerImages } from '../lib/pvlager-media';
 
 interface CarportConfiguratorProps {
   initialType?: string;
@@ -28,17 +27,17 @@ interface CarportConfiguratorProps {
 export function CarportConfigurator({ initialType = 'double', onCompleteLead }: CarportConfiguratorProps) {
   // Configurator state
   const [step, setStep] = useState(1);
-  const [carportType, setCarportType] = useState(initialType); // 'single', 'double', 'commercial', 'terrace'
-  const [profileSystem, setProfileSystem] = useState('heavy-duty'); // 'heavy-duty' (100x100), 'standard' (80x80)
-  const [panelWattage, setPanelWattage] = useState(435); // 435W, 450W, 500W
+  const [carportType, setCarportType] = useState(initialType);
+  const [profileSystem, setProfileSystem] = useState('heavy-duty');
+  const [panelWattage, setPanelWattage] = useState(435);
   const [panelCount, setPanelCount] = useState(carportType === 'single' ? 10 : carportType === 'double' ? 18 : carportType === 'terrace' ? 12 : 40);
-  const [inverterChoice, setInverterChoice] = useState('hybrid-10kw'); // 'hybrid-5kw', 'hybrid-10kw', 'hybrid-20kw'
+  const [inverterChoice, setInverterChoice] = useState('hybrid-10kw');
 
   // Upsells
   const [addBattery, setAddBattery] = useState(true);
-  const [batteryCapacity, setBatteryCapacity] = useState(10); // 5, 10, 15 kWh
+  const [batteryCapacity, setBatteryCapacity] = useState(10);
   const [addWallbox, setAddWallbox] = useState(true);
-  const [wallboxType, setWallboxType] = useState('dual-11kw'); // 'single-11kw', 'dual-11kw'
+  const [wallboxType, setWallboxType] = useState('dual-11kw');
   const [isLeasing, setIsLeasing] = useState(false);
   const [addMaintenance, setAddMaintenance] = useState(true);
 
@@ -49,27 +48,25 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
   const [leadZip, setLeadZip] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Recalculate ERP & BOM data
+  // Calculations
   const totalPowerKwp = (panelCount * panelWattage) / 1000;
-  const estimatedAnnualKwh = Math.round(totalPowerKwp * 980); // Average German solar yield factor ~980 kWh/kWp
+  const estimatedAnnualKwh = Math.round(totalPowerKwp * 980);
   const co2SavingsTons = (estimatedAnnualKwh * 0.475 / 1000).toFixed(1);
 
-  // Profile calculations
   const postProfilesNeeded = carportType === 'single' ? 4 : carportType === 'double' ? 6 : carportType === 'terrace' ? 4 : 12;
   const mainRafterProfiles = carportType === 'single' ? 3 : carportType === 'double' ? 5 : carportType === 'terrace' ? 4 : 10;
   const purlinProfiles = Math.ceil(panelCount / 2);
   const rainChannelMeters = carportType === 'single' ? 6 : carportType === 'double' ? 9 : carportType === 'terrace' ? 7 : 24;
 
-  // Base pricing breakdown (samples from PV Lager ERP)
   const baseStructurePrice = carportType === 'single' ? 3200 : carportType === 'double' ? 5400 : carportType === 'terrace' ? 3800 : 14500;
-  const panelsPrice = panelCount * 95; // €95 per bifacial glass-glass module
+  const panelsPrice = panelCount * 95;
   const inverterPrice = inverterChoice === 'hybrid-5kw' ? 1100 : inverterChoice === 'hybrid-10kw' ? 1850 : 3100;
   const batteryPrice = addBattery ? (batteryCapacity === 5 ? 2100 : batteryCapacity === 10 ? 3600 : 5200) : 0;
   const wallboxPrice = addWallbox ? (wallboxType === 'single-11kw' ? 650 : 1250) : 0;
   const maintenancePrice = addMaintenance ? 190 : 0;
 
   const totalPriceWithoutVat = baseStructurePrice + panelsPrice + inverterPrice + batteryPrice + wallboxPrice + maintenancePrice;
-  const monthlyLeasingRate = Math.round((totalPriceWithoutVat * 1.04) / 72); // 6-year leasing rate sample
+  const monthlyLeasingRate = Math.round((totalPriceWithoutVat * 1.04) / 72);
 
   const handleNextStep = () => {
     if (step < 5) setStep(step + 1);
@@ -126,20 +123,19 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
   };
 
   return (
-    <div id="configurator" className="w-full max-w-6xl mx-auto my-12 px-4 sm:px-6">
-      {/* Configurator Container */}
-      <div className="bg-[#0F172A] border border-amber-500/30 rounded-3xl shadow-2xl overflow-hidden backdrop-blur-xl">
-        {/* Step Indicator Top Bar */}
-        <div className="bg-slate-900/90 border-b border-white/10 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+    <div id="configurator" className="w-full max-w-7xl mx-auto my-12 px-4 sm:px-6">
+      <div className="bg-[#0D1322] border border-amber-500/40 rounded-3xl shadow-2xl overflow-hidden backdrop-blur-2xl">
+        {/* Step Indicator Bar */}
+        <div className="bg-slate-900/90 border-b border-white/10 px-6 py-5 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 font-black flex items-center justify-center text-lg shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-black flex items-center justify-center text-xl shadow-lg shadow-amber-500/30">
               {step}
             </div>
             <div>
               <span className="text-[11px] font-mono text-amber-400 uppercase tracking-widest block font-bold">
                 Schritt {step} von 5 · Interaktiver ERP-Konfigurator
               </span>
-              <h2 className="text-sm font-bold text-white">
+              <h2 className="text-base font-bold text-white">
                 {step === 1 && 'Bauform & Carport-Typ Wählen'}
                 {step === 2 && 'Aluminium-Profilsystem & Belastbarkeit'}
                 {step === 3 && 'Solarmodule & Ertragsberechnung'}
@@ -149,18 +145,17 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
             </div>
           </div>
 
-          {/* Step Progress Pills */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-2">
             {[1, 2, 3, 4, 5].map((i) => (
               <button
                 key={i}
                 onClick={() => setStep(i)}
-                className={`w-7 h-2 rounded-full transition-all ${
+                className={`h-2.5 rounded-full transition-all ${
                   step === i
-                    ? 'bg-amber-500 w-10 shadow-md shadow-amber-500/30'
+                    ? 'bg-amber-500 w-12 shadow-lg shadow-amber-500/40'
                     : step > i
-                    ? 'bg-emerald-500'
-                    : 'bg-slate-800'
+                    ? 'bg-emerald-500 w-7'
+                    : 'bg-slate-800 w-7'
                 }`}
                 title={`Schritt ${i}`}
               />
@@ -168,14 +163,14 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
           </div>
         </div>
 
-        {/* Configurator Content Workspace */}
-        <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Content Workspace */}
+        <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Main Controls (Left 7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* STEP 1: CARPORT TYPE */}
             {step === 1 && (
-              <div className="space-y-4 animate-fade-in">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
+              <div className="space-y-5 animate-fade-in">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <Car className="w-5 h-5 text-amber-400" />
                   Wählen Sie Ihren Verwendungszweck:
                 </h3>
@@ -185,6 +180,7 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                       id: 'single',
                       title: 'Einzel-Carport (1 Stellplatz)',
                       desc: 'Ideal für PKW oder SUV. Ca. 3,5m x 6m.',
+                      img: pvlagerImages.carportKitSingle,
                       panels: 10,
                       kwp: '4.35 kWp'
                     },
@@ -192,6 +188,7 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                       id: 'double',
                       title: 'Doppel-Carport (2 Stellplätze)',
                       desc: 'Der Bestseller für Familien & 2 Fahrzeuge. Ca. 6m x 6m.',
+                      img: pvlagerImages.carportKitDouble,
                       panels: 18,
                       kwp: '7.83 kWp'
                     },
@@ -199,6 +196,7 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                       id: 'commercial',
                       title: 'Gewerbe & Fuhrpark (Multi-Bay)',
                       desc: 'Für Firmenparkplätze, Logistik & Flotten (ab 4 Stellplätzen).',
+                      img: pvlagerImages.b2bFleetCarport,
                       panels: 40,
                       kwp: '17.4 kWp'
                     },
@@ -206,6 +204,7 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                       id: 'terrace',
                       title: 'Solar-Terrassendach & Überdachung',
                       desc: 'Regendichte Überdachung für Terrasse oder Freifläche.',
+                      img: pvlagerImages.solarTerrace,
                       panels: 12,
                       kwp: '5.22 kWp'
                     }
@@ -216,18 +215,23 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                         setCarportType(item.id);
                         setPanelCount(item.panels);
                       }}
-                      className={`p-5 rounded-2xl cursor-pointer border transition-all ${
+                      className={`p-4 rounded-2xl cursor-pointer border transition-all overflow-hidden flex flex-col justify-between ${
                         carportType === item.id
-                          ? 'bg-amber-500/10 border-amber-500 text-white glow-amber'
-                          : 'bg-slate-900/80 border-slate-800 text-slate-300 hover:border-slate-700 hover:bg-slate-900'
+                          ? 'bg-amber-500/10 border-amber-500 text-white shadow-xl shadow-amber-500/20'
+                          : 'bg-slate-900/90 border-slate-800 text-slate-300 hover:border-slate-700 hover:bg-slate-900'
                       }`}
                     >
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="font-bold text-sm text-white">{item.title}</span>
-                        {carportType === item.id && <CheckCircle className="w-5 h-5 text-amber-400" />}
+                      <div className="relative h-32 w-full rounded-xl overflow-hidden mb-3 border border-white/10">
+                        <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                        {carportType === item.id && (
+                          <div className="absolute top-2 right-2 bg-amber-500 text-slate-950 p-1 rounded-full shadow-lg">
+                            <CheckCircle className="w-4 h-4" />
+                          </div>
+                        )}
                       </div>
-                      <p className="text-xs text-slate-400 mb-3">{item.desc}</p>
-                      <span className="inline-block px-2.5 py-1 rounded-md bg-slate-800 text-amber-300 font-mono text-[11px]">
+                      <span className="font-bold text-sm text-white block mb-1">{item.title}</span>
+                      <p className="text-xs text-slate-400 mb-3 leading-relaxed">{item.desc}</p>
+                      <span className="inline-block px-2.5 py-1 rounded-md bg-slate-950 text-amber-300 font-mono text-[11px] border border-slate-800">
                         Empfohlen: ~{item.panels} Module ({item.kwp})
                       </span>
                     </div>
@@ -238,8 +242,8 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
 
             {/* STEP 2: PROFILE SYSTEM */}
             {step === 2 && (
-              <div className="space-y-4 animate-fade-in">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
+              <div className="space-y-5 animate-fade-in">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <Layers className="w-5 h-5 text-amber-400" />
                   Aluminium-Tragwerk & Unterkonstruktion:
                 </h3>
@@ -249,30 +253,37 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                       id: 'heavy-duty',
                       title: 'Heavy-Duty Ultra-Alu 100x100mm (Empfohlen)',
                       specs: 'Statisch geprüft für Schneelastzone 3 & Windlastzone 4. Inkl. integrierter Smart-Regenrinne.',
+                      img: pvlagerImages.aluminumProfiles,
                       benefit: 'Höchste Langlebigkeit, korrosionsfrei, 30 Jahre Garantie auf Profilstruktur.'
                     },
                     {
                       id: 'standard',
                       title: 'Standard Aluminium 80x80mm',
                       specs: 'Kompakte Leichtbauweise für normale Schneelastzonen 1-2.',
+                      img: pvlagerImages.rainGutters,
                       benefit: 'Wirtschaftliche Lösung für geschützte Lagen.'
                     }
                   ].map((item) => (
                     <div
                       key={item.id}
                       onClick={() => setProfileSystem(item.id)}
-                      className={`p-5 rounded-2xl cursor-pointer border transition-all ${
+                      className={`p-5 rounded-2xl cursor-pointer border transition-all grid md:grid-cols-12 gap-4 items-center ${
                         profileSystem === item.id
-                          ? 'bg-amber-500/10 border-amber-500 text-white glow-amber'
-                          : 'bg-slate-900/80 border-slate-800 text-slate-300 hover:border-slate-700 hover:bg-slate-900'
+                          ? 'bg-amber-500/10 border-amber-500 text-white shadow-xl shadow-amber-500/20'
+                          : 'bg-slate-900/90 border-slate-800 text-slate-300 hover:border-slate-700 hover:bg-slate-900'
                       }`}
                     >
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="font-bold text-sm text-white">{item.title}</span>
-                        {profileSystem === item.id && <CheckCircle className="w-5 h-5 text-amber-400" />}
+                      <div className="md:col-span-4 h-28 rounded-xl overflow-hidden border border-white/10">
+                        <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                       </div>
-                      <p className="text-xs text-slate-300 mb-2">{item.specs}</p>
-                      <p className="text-xs text-emerald-400 font-medium">✓ {item.benefit}</p>
+                      <div className="md:col-span-8 space-y-1.5">
+                        <div className="flex justify-between items-center">
+                          <span className="font-bold text-sm text-white">{item.title}</span>
+                          {profileSystem === item.id && <CheckCircle className="w-5 h-5 text-amber-400" />}
+                        </div>
+                        <p className="text-xs text-slate-300">{item.specs}</p>
+                        <p className="text-xs text-emerald-400 font-medium">✓ {item.benefit}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -281,13 +292,25 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
 
             {/* STEP 3: SOLAR MODULES */}
             {step === 3 && (
-              <div className="space-y-4 animate-fade-in">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
+              <div className="space-y-5 animate-fade-in">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <Sun className="w-5 h-5 text-amber-400" />
                   Solarmodule & Belegungsanzahl:
                 </h3>
 
-                <div className="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 space-y-4">
+                <div className="bg-slate-900/90 p-6 rounded-2xl border border-slate-800 space-y-5">
+                  <div className="grid md:grid-cols-12 gap-4 items-center">
+                    <div className="md:col-span-5 h-36 rounded-xl overflow-hidden border border-white/10">
+                      <img src={pvlagerImages.bifacialModules} alt="Trina Bifazial Glas-Glas Module" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="md:col-span-7 space-y-2">
+                      <h4 className="font-bold text-sm text-white">Trina Vertex S+ Bifazial Glas-Glas</h4>
+                      <p className="text-xs text-slate-400">
+                        Lichtdurchlässiges Doppelglas-Modul mit N-Type i-TOPCon Zelltechnologie für höchste Transparenz & bis zu 25% Mehrertrag.
+                      </p>
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-xs font-semibold text-slate-200 mb-2">
                       Anzahl Bifaziale Glas-Glas Module: <span className="text-amber-400 font-mono text-sm">{panelCount} Module</span>
@@ -300,11 +323,6 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                       onChange={(e) => setPanelCount(parseInt(e.target.value))}
                       className="w-full accent-amber-500 cursor-pointer"
                     />
-                    <div className="flex justify-between text-[10px] text-slate-500 font-mono mt-1">
-                      <span>6 Module (Kompakt)</span>
-                      <span>18 Module (Standard)</span>
-                      <span>60 Module (Gewerbe)</span>
-                    </div>
                   </div>
 
                   <div>
@@ -325,18 +343,14 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                       ))}
                     </div>
                   </div>
-
-                  <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300">
-                    <strong>Bifazial-Vorteil:</strong> Durch die Lichtdurchlässigkeit der Glas-Glas-Module strömt angenehmes Tageslicht unter das Carport, während die Unterseite reflektiertes Licht in bis zu 25% Extra-Strom umwandelt.
-                  </div>
                 </div>
               </div>
             )}
 
-            {/* STEP 4: UPSELLS & ADD-ONS */}
+            {/* STEP 4: UPSELLS */}
             {step === 4 && (
               <div className="space-y-5 animate-fade-in">
-                <h3 className="text-base font-bold text-white flex items-center gap-2">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <Cpu className="w-5 h-5 text-amber-400" />
                   Wechselrichter, Batteriespeicher & Smart Upsells:
                 </h3>
@@ -345,10 +359,12 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                 <div className={`p-5 rounded-2xl border transition-all ${addBattery ? 'bg-emerald-500/10 border-emerald-500/50' : 'bg-slate-900/80 border-slate-800'}`}>
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
-                      <BatteryCharging className="w-6 h-6 text-emerald-400" />
+                      <div className="w-12 h-12 rounded-xl overflow-hidden border border-white/10 shrink-0">
+                        <img src={pvlagerImages.storageBatteryBYD} alt="BYD Smart Battery" className="w-full h-full object-cover" />
+                      </div>
                       <div>
-                        <h4 className="font-bold text-sm text-white">Zusätzlicher Stromspeicher (Smart Battery)</h4>
-                        <p className="text-xs text-slate-400">Erhöht Eigenverbrauch von 35% auf bis zu 85%.</p>
+                        <h4 className="font-bold text-sm text-white">BYD Battery-Box Premium (Smart Storage)</h4>
+                        <p className="text-xs text-slate-400">Steigert Ihren Eigenverbrauch auf bis zu 85%.</p>
                       </div>
                     </div>
                     <input
@@ -378,14 +394,14 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                   )}
                 </div>
 
-                {/* Wallbox EV Charger Upsell */}
+                {/* Wallbox EV Charger */}
                 <div className={`p-5 rounded-2xl border transition-all ${addWallbox ? 'bg-cyan-500/10 border-cyan-500/50' : 'bg-slate-900/80 border-slate-800'}`}>
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <Zap className="w-6 h-6 text-cyan-400" />
                       <div>
                         <h4 className="font-bold text-sm text-white">EV Wallbox Ladestation (11kW / 22kW)</h4>
-                        <p className="text-xs text-slate-400">Überschussladen direkt aus dem Solar-Carport.</p>
+                        <p className="text-xs text-slate-400">Direktes Überschussladen aus dem Carport-Dach.</p>
                       </div>
                     </div>
                     <input
@@ -396,22 +412,6 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                     />
                   </div>
                 </div>
-
-                {/* Financing Option */}
-                <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-bold text-sm text-amber-300">Optionale Leasing / Ratenzahlung</h4>
-                    <p className="text-xs text-slate-400">Ab ca. €{monthlyLeasingRate}/Monat ohne Eigenkapital.</p>
-                  </div>
-                  <button
-                    onClick={() => setIsLeasing(!isLeasing)}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold border transition ${
-                      isLeasing ? 'bg-amber-500 text-slate-950 border-amber-400' : 'bg-slate-800 text-slate-300 border-slate-700'
-                    }`}
-                  >
-                    {isLeasing ? '✓ Leasing Ausgewählt' : 'Leasing Anfragen'}
-                  </button>
-                </div>
               </div>
             )}
 
@@ -421,12 +421,12 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                 {!isSubmitted ? (
                   <>
                     <div>
-                      <h3 className="text-base font-bold text-white flex items-center gap-2">
+                      <h3 className="text-lg font-bold text-white flex items-center gap-2">
                         <FileText className="w-5 h-5 text-amber-400" />
                         Kostenloses Angebot & Stückliste Anfordern:
                       </h3>
                       <p className="text-xs text-slate-400 mt-1">
-                        Ihre Konfiguration wird direkt an den Vertriebsleiter (Frank's Bruder) übermittelt. Sie erhalten ein individuelles Festpreisangebot inkl. Statiknachweis.
+                        Ihre Konfiguration wird direkt an die Vertriebsleitung im Zentrallager Seesen übermittelt.
                       </p>
                     </div>
 
@@ -498,9 +498,6 @@ export function CarportConfigurator({ initialType = 'double', onCompleteLead }: 
                     <p className="text-xs text-slate-300 max-w-md mx-auto">
                       Vielen Dank, <span className="text-amber-400 font-bold">{leadName}</span>! Ihre Konfiguration & ERP-Stückliste liegt unserem Vertriebsteam in Seesen vor.
                     </p>
-                    <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs text-slate-400 inline-block font-mono">
-                      Referenz-ID: PVL-{Math.floor(100000 + Math.random() * 900000)} · Priorität: Hoch
-                    </div>
                   </div>
                 )}
               </div>
