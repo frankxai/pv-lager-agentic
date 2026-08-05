@@ -1,24 +1,31 @@
-# PV-Lager Agentic Architecture (Starlight + Energy IS + Agentic Orchestration)
+# PV-Lager Agentic Architecture
 
-## High-Level Layers
-1. **Always-On (Hermes Cron + Profiles)**: Inventory sync, subsidy monitoring, lead scoring, heartbeat reports.
-2. **Triggered Swarms**: Quiz completion → Buyer Clarity Agent + validated Sizing/Cost (Energy IS) → Proposal Generator → handoff to Sales Co-Pilot.
-3. **Customer-Facing**: Intelligent quiz (this repo /quiz), dynamic recs, virtual configurator (Wix MCP).
-4. **Ops & Sales Intelligence**: Cousin/team co-pilots (sales-intelligence repo), accounting agents, logistics.
-5. **Marketing Intelligence**: Content swarms for mass adoption & affection (marketing-intelligence repo) — Zola stories, ROI shares, virtual experiences.
-6. **Virtual Side**: Wix MCP as live virtual domain layer. Agent-controlled storefront, products, leads.
-7. **Domain (Energy IS PV Instance)**: Sovereign extension of Energy IS vertical. PV-specific entities (Zola Car Pod, hybrid climate configs, structural kits, local fulfillment). Calculator + Validation for credible numbers. Private instance holds real data.
+The current architecture source of truth for the PV-carport initiative is [`../labs/pv-carport-lab/OPERATING-MODEL.md`](../labs/pv-carport-lab/OPERATING-MODEL.md), backed by machine-readable policies in `../labs/pv-carport-lab/contracts/`.
 
-## Handoff Protocol (Agentic Orchestration Pattern)
-- From: Quiz/Buyer Agent
-- To: Sales Co-Pilot
-- Context: Quiz answers + calculated kWp/cost/ROI/subsidies + inventory snapshot + suggested package
-- Artifacts: Recommendation text, PDF draft, next-step options
+## Layers
 
-## Integration Points
-- Starlight Intelligence System → Energy IS vertical + sovereign private/pv-lager
-- Agentic Creator OS + Hermes → runtime, skills, profiles, crons
-- Wix MCP → virtual site control
-- sales-intelligence & marketing-intelligence repos → specialized reusable modules applied here
+1. **Customer learning:** readiness scan, curriculum, Build Passport, and explicit limitations.
+2. **Project evidence:** source-dated site facts, assumptions, products, versions, consent, and decision receipts.
+3. **Draft agents:** intake, learning, evidence, concept, safe prototype, gate completeness, provisional BOM, sales explanation, routing, and observation.
+4. **Human authority:** local planning/building control, structural engineering, registered electrical installation, PV Lager/RIAL product approval, commercial review, installation, commissioning, and handover.
+5. **Commerce:** only human-approved quotes, contracts, stock, compatibility, warranty, fulfillment, withdrawal/returns, and attribution.
+6. **Virtual/domain layer:** Wix MCP, CRM/ERP, and Energy IS integrations after security/data/ownership review.
+7. **Operations:** stale-source, queue-aging, incident, consent, support, attribution, and reconciliation receipts.
 
-Full swarm patterns and Energy IS 7 sub-systems mapping in the parent Starlight repo and this /domain folder.
+## Project state machine
+
+`discover → education → concept_draft → jurisdiction_review → structural_review → electrical_review → bom_review → commercial_review → quote_ready → contracted → build → commission → handover → service`
+
+Only the first two transitions and a clearly labeled concept draft may be automated. Later transitions require the evidence and owner defined in `../labs/pv-carport-lab/contracts/safety-policy.json`.
+
+## Handoff packet
+
+- project ID and current state;
+- requested decision and named owner;
+- evidence bundle, source dates, assumptions, and conflicts;
+- allowed next states and stop conditions;
+- immutable human decision receipt.
+
+## Runtime status
+
+The repository currently contains contracts, a dependency-free validator, regression tests, and a static prototype. It does **not** contain a production CRM/ERP/Wix integration, approved calculator, autonomous customer messaging, inventory mutation, checkout, or professional approval service.

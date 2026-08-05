@@ -1,0 +1,67 @@
+{
+  "version": "2026-07-18",
+  "status": "inactive-pre-pilot",
+  "activationRequires": [
+    "signed-commercial-agreement",
+    "named-invoicing-entities",
+    "defined-incremental-gross-profit",
+    "approved-disclosures",
+    "crm-attribution-live",
+    "returns-and-cancellations-process"
+  ],
+  "authority": {
+    "contractSigning": "human-only",
+    "payoutApproval": "human-only",
+    "moneyMovement": "none",
+    "attributionOverride": "named-human-with-reason"
+  },
+  "models": [
+    {
+      "id": "pv-lager-host-share",
+      "event": "paid-starlight-digital-product-from-pv-lager-owned-audience",
+      "basis": "net-digital-revenue",
+      "hypothesisPercent": { "min": 15, "max": 25 },
+      "payAfter": ["payment-settled", "withdrawal-refund-window-closed", "reconciliation-approved"]
+    },
+    {
+      "id": "starlight-hardware-growth-share",
+      "event": "lab-attributed-hardware-order",
+      "basis": "incremental-gross-profit",
+      "hypothesisPercent": { "min": 10, "max": 20 },
+      "alternative": "fixed-qualified-project-fee",
+      "payAfter": ["payment-settled", "returns-cancellations-closed", "direct-costs-confirmed", "reconciliation-approved"]
+    },
+    {
+      "id": "professional-partner-introduction",
+      "event": "disclosed-qualified-introduction",
+      "basis": "signed-partner-agreement",
+      "hypothesisPercent": null,
+      "payAfter": ["disclosure-recorded", "professional-rules-checked", "payment-settled", "reconciliation-approved"]
+    }
+  ],
+  "excludedFromPayout": [
+    "vat",
+    "shipping-pass-through",
+    "refunds",
+    "chargebacks",
+    "cancelled-work",
+    "unattributed-historical-revenue"
+  ],
+  "requiredAttributionFields": [
+    "sourceId",
+    "firstTouchAt",
+    "lastMeaningfulTouchAt",
+    "consentBasis",
+    "offerId",
+    "projectId",
+    "quoteId",
+    "orderId",
+    "orderState",
+    "netRevenue",
+    "directCosts",
+    "incrementalGrossProfit",
+    "payoutState"
+  ],
+  "rankingRule": "Commercial compensation must not silently determine technical or professional recommendations.",
+  "disclosureRule": "Material commercial relationships are disclosed before a recommendation or introduction can affect a customer decision."
+}

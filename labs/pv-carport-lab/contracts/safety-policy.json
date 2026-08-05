@@ -1,0 +1,81 @@
+{
+  "version": "2026-07-18",
+  "policyState": "pre-pilot",
+  "principles": [
+    "unknown-is-not-approved",
+    "agents-cannot-self-approve",
+    "changes-reopen-affected-gates",
+    "rejection-can-be-a-successful-outcome"
+  ],
+  "allowedPrintUses": [
+    "scale-model",
+    "teaching-cutaway",
+    "spacing-template",
+    "drill-template-guide",
+    "label",
+    "assembly-organizer",
+    "non-load-bearing-lab-jig",
+    "fit-prototype-replaced-before-build"
+  ],
+  "prohibitedPrintUses": [
+    "column",
+    "beam",
+    "rafter",
+    "brace",
+    "foundation",
+    "anchor",
+    "structural-connector",
+    "module-clamp",
+    "fall-protection",
+    "weather-seal",
+    "drainage-safety-part",
+    "fire-barrier",
+    "live-electrical-enclosure",
+    "unrated-cable-support",
+    "electrical-connector"
+  ],
+  "statesAllowedWithoutHumanApproval": [
+    "discover",
+    "education",
+    "concept_draft"
+  ],
+  "gates": [
+    {
+      "id": "jurisdiction",
+      "ownerRole": "local-authority-or-qualified-planner",
+      "requiredForStates": ["structural_review", "electrical_review", "bom_review", "quote_ready", "contracted", "build", "commission", "handover", "service"],
+      "acceptedStatuses": ["approved", "approved-with-conditions", "not-required-with-evidence"]
+    },
+    {
+      "id": "structural",
+      "ownerRole": "qualified-structural-engineer",
+      "requiredForStates": ["bom_review", "quote_ready", "contracted", "build", "commission", "handover", "service"],
+      "acceptedStatuses": ["approved", "approved-with-conditions"]
+    },
+    {
+      "id": "electrical",
+      "ownerRole": "registered-installation-company",
+      "requiredForStates": ["quote_ready", "contracted", "build", "commission", "handover", "service"],
+      "acceptedStatuses": ["approved", "approved-with-conditions"]
+    },
+    {
+      "id": "bom",
+      "ownerRole": "pv-lager-rial-technical-owner",
+      "requiredForStates": ["quote_ready", "contracted", "build", "commission", "handover", "service"],
+      "acceptedStatuses": ["approved", "approved-with-conditions"]
+    },
+    {
+      "id": "commercial",
+      "ownerRole": "invoicing-entity-and-legal-reviewer",
+      "requiredForStates": ["contracted", "build", "commission", "handover", "service"],
+      "acceptedStatuses": ["approved", "approved-with-conditions"]
+    }
+  ],
+  "reopenGateTriggers": {
+    "jurisdiction": ["municipality", "parcel", "use", "dimensions", "boundary-distance"],
+    "structural": ["site-load", "ground", "material", "member", "connection", "foundation", "module-dimensions", "bay-width"],
+    "electrical": ["module", "inverter", "battery", "ev-charger", "cable-route", "protection", "grid-operator"],
+    "bom": ["sku", "revision", "supplier", "substitution", "warranty", "stock-source"],
+    "commercial": ["seller", "scope", "price", "warranty", "returns", "responsibility"]
+  }
+}

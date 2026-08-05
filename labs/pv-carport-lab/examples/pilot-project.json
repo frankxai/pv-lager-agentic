@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "2026-07-18",
+  "projectId": "PVC-DEMO-001",
+  "state": "concept_draft",
+  "mode": "education-only",
+  "jurisdiction": {
+    "country": "DE",
+    "state": "Niedersachsen",
+    "municipality": "Seesen",
+    "status": "human-required"
+  },
+  "site": {
+    "parkingSpaces": 2,
+    "structureRoute": "undecided",
+    "dimensionsStatus": "customer-measured",
+    "groundStatus": "unknown",
+    "loadStatus": "engineer-required"
+  },
+  "goals": ["vehicle-shelter", "solar-generation", "maker-learning"],
+  "evidence": [
+    {
+      "id": "site-sketch",
+      "kind": "dimension-sketch",
+      "status": "customer-supplied",
+      "source": "synthetic-demo",
+      "verifiedAt": "2026-07-18T00:00:00Z"
+    },
+    {
+      "id": "ground-review",
+      "kind": "ground-assessment",
+      "status": "missing",
+      "source": "none",
+      "verifiedAt": null
+    }
+  ],
+  "gates": {
+    "jurisdiction": { "status": "human-required", "owner": "local-authority-or-qualified-planner", "evidenceRef": null },
+    "structural": { "status": "human-required", "owner": "qualified-structural-engineer", "evidenceRef": null },
+    "electrical": { "status": "human-required", "owner": "registered-installation-company", "evidenceRef": null },
+    "bom": { "status": "not-started", "owner": "pv-lager-rial-technical-owner", "evidenceRef": null },
+    "commercial": { "status": "not-started", "owner": "invoicing-entity-and-legal-reviewer", "evidenceRef": null }
+  },
+  "printIntents": [
+    { "use": "scale-model", "disposition": "concept-only" },
+    { "use": "spacing-template", "disposition": "allowed-process-aid" }
+  ],
+  "assumptions": [
+    "Customer measurements are unverified.",
+    "No module, structure, foundation, or electrical system has been selected.",
+    "The project cannot move beyond concept without the named human gates."
+  ]
+}

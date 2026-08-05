@@ -1,0 +1,6 @@
+node_modules
+.next
+.tmp-chrome-pv-lab
+dist
+build
+.DS_Store

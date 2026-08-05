@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/frankxai/pv-lager-agentic/labs/pv-carport-lab/schemas/project-pass.schema.json",
+  "title": "Starlight PV Carport Lab Project Pass",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "projectId",
+    "state",
+    "mode",
+    "jurisdiction",
+    "site",
+    "goals",
+    "evidence",
+    "gates",
+    "printIntents",
+    "assumptions"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "2026-07-18" },
+    "projectId": { "type": "string", "pattern": "^PVC-[A-Z0-9-]{4,40}$" },
+    "state": {
+      "enum": [
+        "discover", "education", "concept_draft", "jurisdiction_review",
+        "structural_review", "electrical_review", "bom_review", "commercial_review",
+        "quote_ready", "contracted", "build", "commission", "handover", "service"
+      ]
+    },
+    "mode": { "enum": ["education-only", "concept", "human-reviewed-kit"] },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["country", "state", "municipality", "status"],
+      "properties": {
+        "country": { "const": "DE" },
+        "state": { "type": "string", "minLength": 2 },
+        "municipality": { "type": "string", "minLength": 2 },
+        "status": { "enum": ["unknown", "human-required", "approved", "approved-with-conditions", "not-required-with-evidence", "rejected"] }
+      }
+    },
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parkingSpaces", "structureRoute", "dimensionsStatus", "groundStatus", "loadStatus"],
+      "properties": {
+        "parkingSpaces": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "structureRoute": { "enum": ["undecided", "engineered-aluminum", "engineered-timber", "approved-system-kit"] },
+        "dimensionsStatus": { "enum": ["unknown", "customer-measured", "professionally-verified"] },
+        "groundStatus": { "enum": ["unknown", "customer-observation", "professionally-assessed"] },
+        "loadStatus": { "enum": ["unknown", "engineer-required", "engineer-issued"] }
+      }
+    },
+    "goals": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "enum": ["vehicle-shelter", "solar-generation", "ev-charging", "storage", "maker-learning", "installer-training"] }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "status", "source", "verifiedAt"],
+        "properties": {
+          "id": { "type": "string", "minLength": 3 },
+          "kind": { "type": "string", "minLength": 3 },
+          "status": { "enum": ["missing", "customer-supplied", "human-verified", "stale", "conflicting"] },
+          "source": { "type": "string" },
+          "verifiedAt": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jurisdiction", "structural", "electrical", "bom", "commercial"],
+      "properties": {
+        "jurisdiction": { "$ref": "#/$defs/gate" },
+        "structural": { "$ref": "#/$defs/gate" },
+        "electrical": { "$ref": "#/$defs/gate" },
+        "bom": { "$ref": "#/$defs/gate" },
+        "commercial": { "$ref": "#/$defs/gate" }
+      }
+    },
+    "printIntents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["use", "disposition"],
+        "properties": {
+          "use": { "type": "string", "minLength": 2 },
+          "disposition": { "enum": ["concept-only", "replace-before-build", "allowed-process-aid", "rejected"] }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 3 }
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "owner", "evidenceRef"],
+      "properties": {
+        "status": { "enum": ["not-started", "human-required", "approved", "approved-with-conditions", "not-required-with-evidence", "rejected"] },
+        "owner": { "type": ["string", "null"] },
+        "evidenceRef": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

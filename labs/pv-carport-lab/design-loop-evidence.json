@@ -1,0 +1,137 @@
+{
+  "version": "2026-07-18",
+  "task": "Design and verify a trustworthy German customer-facing PV Carport Lab readiness and project-pass prototype.",
+  "surface": "Responsive single-page product prototype with interactive readiness scan and downloadable project pass.",
+  "audience": "German homeowners, makers, PV buyers, installers, suppliers, and operating partners who need an honest path from learning to professional review.",
+  "first_read": "Learn how to prepare a PV-carport project with evidence while qualified people retain safety and approval authority.",
+  "standards": [
+    "design-agent-standards/OUTCOMES.md",
+    "design-agent-standards/AGENTIC_DESIGN_LOOP.md",
+    "design-agent-standards/PREMIUM_ASSET_STANDARD.md",
+    "DESIGN_TASTE.md",
+    "MOTION_TASTE_RUBRIC.md",
+    "VISUAL_QA_GATE.md",
+    "starlight-design-intelligence/brand-packs/sis/BRAND.md",
+    "starlight-design-intelligence/brand-packs/sis/DESIGN.md"
+  ],
+  "references": [
+    {
+      "label": "SIS brand pack",
+      "source": "C:/Users/frank/starlight/repos/starlight-design-intelligence/brand-packs/sis/BRAND.md",
+      "reason": "Evidence-first intelligence, restrained authority, and visible governance."
+    },
+    {
+      "label": "SIS design system",
+      "source": "C:/Users/frank/starlight/repos/starlight-design-intelligence/brand-packs/sis/DESIGN.md",
+      "reason": "Dark command-surface palette, disciplined typography, and signal color."
+    },
+    {
+      "label": "Premium web outcomes",
+      "source": "C:/Users/frank/starlight/repos/design-agent-standards/OUTCOMES.md",
+      "reason": "Strong first viewport, inspectable product evidence, responsive QA, and 30-point ship gate."
+    }
+  ],
+  "direction": {
+    "keep": [
+      "Evidence-first hero with a real project-pass artifact",
+      "Solar yellow for action and mint for verified boundaries",
+      "Visible human gates and owners",
+      "Editorial typography on near-solid surfaces",
+      "No invented performance, stock, price, permit, or engineering claims"
+    ],
+    "avoid": [
+      "Generic solar stock photography",
+      "Greenwashing gradients",
+      "Fake analytics dashboards",
+      "Decorative glass everywhere",
+      "AI magic language or autonomous approval implications",
+      "Tiny legal disclaimers used to excuse unsafe primary copy"
+    ],
+    "signature": "The project pass is the hero: the carport is shown as a layered evidence system with open human gates, not a fantasy render.",
+    "system": [
+      "Near-black background and solid slate panels",
+      "Solar yellow primary action, mint verified state, orange open gate",
+      "Inter-like system sans with compact monospaced evidence labels",
+      "12/20/36/72 spacing rhythm",
+      "CSS-authored project-pass and carport diagram as exact product UI",
+      "Short opacity/translate state transition disabled under prefers-reduced-motion"
+    ]
+  },
+  "asset_quality": {
+    "tier": "C",
+    "source_method": "vector-diagram",
+    "provenance": "owned",
+    "why_premium": "The correct primary asset is the actual project-pass interface and its governed carport/evidence diagram. It is product evidence rather than decorative illustration, has no external licensing risk, and was inspected in desktop and true mobile emulation.",
+    "shortcut_risk": "low",
+    "context_tested": true
+  },
+  "artifacts": [
+    {
+      "path_or_url": "labs/pv-carport-lab/prototype/index.html",
+      "kind": "web",
+      "inspected": true,
+      "notes": "Served locally; accessibility tree, interactions, generated project-pass JSON, structural-print rejection, and console were inspected."
+    },
+    {
+      "path_or_url": "labs/pv-carport-lab/evidence/desktop-1440x1000.png",
+      "kind": "ui",
+      "inspected": true,
+      "notes": "Desktop first viewport inspected at 1440x1000: no clipping or overlap; product, safety posture, CTA, and project-pass proof are visible."
+    },
+    {
+      "path_or_url": "labs/pv-carport-lab/evidence/mobile-390x844.png",
+      "kind": "ui",
+      "inspected": true,
+      "notes": "True Chrome DevTools Protocol mobile emulation at 390x844: scrollWidth equals clientWidth, CTAs stack, copy wraps, and the project pass begins in the first viewport without clipping."
+    }
+  ],
+  "checks": [
+    {
+      "name": "asset-tier",
+      "status": "pass",
+      "evidence": "Tier C is the appropriate medium for exact product UI and a system-authored vector diagram; it is not substituting for a required real-world product photograph."
+    },
+    {
+      "name": "desktop-export-inspection",
+      "status": "pass",
+      "evidence": "1440x1000 browser capture inspected after local HTTP render."
+    },
+    {
+      "name": "mobile-export-inspection",
+      "status": "pass",
+      "evidence": "CDP device metrics: innerWidth=390, clientWidth=390, document/body scrollWidth=390; screenshot inspected."
+    },
+    {
+      "name": "interaction-safety",
+      "status": "pass",
+      "evidence": "Selecting structural-connector records disposition rejected and displays an explicit safety stop; generated JSON retains all human-required gates."
+    },
+    {
+      "name": "accessibility-and-motion",
+      "status": "pass",
+      "evidence": "Semantic landmarks/headings, labelled controls, aria-pressed state, keyboard focus styles, readable contrast, responsive stacking, and reduced-motion override are present."
+    },
+    {
+      "name": "console-and-runtime",
+      "status": "pass",
+      "evidence": "Local browser console reported zero messages and zero JavaScript errors during the tested flow."
+    },
+    {
+      "name": "factual-and-provenance-integrity",
+      "status": "pass",
+      "evidence": "No external imagery, tracking, fabricated stock, financial output, structural calculation, permit result, or autonomous approval claim."
+    }
+  ],
+  "score": {
+    "total": 29,
+    "max": 30,
+    "notes": "First read/hierarchy 5; brand fit/distinctiveness 4; craft 5; accessibility/responsiveness/reduced motion 5; factual accuracy/provenance 5; usefulness 5. One point held until real pilot participants and the operating brand owner test the surface."
+  },
+  "decision": "ship",
+  "known_risks": [
+    "Ship means internal/invitation-only pre-pilot prototype, not production commerce or technical approval.",
+    "No usability study with real homeowners, makers, or installers has been completed.",
+    "The PV diamond mark is an interim interface mark, not a cleared production trademark or final brand asset.",
+    "The prototype has no authenticated backend, CRM/ERP, consent store, professional-review service, or production analytics."
+  ]
+}

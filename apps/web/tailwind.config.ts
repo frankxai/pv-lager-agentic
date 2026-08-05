@@ -6,19 +6,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          dark: '#0A0E17',
-          surface: '#121824',
-          border: '#1F293D',
-          gold: '#E5A93C',
-          amber: '#F59E0B',
-          green: '#10B981',
-          slate: '#94A3B8',
+        obsidian: {
+          950: '#05070B',
+          900: '#080C14',
+          800: '#0F172A',
+          700: '#1E293B',
+        },
+        aurevia: {
+          300: '#FDE68A',
+          400: '#F59E0B',
+          500: '#D4AF37',
+          600: '#B48E28',
+        },
+        emerald: {
+          400: '#34D399',
+          500: '#10B981',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
         heading: ['Outfit', 'Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

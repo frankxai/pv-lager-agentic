@@ -1,32 +1,41 @@
-# PV Lager Agentic (Rial Energy Alliance)
+# PV Lager Agentic (RIAL Energy Alliance)
 
-**Status**: Active build — agentic operating system, intelligent recommendation engine, sales + marketing intelligence, virtual domain layer for PV Lager (Seesen) / Rial Energy GmbH solar carports, Zola Car Pods, hybrid PV-climate systems, and full solutions.
+**Status**: Active pre-pilot — education, evidence, governed agent workflows, and human-reviewed commerce for PV Lager (Seesen) / RIAL Energy GmbH.
 
-**Mission**: Turn a high-trust, stocked local PV business into a scalable, AI-amplified operation. Deliver mass adoption and brand affection through personalized, funded, effortless customer journeys. Build reusable patterns that advance the broader FrankX/Starlight/GenCreator ecosystem while powering this specific alliance and partnership with brother's health/team support in mind.
+**Mission**: Turn product expertise, inventory, customer questions, and professional partners into a trustworthy decision-to-project system. AI prepares evidence and handoffs; named people retain technical, legal, commercial, and safety authority.
+
+## Current source of truth
+
+- **Research location/status:** [`docs/source-map-and-research-status.md`](docs/source-map-and-research-status.md)
+- **Joint-venture, education, product, inventory, CRM/ERP, and 90-day pilot plan:** [`docs/rial-energy-joint-venture-growth-system-2026.md`](docs/rial-energy-joint-venture-growth-system-2026.md)
+- **Starlight PV Carport Lab product, GTM, safety, contracts, tests, and prototype:** [`labs/pv-carport-lab/README.md`](labs/pv-carport-lab/README.md)
+
+> **Prototype safety:** The legacy quiz is now a deprecation page. The current Lab prototype produces only a learning and human-review pathway—never a quote, structural/electrical design, permit result, stock promise, subsidy determination, or financial forecast.
 
 ## The Alliance & Partnership
 - **RIAL Energy GmbH** (holding): Renewables + intelligent building tech.
 - **PV Lager** (core operations, Seesen): Stocked warehouse ("Lagernde Ware — sofort verfügbar"), full PV components, unique **AC/DC PV Solar Multi-Split Klimaanlagen** (heavy action pricing), and architectural PV structures.
-- **Zola Car Pods**: Internal/family-branded premium solar car pods / vehicle shelters (bifacial carports under PV Lager / SOLARCARPORT.TECH).
+- **Zola Car Pods**: Working/internal label from earlier discussions. It is not currently evidenced on the reviewed public sites; confirm its exact name, ownership, and public-use status with the family before publishing it.
 - **Products in focus**: Bifacial modules (Trina etc.), storage, mounting, Panasonic heat pumps, **PV-Carports / Zola Car Pods**, **PV-Terrassen** (with Smart Rain Channels), PV-Zäune, PV-Vordächer.
 - **Sales model**: Wix shop + Kleinanzeigen + direct (phone/WhatsApp). Local pickup/delivery advantage.
-- **Goal of this repo**: Intelligent first-touch quiz → tailored recs (modules + battery + structure + hybrid climate) + ROI + exact German subsidies (0% VAT, EEG, KfW/BEG up to 70%). Sales co-pilots for cousin (MD logistics/sales) + team. Marketing swarms for mass adoption/affection. Virtual layer via Wix MCP. Domain modeling via Energy IS sovereign instance.
+- **Goal of this repo**: Intelligent first-touch education and diagnostic → bounded system pathways (modules + battery + structure + hybrid climate) → source-dated scenarios and human-reviewed quotes. Sales co-pilots for cousin (MD logistics/sales) + team. Marketing swarms for useful, people-first education. Virtual layer via Wix MCP. Domain modeling via Energy IS sovereign instance.
 
 This is the dedicated collaboration repo for the alliance. It consumes and extends the foundational agentic repos (see Interconnections) and the Energy IS vertical in Starlight Intelligence System (private sovereign instance for real data: customers, pricing, contracts).
 
 ## Key Deliverables (Built Here)
-- **Intelligent Intake Quiz & Recommendation Engine** (see `/quiz`): Collects location, use-case (Zola Car Pod/carport/terrace/hybrid), scale, consumption, heating, priorities → instant personalized config, costs, ROI, stacked subsidies, upsell packages. Prototype HTML ready; production via Wix MCP + agents.
-- **Sales Intelligence**: Co-pilot for cousin + team (lead scoring from quiz/inquiries, proposal generation, objection handling, inventory-aware quotes). Ties to ops (logistics, accounting agents).
-- **Marketing Intelligence** (for mass adoption & brand affection): Content swarms generating affectionate/engaging material — Zola Car Pod owner stories, local Seesen impact, shareable ROI visuals, quiz virality, virtual experiences. SEO + social for the structural PV + hybrid climate niche.
-- **Agentic Swarms & OS Layer**: Always-on (Hermes cron: inventory, subsidy watches), triggered (quiz → Buyer Agent + Sizing/Cost + Proposal), customer-facing, ops (accounting/bookkeeping, logistics for cousin).
+- **Starlight PV Carport Lab** (see `/labs/pv-carport-lab`): readiness scan, Build Passport, maker-learning model, product/affiliate contracts, human gates, validators, regression tests, and a customer-facing prototype.
+- **Sales Intelligence**: bounded co-pilot for education, evidence completeness, source-backed product explanations, and human handoffs. Live quotes require approved inventory, compatibility, pricing, and ownership.
+- **Marketing Intelligence**: useful, reviewed content from real buyer questions, project evidence, and explicit limits—not unsupported ROI, subsidy, scarcity, or approval claims.
+- **Agentic Operations Layer**: intake, evidence, concept, safety-gate, BOM, sales, partner-routing, and observation agents with draft-only authority until human approval.
 - **Virtual Side**: Wix MCP-powered virtual storefront and co-work layer. Agent-driven site updates, dynamic product recs, lead capture. Digital experiences (virtual "Zola Pod configurator").
 - **Domain Modeling (Energy IS PV Instance)**: Sovereign extension of Energy IS (7 sub-systems: Sizing, Cost, Installer, Operations, Buyer, Grid, Recovery + Calculator + Validation substrate). PV-specific domain concepts (Zola Car Pod entity, hybrid climate configs, structural kits, local Seesen fulfillment). Private instance for real data.
 
 ## Strategy (Recommended Hybrid)
-1. **Core Optimization First**: Enhance pvlager.com (Wix) with quiz/funnel + agents (fast revenue, uses local stocked advantage + unique products).
-2. **Digital Layer + Upsells**: Configurator as premium product; reusable SaaS patterns.
-3. **Light SEO/Content**: Agent-generated, feeding main site + targeted pages for "mass affection".
-4. **Parallel NL / Reusable**: Foundations advanced here feed other brands.
+1. **Decision layer first**: prove that education and a Build Passport improve evidence quality and reduce quote/rework burden.
+2. **Human-reviewed joint offer**: join the digital dossier to an approved product/partner brief.
+3. **Attributable economics**: digital-product revenue, host shares, and incremental-gross-profit participation with explicit reconciliation.
+4. **Useful evidence content**: one reviewed knowledge surface fed by real questions and project learning.
+5. **Reusable platform only after proof**: productize Pro Desk when the pilot workflow and responsibilities work repeatedly.
 
 See full strategy, market validation (Germany solar carports growing, subsidies complex → quiz is highly differentiating), and prior research in `/docs`.
 
@@ -44,36 +53,35 @@ This repo is built on and advances:
 Work in this repo both solves the immediate PV Lager/Rial needs **and** strengthens the shared stack.
 
 ## Architecture Overview (from Agentic Orchestration + Energy IS)
-- **Orchestrator**: Routes quiz → specialists (Buyer Clarity, Sizing/Cost validators, Proposal, Inventory via MCP).
-- **Always-On**: Hermes crons (subsidy updates, low-stock alerts, lead monitoring).
-- **Triggered Swarms**: Quiz completion fires Buyer + Cost agents → handoff to Sales co-pilot.
-- **Ops**: Accounting agents (receipts → books, subsidy tracking), logistics for cousin.
-- **Marketing Swarm**: Generates affectionate content, personalized shares, virtual tour scripts.
-- **Virtual/Domain**: Wix MCP as the live virtual domain. Energy IS PV domain model (entities, calculators validated).
+- **Orchestrator**: enforces the project state machine and routes evidence to the next named human or agent.
+- **Draft agents**: intake, education, evidence, concept, prototype, safety completeness, provisional BOM, sales explanation, and operations observation.
+- **Human gates**: jurisdiction, structural, electrical, product/BOM, commercial, installation, commissioning, and handover.
+- **Always-on observation**: stale-source, blocked-project, consent, attribution, support, and safety alerts—only after real data integrations exist.
+- **Virtual/domain layer**: Wix MCP and Energy IS can supply governed product/lead data; no production mutation is enabled by this prototype.
 - **Sovereignty**: Real data (customers, exact pricing, contracts) stays private. Public patterns reusable.
 
 Full swarm architecture, handoff protocols, and Energy IS mapping in `/docs/architecture.md` and `/domain`.
 
 ## Quick Start (for the Alliance)
-1. Open the interactive quiz prototype: `/quiz/pv-lager-intake-quiz-mock.html` (demo of the recommendation engine).
-2. Review seller co-pilot prompt in `/agents/seller-copilot.md` (ready for Claude Cowork / Hermes).
-3. See prior deep documentation: `/docs/rial-energy-pv-lager-documentation.md`.
-4. For developers: Clone, run quiz locally, connect Wix MCP for live site updates.
-5. Meetings: Use `/docs/meeting-plan.md` template with brother, cousin, team.
+1. Read [`labs/pv-carport-lab/README.md`](labs/pv-carport-lab/README.md) and [`labs/pv-carport-lab/SAFETY-BOUNDARY.md`](labs/pv-carport-lab/SAFETY-BOUNDARY.md).
+2. Run `python labs/pv-carport-lab/scripts/validate_lab.py` and the Lab unit tests.
+3. Serve `/labs/pv-carport-lab/prototype` locally and test the Readiness Scan / JSON Project Pass.
+4. Review `/agents/seller-copilot.md`; do not use it with customers until its production prerequisites are implemented.
+5. Use the family-meeting decisions in the full joint-venture plan before commercial activation.
 
 ## Next / Build Plan (Swarm-Orchestrated)
-- Phase 1: Quiz live on pvlager.com + basic Buyer Agent + Wix MCP integration.
-- Phase 2: Sales co-pilot + accounting agents for cousin/ops relief.
-- Phase 3: Marketing swarms for mass affection (Zola stories, ROI shares) + content engine.
-- Phase 4: Full virtual layer + advanced domain (Energy IS PV extensions) + digital product packaging (reusable).
-- Ongoing: Measure adoption metrics, iterate with brother/team, contribute reusable patterns back to foundations.
+- Phase 0: family roles, legal/product boundary, professional partners, live product data, and attribution agreement.
+- Phase 1: invitation-only Readiness Scan + Build Passport cohort with 5–10 projects.
+- Phase 2: human-reviewed kit brief, source-backed seller co-pilot, and operations observation.
+- Phase 3: partner Pro Desk, repeatable workshops, and host-beneficiary distribution if pilot evidence supports it.
+- Ongoing: measure evidence completeness, rejection reasons, quote-cycle time, attributable gross profit, refunds, support, and safety escalations.
 
 ## Research & Validation Summary
-- **Company**: Fully documented (RIAL holding + PV Lager operations, exact products, Wix + Kleinanzeigen channels, social).
-- **Zola Car Pods**: Internal branded premium car pods/carports.
-- **Market**: Germany leader in solar; carports/structural growing (dual-use value); complex subsidies = perfect for intelligent quiz.
-- **Innovation**: Quiz/funnel is highly differentiating — removes fear, surfaces funding, tailors to unique offerings (stocked + hybrid climate + architectural).
-- **Feasibility**: Wix MCP production-ready. Energy IS substrate already scaffolds this. Hermes + Claude + swarms ready.
+- **Company**: The public RIAL, PV Lager, SolarCarport.tech, and VR Gebäudetechnik surfaces are mapped; private commercial and system facts still require owner confirmation.
+- **Zola Car Pods**: Unverified working label, not yet a public brand fact.
+- **Market/rules**: All tax, tariff, subsidy, and financial claims must be sourced and date-stamped at use time.
+- **Innovation hypothesis**: An honest education, diagnostic, system-bundle, and continuity layer can reduce buyer uncertainty and increase attributable lifetime value; the 90-day pilot is designed to test it.
+- **Feasibility**: The current repo proves only the concept. Production requires actual CRM/ERP discovery, approved integrations, validated calculators, and operational ownership.
 - Full details in `/docs`.
 
 ## Contributing & Collaboration
@@ -84,7 +92,7 @@ Full swarm architecture, handoff protocols, and Energy IS mapping in `/docs/arch
 
 **Built with best skills and swarms** (agentic-orchestration, todo-discipline, Energy IS, Starlight substrate, Hermes, MCP).
 
-This repo makes the recommendation real, drives mass adoption + affection for PV Lager / Zola Car Pods, virtualizes the business, domains the energy vertical, and strengthens the entire agentic foundation stack.
+This repository is the public, non-sensitive product and operating-pattern layer. Real customer, supplier, price, contract, and approval records belong in an approved private system.
 
 Links to live repos:
 - https://github.com/frankxai/pv-lager-agentic (this)

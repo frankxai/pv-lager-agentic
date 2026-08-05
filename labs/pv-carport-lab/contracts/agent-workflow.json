@@ -1,0 +1,107 @@
+{
+  "version": "2026-07-18",
+  "workflowState": "design-only",
+  "defaultAuthority": "draft-only",
+  "agents": [
+    {
+      "id": "intake",
+      "owner": "starlight-product-owner",
+      "riskClass": "low",
+      "outputs": ["project-pass-draft", "missing-data-list"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "learning-guide",
+      "owner": "starlight-product-owner",
+      "riskClass": "low",
+      "outputs": ["education-path", "customer-questions"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "evidence",
+      "owner": "starlight-product-owner",
+      "riskClass": "medium",
+      "outputs": ["evidence-index", "freshness-alert"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "concept",
+      "owner": "starlight-product-owner",
+      "riskClass": "high",
+      "outputs": ["labeled-concept-layout", "assumption-register"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "prototype",
+      "owner": "starlight-product-owner",
+      "riskClass": "high",
+      "outputs": ["scale-model", "allowed-process-aid"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "safety-gate",
+      "owner": "starlight-product-owner",
+      "riskClass": "high",
+      "outputs": ["completeness-result", "escalation"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "bom",
+      "owner": "pv-lager-rial-technical-owner",
+      "riskClass": "high",
+      "outputs": ["provisional-bom", "source-gaps"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "sales-copilot",
+      "owner": "pv-lager-rial-sales-owner",
+      "riskClass": "high",
+      "outputs": ["explanation-draft", "handoff-brief"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    },
+    {
+      "id": "operations-observer",
+      "owner": "joint-operations-owner",
+      "riskClass": "medium",
+      "outputs": ["queue", "aging-alert", "weekly-receipt"],
+      "canApproveGate": false,
+      "externalSideEffects": []
+    }
+  ],
+  "prohibitedAuthority": [
+    "structural-approval",
+    "permit-decision",
+    "electrical-approval",
+    "energization",
+    "product-compliance-approval",
+    "contract-signing",
+    "checkout",
+    "money-movement",
+    "inventory-mutation",
+    "public-publish",
+    "customer-send-without-approved-template-and-scope"
+  ],
+  "transitions": [
+    { "from": "discover", "to": "education", "humanGate": null },
+    { "from": "education", "to": "concept_draft", "humanGate": null },
+    { "from": "concept_draft", "to": "jurisdiction_review", "humanGate": "project-owner-consent" },
+    { "from": "jurisdiction_review", "to": "structural_review", "humanGate": "jurisdiction" },
+    { "from": "structural_review", "to": "electrical_review", "humanGate": "structural" },
+    { "from": "electrical_review", "to": "bom_review", "humanGate": "electrical" },
+    { "from": "bom_review", "to": "commercial_review", "humanGate": "bom" },
+    { "from": "commercial_review", "to": "quote_ready", "humanGate": "commercial-review-complete" },
+    { "from": "quote_ready", "to": "contracted", "humanGate": "signed-contract" },
+    { "from": "contracted", "to": "build", "humanGate": "notice-to-proceed" },
+    { "from": "build", "to": "commission", "humanGate": "installation-inspection" },
+    { "from": "commission", "to": "handover", "humanGate": "commissioning-receipt" },
+    { "from": "handover", "to": "service", "humanGate": "handover-acceptance" }
+  ]
+}

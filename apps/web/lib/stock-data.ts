@@ -4,6 +4,7 @@ export interface ProductItem {
   name: string;
   category: 'bifacial-modules' | 'carports' | 'climate' | 'heat-pumps' | 'inverters' | 'batteries';
   brand: string;
+  imageUrl: string;
   description: string;
   specs: Record<string, string>;
   stockSeesen: number;
@@ -20,7 +21,8 @@ export const REAL_PRODUCT_CATALOG: ProductItem[] = [
     name: 'Trina Vertex S+ 440W Doppelglas Bifazial N-Type',
     category: 'bifacial-modules',
     brand: 'Trina Solar',
-    description: 'Hochleistungs-Glas-Glas Modul mit i-TOPCon Technologie. Bis zu 25% Mehrertrag durch bifaziale Rückseite.',
+    imageUrl: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80',
+    description: 'Hochleistungs-Glas-Glas Modul mit i-TOPCon Technologie. Bis zu 25% Mehrertrag durch bifaziale Rückseite. Extrem widerstandsfähig gegen Hagel und Schneelast.',
     specs: { 'Leistung': '440 Wp', 'Garantie': '25 Jahre Produkt / 30 Jahre Leistung', 'Schneelast': '5.400 Pa', 'Zelltyp': 'N-Type i-TOPCon' },
     stockSeesen: 1420,
     pricePvlager: 89.00,
@@ -34,7 +36,8 @@ export const REAL_PRODUCT_CATALOG: ProductItem[] = [
     name: 'Solar-Carport Zola Pod (2 Stellplätze, Alu-Konstruktion)',
     category: 'carports',
     brand: 'SolarCarport.tech / RIAL',
-    description: 'Modulares Aluminium-PV-Carport mit integriertem Smart Rain Channel System und Doppelglas-Modulen.',
+    imageUrl: 'https://images.unsplash.com/photo-1558441719-67450807e909?auto=format&fit=crop&w=800&q=80',
+    description: 'Modulares Aluminium-PV-Carport mit integriertem Smart Rain Channel System, LED-Ambientebeleuchtung und 22kW Wallbox Vorbereitung.',
     specs: { 'Stellplätze': '2 Fahrzeuge', 'Abmessung': '5.90m x 5.50m', 'Regenrinne': 'Smart Rain Channel', 'Schneelastzone': 'Zone 2 & 3 geeignet' },
     stockSeesen: 12,
     pricePvlager: 3490.00,
@@ -48,7 +51,8 @@ export const REAL_PRODUCT_CATALOG: ProductItem[] = [
     name: 'AC/DC Solar Multi-Split Klimaanlage (Direct PV)',
     category: 'climate',
     brand: 'RIAL Energy',
-    description: 'Direkt-PV betriebenes Klimasystem. Speist Solarstrom direkt ohne Wechselrichter-Umwandlung ein.',
+    imageUrl: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+    description: 'Direkt-PV betriebenes Klimasystem. Speist Solarstrom direkt ohne Wechselrichter-Umwandlungsverluste für Kühlen & Heizen ein.',
     specs: { 'Kühlleistung': '12.000 BTU / 3.5 kW', 'DC-Einspeisung': '80V - 380V Direct', 'SEER': '22.0', 'Kältemittel': 'R32' },
     stockSeesen: 34,
     pricePvlager: 899.00,
@@ -62,7 +66,8 @@ export const REAL_PRODUCT_CATALOG: ProductItem[] = [
     name: 'Panasonic Aquarea T-CAP 9kW Monoblock Wärmepumpe',
     category: 'heat-pumps',
     brand: 'Panasonic',
-    description: 'Konstante Heizleistung bis -20°C Außentemperatur. Perfekt abgestimmt auf PV-Kopplung.',
+    imageUrl: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+    description: 'Konstante Heizleistung bis -20°C Außentemperatur im Harzer Winter. Perfekt abgestimmt auf PV-Kopplung und Fußbodenheizungen.',
     specs: { 'Heizleistung': '9.0 kW', 'COP': '4.85', 'Vorlauf': 'bis 65°C', 'Stromanschluss': '400V 3-Phasig' },
     stockSeesen: 8,
     pricePvlager: 4250.00,
@@ -75,7 +80,8 @@ export const REAL_PRODUCT_CATALOG: ProductItem[] = [
     name: 'BYD Battery-Box Premium HVS 10.2 kWh Speicher',
     category: 'batteries',
     brand: 'BYD',
-    description: 'Modularer Hochvolt-Lithium-Eisenphosphat (LiFePO4) Speicher. Maximale Sicherheit und Lebensdauer.',
+    imageUrl: 'https://images.unsplash.com/photo-1569012871812-a386454f226c?auto=format&fit=crop&w=800&q=80',
+    description: 'Modularer Hochvolt-Lithium-Eisenphosphat (LiFePO4) Speicher. Maximale Sicherheit, hohe Entladerate und 10 Jahre Herstellergarantie.',
     specs: { 'Kapazität': '10.24 kWh', 'Zellchemie': 'LiFePO4', 'Wirkungsgrad': '>96%', 'Garantie': '10 Jahre' },
     stockSeesen: 24,
     pricePvlager: 3890.00,
@@ -88,7 +94,8 @@ export const REAL_PRODUCT_CATALOG: ProductItem[] = [
     name: 'Huawei SUN2000 10KTL-M1 Hybrid-Wechselrichter',
     category: 'inverters',
     brand: 'Huawei',
-    description: 'Dreiphasiger Hybrid-Wechselrichter mit integriertem Lichtbogenschutz (AI Arc Fault Detection).',
+    imageUrl: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=800&q=80',
+    description: 'Dreiphasiger Hybrid-Wechselrichter mit integriertem Lichtbogenschutz (AI Arc Fault Detection) und direkter Speicherunterstützung.',
     specs: { 'AC-Leistung': '10.0 kW', 'MPPT': '2 Unabhängige Tracker', 'Effizienz': '98.6%', 'Schutzart': 'IP65 Outdoor' },
     stockSeesen: 42,
     pricePvlager: 1190.00,
