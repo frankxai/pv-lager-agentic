@@ -8,9 +8,15 @@ export const pvlagerImages = {
   acdcSolarKlima: "/images/pvlager/fab3ae_5a3992b07b4f43ac8d563fb927d50de3.png",
   storageBatteryBYD: "/images/pvlager/fab3ae_e20b32fb926943c4ada6b544d378579c.png",
   huaweiInverter: "/images/pvlager/fab3ae_812ab757db914501bd260a247ab366aa.png",
+  pvlagerLogo: "/images/pvlager/fab3ae_561e8663abe24a98a79412d783fc4cf3.png",
   brandLogo: "/images/pvlager/fab3ae_561e8663abe24a98a79412d783fc4cf3.png",
+  solarcarportLogo: "/images/pvlager/fab3ae_561e8663abe24a98a79412d783fc4cf3.png",
   b2bFleetCarport: "/images/pvlager/fab3ae_287c64ac473349919b4ed162d5e46a4f.png",
   solarTerrace: "/images/pvlager/fab3ae_fdec7cfeb8924e18876e6a05c0b1809a.png",
   rainGutters: "/images/pvlager/fab3ae_c55f97b0003d453e849e43d195d1846a.png",
   trinaSolarModule: "/images/pvlager/fab3ae_eae1b194c0f74cedbd8fd2ffbe9176cb.png"
+};
+
+export const pvlagerVideos = {
+  carportFlythrough: 'https://www.w3schools.com/html/mov_bbb.mp4'
 };
