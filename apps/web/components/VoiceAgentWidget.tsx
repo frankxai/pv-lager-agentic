@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Mic, Volume2, MicOff, Sparkles, CheckCircle } from 'lucide-react';
+import { Mic, X, MicOff, Volume2, ShieldCheck } from 'lucide-react';
 
 interface VoiceAgentWidgetProps {
   isOpen: boolean;
@@ -10,99 +10,43 @@ interface VoiceAgentWidgetProps {
 
 export function VoiceAgentWidget({ isOpen, onClose }: VoiceAgentWidgetProps) {
   const [isListening, setIsListening] = useState(false);
-  const [transcript, setTranscript] = useState('');
-  const [agentResponse, setAgentResponse] = useState(
-    'Sprechen Sie direkt mit dem PV Lager Sprach-Assistenten. Sagen Sie beispielsweise: "Ich benötige ein Doppelcarport für 2 Elektroautos mit 10 kW Speicher."'
-  );
 
   if (!isOpen) return null;
 
-  const toggleMic = () => {
-    if (!isListening) {
-      setIsListening(true);
-      setAgentResponse('Sprachaufzeichnung aktiv... (Sprechen Sie jetzt)');
-      setTimeout(() => {
-        setIsListening(false);
-        setTranscript('Ich brauche ein Doppel-Carport in Seesen mit 18 Modulen und Ladesäule.');
-        setAgentResponse(
-          'Verstanden! Ich habe ein Doppel-Carport mit 18 bifazialen Trina Modulen (7.83 kWp) und 11kW Wallbox vorkonfiguriert. Möchten Sie die Festpreis-Stückliste direkt einsehen?'
-        );
-      }, 3500);
-    } else {
-      setIsListening(false);
-    }
-  };
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-      <div className="relative w-full max-w-md bg-[#0F172A] border border-emerald-500/40 rounded-2xl shadow-2xl overflow-hidden p-6 text-slate-100 space-y-5">
-        {/* Header */}
-        <div className="flex justify-between items-start">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center">
-              <Mic className="w-5 h-5 animate-pulse" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-sm text-white">ElevenLabs Voice AI Agent</span>
-                <span className="px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono">
-                  Live Stream
-                </span>
-              </div>
-              <span className="text-[11px] text-slate-400">Interaktive Sprachberatung & Konfiguration</span>
-            </div>
-          </div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-xl">
+      <div className="relative w-full max-w-md bg-[#070B14] border border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 text-center">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 rounded-xl bg-slate-900 text-slate-400 hover:text-white border border-slate-800"
+        >
+          <X className="w-4 h-4" />
+        </button>
 
-          <button
-            onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Dynamic Voice Visualizer */}
-        <div className="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 text-center space-y-4">
-          <div className="relative flex items-center justify-center">
-            <div
-              className={`w-20 h-20 rounded-full flex items-center justify-center transition-all ${
-                isListening
-                  ? 'bg-emerald-500/30 text-emerald-400 animate-ping'
-                  : 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30'
-              }`}
-            >
-              <button
-                onClick={toggleMic}
-                className="w-16 h-16 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-lg shadow-emerald-500/30 hover:scale-105 transition-transform"
-              >
-                {isListening ? <MicOff className="w-7 h-7" /> : <Mic className="w-7 h-7" />}
-              </button>
-            </div>
-          </div>
-
-          <span className="text-[11px] text-slate-400 font-mono block">
-            {isListening ? 'Zuhören & Konfiguration erfassen...' : 'Klicken Sie auf das Mikrofon, um zu sprechen'}
+        <div className="space-y-2">
+          <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] font-bold uppercase tracking-widest inline-block">
+            ElevenLabs Voice Agent V2
           </span>
-
-          <div className="bg-slate-950 p-4 rounded-xl text-left border border-slate-800 text-xs space-y-2">
-            <div className="flex items-center gap-1.5 text-emerald-400 font-mono text-[11px]">
-              <Volume2 className="w-3.5 h-3.5" />
-              <span>Voice Agent Antwort:</span>
-            </div>
-            <p className="text-slate-200 leading-relaxed">{agentResponse}</p>
-
-            {transcript && (
-              <div className="pt-2 border-t border-slate-800 text-[11px] text-amber-300">
-                <strong>Erkannt:</strong> "{transcript}"
-              </div>
-            )}
-          </div>
+          <h3 className="font-serif text-xl font-bold text-white">Sprachgeführte Intelligente Beratung</h3>
+          <p className="text-xs text-slate-300">
+            Sprechen Sie direkt mit der KI, um Fahrzeuganzahl, Stellplätze & Speicherbedarfe freihändig zu erfassen.
+          </p>
         </div>
 
-        {/* Feature Pill */}
-        <div className="flex items-center gap-2 text-[11px] text-slate-400 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
-          <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-          <span>Der Voice Agent wandelt Ihre gesprochenen Anforderungen direkt in die ERP-Stückliste um.</span>
+        <div className="py-6">
+          <button
+            onClick={() => setIsListening(!isListening)}
+            className={`w-24 h-24 rounded-full mx-auto flex items-center justify-center transition-all shadow-2xl ${
+              isListening
+                ? 'bg-emerald-500 text-slate-950 scale-110 animate-pulse ring-8 ring-emerald-500/30'
+                : 'bg-slate-900 text-emerald-400 border border-emerald-500/40 hover:bg-slate-800'
+            }`}
+          >
+            {isListening ? <Volume2 className="w-10 h-10" /> : <Mic className="w-10 h-10" />}
+          </button>
+          <span className="text-[11px] font-mono text-slate-400 block mt-4">
+            {isListening ? 'Zuhören & Verarbeiten...' : 'Klicken Sie zum Starten der Sprachverbindung'}
+          </span>
         </div>
       </div>
     </div>
