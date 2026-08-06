@@ -10,7 +10,7 @@ export function LagerbestandTrackerV2() {
       category: 'Bifaziales PV Modul',
       stock: 1420,
       price: '89 € / Modul',
-      badge: 'Sofort Lieferbar',
+      badge: 'Sofort lieferbar',
       img: '/images/pvlager/fab3ae_52b99309068b4d81af21193f2c00f9eb.png',
       spedition: '24-48 Std. Spedition',
     },
@@ -44,47 +44,47 @@ export function LagerbestandTrackerV2() {
   ];
 
   return (
-    <div id="lagerbestand" className="w-full max-w-7xl mx-auto my-12 px-4 sm:px-6">
-      <div className="bg-[#030712] border border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-white/10 pb-6">
+    <div id="lagerbestand" className="w-full max-w-7xl mx-auto my-16 px-4 sm:px-6">
+      <div className="bg-[#000000] border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl space-y-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-white/10 pb-8">
           <div>
-            <span className="text-xs font-mono uppercase text-amber-400 tracking-widest font-bold flex items-center gap-1.5">
+            <span className="text-xs font-sans uppercase text-amber-400 tracking-widest font-medium flex items-center gap-2">
               <Warehouse className="w-4 h-4" /> Live Lagerbestand Zentrallager Seesen (Harz)
             </span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white mt-1">
-              Sofort Verfügbare Photovoltaik-Lagerware
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">
+              Sofort verfügbare Photovoltaik-Lagerware
             </h2>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-            <span className="text-xs font-mono text-emerald-400 font-bold">Lagerbestand Live Aktiv</span>
+            <span className="text-xs font-sans text-emerald-400 font-medium">Lagerbestand live aktiv</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {inventory.map((item, idx) => (
             <div
               key={idx}
-              className="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-amber-500/40 transition shadow-xl"
+              className="bg-slate-950/80 border border-white/10 rounded-3xl p-5 flex flex-col justify-between space-y-4 hover:border-amber-500/30 transition shadow-xl group"
             >
-              <div className="relative h-36 rounded-xl overflow-hidden border border-white/10 bg-slate-950">
-                <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
-                <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-emerald-500/90 text-slate-950 font-mono text-[10px] font-bold">
+              <div className="relative h-40 rounded-2xl overflow-hidden border border-white/10 bg-black">
+                <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                <div className="absolute top-2.5 right-2.5 px-3 py-1 rounded-full bg-emerald-500/90 text-slate-950 font-sans text-xs font-semibold">
                   {item.stock} Stk. auf Lager
                 </div>
               </div>
 
-              <div className="space-y-1">
-                <h3 className="font-bold text-xs text-white leading-snug">{item.name}</h3>
-                <span className="text-amber-400 font-mono font-bold text-xs block">{item.price}</span>
+              <div className="space-y-1.5">
+                <h3 className="font-bold text-sm text-white leading-snug">{item.name}</h3>
+                <span className="text-amber-300 font-mono font-semibold text-xs block">{item.price}</span>
               </div>
 
-              <div className="pt-2 border-t border-slate-800 text-[11px] text-slate-400 space-y-1">
-                <div className="flex items-center gap-1 text-emerald-400">
+              <div className="pt-3 border-t border-white/10 text-xs text-slate-400 space-y-1.5 font-sans">
+                <div className="flex items-center gap-1.5 text-emerald-400">
                   <CircleCheck className="w-3.5 h-3.5" />
                   <span>{item.badge}</span>
                 </div>
-                <div className="flex items-center gap-1 text-slate-400">
+                <div className="flex items-center gap-1.5 text-slate-400">
                   <Clock className="w-3.5 h-3.5 text-amber-400" />
                   <span>Spedition: {item.spedition}</span>
                 </div>
@@ -92,9 +92,9 @@ export function LagerbestandTrackerV2() {
 
               <a
                 href="/v2#configurator"
-                className="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center justify-center gap-1 border border-slate-700 transition"
+                className="w-full py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-200 font-medium text-xs flex items-center justify-center gap-1.5 border border-white/10 transition"
               >
-                <span>Reservieren</span>
+                <span>Komponente reservieren</span>
                 <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
               </a>
             </div>

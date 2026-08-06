@@ -3,76 +3,76 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { BrandLogoV2 } from './BrandLogoV2';
-import { PhoneCall, Zap, ShieldCheck, Warehouse, Menu, X, Sparkles } from 'lucide-react';
+import { PhoneCall, Zap, Warehouse, Menu, X } from 'lucide-react';
 
 export function NavV2() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#030712]/90 backdrop-blur-2xl border-b border-amber-500/20 shadow-2xl transition-all">
+    <header className="sticky top-0 z-50 bg-[#000000]/80 backdrop-blur-2xl border-b border-white/10 shadow-2xl transition-all">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-amber-500/20 via-emerald-500/20 to-amber-500/20 border-b border-white/10 py-1.5 px-4 text-center text-[11px] font-mono text-slate-300 flex items-center justify-between sm:justify-center gap-4">
-        <span className="inline-flex items-center gap-1.5 text-amber-300 font-semibold truncate">
+      <div className="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-amber-500/10 border-b border-white/5 py-2 px-4 text-center text-xs font-sans text-slate-300 flex items-center justify-between sm:justify-center gap-4">
+        <span className="inline-flex items-center gap-2 text-amber-300 font-medium truncate">
           <Warehouse className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-          Zentrallager Seesen (Harz) · 100% Sofort Verfügbar
+          Zentrallager Seesen (Harz) · Sofort lieferbare Solar-Komponenten
         </span>
         <span className="hidden md:inline text-slate-600">•</span>
         <span className="hidden md:inline text-slate-300">
-          Statisch geprüft Schneelastzone 3 (Harz-Standard)
+          Statisch geprüft nach Schneelastzone 3
         </span>
         <span className="hidden md:inline text-slate-600">•</span>
-        <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] border border-emerald-500/30 shrink-0">
-          0% MwSt. § 12 (3) UStG
+        <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 font-medium text-[11px] border border-emerald-500/20 shrink-0">
+          0% MwSt. § 12 (3) UStG befreit
         </span>
       </div>
 
-      {/* Main Bar */}
+      {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <Link href="/v2" className="hover:opacity-95 transition">
+        <Link href="/v2" className="hover:opacity-90 transition">
           <BrandLogoV2 />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase text-slate-300">
-          <Link href="/v2#vision" className="hover:text-amber-400 transition flex items-center gap-1">
-            <span>Architektur &amp; Vision</span>
+        {/* Desktop Links (Apple-style Sentence Case) */}
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-sans text-slate-300">
+          <Link href="/v2#vision" className="hover:text-white transition">
+            Architektur &amp; Vision
           </Link>
-          <Link href="/v2#configurator" className="hover:text-amber-400 transition text-amber-300 flex items-center gap-1 font-bold">
+          <Link href="/v2#configurator" className="hover:text-amber-300 transition text-amber-400 font-medium flex items-center gap-1.5">
             <Zap className="w-3.5 h-3.5 fill-current text-amber-400" />
-            <span>60s Konfigurator</span>
+            <span>Carport Konfigurator</span>
           </Link>
-          <Link href="/v2/analyse" className="hover:text-amber-400 transition">
+          <Link href="/v2/analyse" className="hover:text-white transition">
             Autarkie-Analyse
           </Link>
-          <Link href="/v2/referenzen" className="hover:text-amber-400 transition">
+          <Link href="/v2/referenzen" className="hover:text-white transition">
             Referenzen
           </Link>
-          <Link href="/v2/herkunft" className="hover:text-amber-400 transition">
+          <Link href="/v2/herkunft" className="hover:text-white transition">
             Zentrallager
           </Link>
         </nav>
 
-        {/* Right CTA */}
+        {/* Right Action Controls */}
         <div className="flex items-center gap-3">
           <a
             href="tel:+49538198000"
-            className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-bold text-xs border border-amber-500/30 transition shadow-lg"
+            className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-medium text-xs border border-white/10 transition"
           >
-            <PhoneCall className="w-4 h-4 text-amber-400" />
-            <span className="font-mono text-[11px]">+49 5381 98000</span>
+            <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
+            <span className="font-mono text-xs">+49 5381 98000</span>
           </a>
 
           <Link
             href="/v2#configurator"
-            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-xl shadow-amber-500/25 transition border border-amber-300/40 inline-flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-semibold text-xs transition shadow-lg shadow-amber-500/20 border border-amber-300/30 inline-flex items-center gap-1.5"
           >
-            <span>ERP Konfigurator</span>
+            <span>Carport konfigurieren</span>
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Drawer Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-slate-900 text-slate-300 border border-slate-800 lg:hidden hover:text-white"
+            className="p-2.5 rounded-full bg-slate-900 text-slate-300 border border-slate-800 lg:hidden hover:text-white"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -82,32 +82,32 @@ export function NavV2() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#030712] border-b border-amber-500/30 p-6 space-y-4 font-mono text-sm">
+        <div className="lg:hidden bg-[#000000] border-b border-white/10 p-6 space-y-4 font-sans text-sm">
           <Link
             href="/v2#vision"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-amber-400 py-2 border-b border-white/10"
+            className="block text-slate-300 hover:text-amber-400 py-2 border-b border-white/5"
           >
             Architektur &amp; Vision
           </Link>
           <Link
             href="/v2#configurator"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-amber-400 font-bold py-2 border-b border-white/10"
+            className="block text-amber-400 font-medium py-2 border-b border-white/5"
           >
-            60s Carport Konfigurator
+            Carport Konfigurator
           </Link>
           <Link
             href="/v2/analyse"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-amber-400 py-2 border-b border-white/10"
+            className="block text-slate-300 hover:text-amber-400 py-2 border-b border-white/5"
           >
             Autarkie-Analyse (€190)
           </Link>
           <Link
             href="/v2/referenzen"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-amber-400 py-2 border-b border-white/10"
+            className="block text-slate-300 hover:text-amber-400 py-2 border-b border-white/5"
           >
             Estate Referenzen
           </Link>
