@@ -17,17 +17,17 @@
   "references": [
     {
       "label": "SIS brand pack",
-      "source": "C:/Users/frank/starlight/repos/starlight-design-intelligence/brand-packs/sis/BRAND.md",
+      "source": "internal design reference (private path redacted for public release)",
       "reason": "Evidence-first intelligence, restrained authority, and visible governance."
     },
     {
       "label": "SIS design system",
-      "source": "C:/Users/frank/starlight/repos/starlight-design-intelligence/brand-packs/sis/DESIGN.md",
+      "source": "internal design reference (private path redacted for public release)",
       "reason": "Dark command-surface palette, disciplined typography, and signal color."
     },
     {
       "label": "Premium web outcomes",
-      "source": "C:/Users/frank/starlight/repos/design-agent-standards/OUTCOMES.md",
+      "source": "internal design reference (private path redacted for public release)",
       "reason": "Strong first viewport, inspectable product evidence, responsive QA, and 30-point ship gate."
     }
   ],

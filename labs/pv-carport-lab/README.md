@@ -46,10 +46,11 @@ The machine-readable offer states are in `contracts/offer-catalog.json`. “Conc
 
 ## Repository map
 
-- `PRODUCT-AND-GTM.md` — what Frank sells, what the operating company sells, launch sequence, and economics.
+- `PRODUCT-AND-GTM.md` — public-safe product roles, release boundary, and human-owned launch decisions.
 - `SAFETY-BOUNDARY.md` — official-source-backed limits and human gates.
 - `OPERATING-MODEL.md` — state machine, agent responsibilities, evidence, and operating cadence.
 - `IMPLEMENTATION-RECEIPT.md` — verified workspace, build, QA, cleanup, swarm handoff, and release gates.
+- `PUBLIC-RELEASE-CHECKLIST.md` — scoped privacy/release gate and recheck triggers.
 - `contracts/` — offer, affiliate, safety, and agent contracts.
 - `schemas/project-pass.schema.json` — portable project intake/evidence schema.
 - `examples/pilot-project.json` — synthetic example with no personal data.
@@ -63,10 +64,17 @@ The machine-readable offer states are in `contracts/offer-catalog.json`. “Conc
 ```bash
 python labs/pv-carport-lab/scripts/validate_lab.py
 python -m unittest labs/pv-carport-lab/tests/test_validate_lab.py
+PYTHONDONTWRITEBYTECODE=1 python labs/pv-carport-lab/tests/browser_smoke.py
 python -m http.server 8765 --directory labs/pv-carport-lab/prototype
 ```
 
 Then open `http://127.0.0.1:8765/`.
+
+`browser_smoke.py` is dependency-free and owns its ephemeral loopback server,
+headless-Chrome profile, and browser process. It verifies desktop/mobile layout,
+the educational route, structural-connector rejection, browser-console cleanliness,
+horizontal overflow, and exact cleanup; it is not a production server or release
+authorization.
 
 ## Pilot exit criteria
 

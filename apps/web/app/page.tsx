@@ -4,11 +4,14 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { MobileStickyBar } from '@/components/MobileStickyBar';
 import { CarportConfigurator } from '@/components/CarportConfigurator';
+import { AutarkieCalculator } from '@/components/AutarkieCalculator';
+import { DigitalTwinViewer } from '@/components/DigitalTwinViewer';
+import { FleetParkPlanner } from '@/components/FleetParkPlanner';
+import { LagerbestandTracker } from '@/components/LagerbestandTracker';
 import { LeadMagnetModal } from '@/components/LeadMagnetModal';
 import { SellerCopilotModal } from '@/components/SellerCopilotModal';
 import { VoiceAgentWidget } from '@/components/VoiceAgentWidget';
 import { pvlagerImages } from '@/lib/pvlager-media';
-import { REAL_PRODUCT_CATALOG } from '@/lib/stock-data';
 import {
   Award,
   ShieldCheck,
@@ -24,7 +27,9 @@ import {
   Sun,
   BookOpen,
   Maximize2,
-  FileCheck
+  FileCheck,
+  Warehouse,
+  TrendingUp
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -244,7 +249,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 3. INTERACTIVE 60s CARPORT KONFIGURATOR */}
+        {/* 3. LIVE WAREHOUSE INVENTORY TRACKER */}
+        <LagerbestandTracker />
+
+        {/* 4. INTERACTIVE 60s CARPORT KONFIGURATOR */}
         <section id="configurator" className="scroll-mt-20">
           <div className="text-center space-y-2 max-w-2xl mx-auto mb-6">
             <span className="text-xs font-mono uppercase text-amber-400 tracking-widest font-bold">Interaktive ERP-Planung</span>
@@ -254,7 +262,16 @@ export default function HomePage() {
           <CarportConfigurator />
         </section>
 
-        {/* 4. AUTHENTIC PRODUCT SHOWCASE GALLERY (REAL PV LAGER WAREHOUSE PHOTOS) */}
+        {/* 5. 25-YEAR AUTARKIE & ROI CALCULATOR */}
+        <AutarkieCalculator />
+
+        {/* 6. 3D DIGITAL TWIN VIEWER & STATIK SIMULATOR */}
+        <DigitalTwinViewer />
+
+        {/* 7. COMMERCIAL B2B FLEET PARK PLANNER */}
+        <FleetParkPlanner />
+
+        {/* 8. AUTHENTIC PRODUCT SHOWCASE GALLERY (REAL PV LAGER WAREHOUSE PHOTOS) */}
         <section id="lagerbestand" className="space-y-6">
           <div className="text-center max-w-3xl mx-auto space-y-2">
             <span className="text-xs font-mono text-amber-400 uppercase tracking-widest font-bold">
@@ -317,147 +334,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 5. ULTRA-LUXURY INTERACTIVE GALLERY SHOWCASE TABS */}
-        <section id="showcase" className="space-y-6">
-          <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs font-mono uppercase text-amber-400 tracking-widest font-bold">Architektur & Ingenieurkunst</span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">Exklusives Produkt-Portfolio</h2>
-            <p className="text-xs text-slate-300">Wählen Sie ein Element, um hochauflösende Aufnahmen und technische Details zu sehen.</p>
-          </div>
-
-          {/* Dynamic Gallery Tabs */}
-          <div className="flex justify-center gap-2 flex-wrap">
-            {[
-              { id: 'estate', label: 'Harz Anwesen Villa', icon: Building2 },
-              { id: 'carport', label: 'Zola Pod Carport', icon: Car },
-              { id: 'bifacial', label: 'Bifazial Doppelglas', icon: Sun },
-              { id: 'terrace', label: 'Smart PV-Terrasse', icon: Layers },
-              { id: 'klima', label: 'Direct-PV Klimaanlage', icon: Thermometer },
-              { id: 'digitaltwin', label: 'Digital Twin Portal', icon: Sliders },
-            ].map(tab => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setShowcaseTab(tab.id as any)}
-                  className={`px-3.5 py-2 rounded-xl flex items-center gap-1.5 text-xs font-bold transition uppercase tracking-wider ${
-                    showcaseTab === tab.id
-                      ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-xl border border-amber-300/50'
-                      : 'bg-slate-900/80 text-slate-300 hover:bg-slate-800 border border-white/10'
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Dynamic Image & Specs Display Card */}
-          <div className="glass-gold-card p-5 sm:p-8 rounded-3xl grid lg:grid-cols-12 gap-6 items-center border border-amber-500/40 shadow-2xl">
-            <div
-              className="lg:col-span-7 relative h-[320px] sm:h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer"
-              onClick={() => {
-                if (showcaseTab === 'estate') setActiveImage('/images/estate-mansion.jpg');
-                if (showcaseTab === 'carport') setActiveImage('/images/luxury-carport.jpg');
-                if (showcaseTab === 'bifacial') setActiveImage('/images/bifacial-module.jpg');
-                if (showcaseTab === 'terrace') setActiveImage('/images/luxury-terrace.jpg');
-                if (showcaseTab === 'klima') setActiveImage('/images/direct-pv-klima.jpg');
-                if (showcaseTab === 'digitaltwin') setActiveImage('/images/digital-twin-ui.jpg');
-              }}
-            >
-              {showcaseTab === 'estate' && (
-                <img src="/images/estate-mansion.jpg" alt="Harz Anwesen Villa" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-              )}
-              {showcaseTab === 'carport' && (
-                <img src="/images/luxury-carport.jpg" alt="Zola Pod Executive Carport" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-              )}
-              {showcaseTab === 'bifacial' && (
-                <img src="/images/bifacial-module.jpg" alt="Trina Vertex Bifacial Module" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-              )}
-              {showcaseTab === 'terrace' && (
-                <img src="/images/luxury-terrace.jpg" alt="Smart PV Terrace" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-              )}
-              {showcaseTab === 'klima' && (
-                <img src="/images/direct-pv-klima.jpg" alt="Direct-PV Climate System" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-              )}
-              {showcaseTab === 'digitaltwin' && (
-                <img src="/images/digital-twin-ui.jpg" alt="Digital Twin Dashboard" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-              )}
-            </div>
-
-            <div className="lg:col-span-5 space-y-4">
-              {showcaseTab === 'estate' && (
-                <>
-                  <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest block font-bold">Harz Anwesen Edition</span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Vollständige Anwesens-Autarkie</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Harmonische Verschmelzung von moderner Architektur und Hochleistungs-Photovoltaik. Zola Pod Carport, Bismuth-Glas Terrassendach und Speicher-Kopplung bieten 100% Netzunabhängigkeit für Ihr Anwesen.
-                  </p>
-                </>
-              )}
-
-              {showcaseTab === 'carport' && (
-                <>
-                  <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest block font-bold">Model: Zola Pod Executive</span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Carbon-Aluminium Solar Carport</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Konzipiert für extreme Harzer Wetterbedingungen. Bifaziales Glas-Glas Dach liefert bis zu 12 kWp Ertrag und speist direkt in Ihren Fuhrpark & Haus-Speicher ein.
-                  </p>
-                </>
-              )}
-
-              {showcaseTab === 'bifacial' && (
-                <>
-                  <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest block font-bold">Modul-Technologie</span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Trina Vertex S+ 440W Bifazial</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Glas-Glas Module mit N-Type i-TOPCon Technologie. Bis zu 25% Mehrertrag durch Lichtreflektion auf der Rückseite. Äußerst widerstandsfähig gegen Hagel und schwere Schneelasten.
-                  </p>
-                </>
-              )}
-
-              {showcaseTab === 'terrace' && (
-                <>
-                  <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest block font-bold">Architectural Series</span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Smart Bismuth PV-Terrassendach</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Transluzente Doppelglas-PV-Module sorgen für angenehmen Schattenwurf und gleichzeitige Stromerzeugung. Wasserdichte Aluminium-Struktur mit patentierter Entwässerung.
-                  </p>
-                </>
-              )}
-
-              {showcaseTab === 'klima' && (
-                <>
-                  <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest block font-bold">Direct PV Series</span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">AC/DC Direct Solar Klimaanlage</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Schließen Sie PV-Module direkt an das Innengerät an. Zero-Loss Kühlung und Heizung im Sommer & Übergangszeit ohne jegliche Wechselrichter-Verluste.
-                  </p>
-                </>
-              )}
-
-              {showcaseTab === 'digitaltwin' && (
-                <>
-                  <span className="text-[10px] font-mono text-amber-400 uppercase tracking-widest block font-bold">Executive Software</span>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">Real-Time Digital Twin Portal</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Überwachen Sie Stromfluss, Batteriezustand, Autarkiegrad und Ertrag Ihres Anwesens in Echtzeit via iPad, Mac und iPhone. Integriert mit Weclapp ERP.
-                  </p>
-                </>
-              )}
-
-              <a
-                href="#configurator"
-                className="inline-block px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg transition mt-2"
-              >
-                Maßanfertigung Anfragen ➔
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* 6. JAY ABRAHAM EDUCATIONAL TRANSPARENCY HUB */}
+        {/* 9. JAY ABRAHAM EDUCATIONAL TRANSPARENCY HUB */}
         <section className="glass-gold-card p-6 sm:p-10 rounded-3xl space-y-6 border border-white/10">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
             <span className="text-xs font-mono uppercase text-amber-400 tracking-wider font-bold">Ingenieurwissen & Vergleich</span>
@@ -501,14 +378,14 @@ export default function HomePage() {
 
       {/* LIGHTBOX MODAL FOR HIGH-RES PHOTOS */}
       {activeImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-lg cursor-pointer" onClick={() => setActiveImage(null)}>
-          <div className="relative max-w-5xl max-h-[90vh] overflow-hidden rounded-2xl border border-amber-500/40 shadow-2xl">
-            <img src={activeImage} alt="Hochauflösendes PV Lager Produktbild" className="w-full h-full object-contain max-h-[85vh]" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-lg" onClick={() => setActiveImage(null)}>
+          <div className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl border border-amber-500/40">
+            <img src={activeImage} alt="PV Lager Hochauflösendes Produktbild" className="w-full h-full object-contain max-h-[85vh]" />
           </div>
         </div>
       )}
 
-      {/* MODALS SUITE */}
+      {/* MODALS */}
       <LeadMagnetModal isOpen={isLeadMagnetOpen} onClose={() => setIsLeadMagnetOpen(false)} />
       <SellerCopilotModal isOpen={isCopilotOpen} onClose={() => setIsCopilotOpen(false)} />
       <VoiceAgentWidget isOpen={isVoiceOpen} onClose={() => setIsVoiceOpen(false)} />

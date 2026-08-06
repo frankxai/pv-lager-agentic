@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { BrandLogo } from './BrandLogo';
-import { PhoneCall, Sparkles, BookOpen, Mic, ShieldCheck, Zap, Menu, X } from 'lucide-react';
+import { PhoneCall, Sparkles, BookOpen, Mic, ShieldCheck, Zap, Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
   onOpenLeadMagnet?: () => void;
@@ -88,9 +88,10 @@ export function Navbar({ onOpenLeadMagnet, onOpenCopilot, onOpenVoice }: NavbarP
 
           <a
             href="#configurator"
-            className="px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-xl shadow-amber-500/25 transition border border-amber-300/40"
+            className="px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-xl shadow-amber-500/25 transition border border-amber-300/40 inline-flex items-center gap-1.5 cursor-pointer"
           >
-            Configurator ➔
+            <span>Configurator</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </a>
 
           {/* Mobile Hamburger Toggle */}

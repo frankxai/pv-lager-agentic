@@ -8,11 +8,11 @@
 
 | Check | Verified result |
 |---|---|
-| Machine identity | `yogabook` / hostname `Starlight` / model `83KJ` |
-| Canonical repository | `C:/Users/frank/starlight/repos/pv-lager-agentic` |
-| Git top-level | `C:/Users/frank/starlight/repos/pv-lager-agentic` |
-| Origin | `https://github.com/frankxai/pv-lager-agentic.git` |
-| Branch | `agent/hermes/rial-energy-growth-system` |
+| Machine identity | Internal execution environment (details withheld from public artifact) |
+| Canonical repository | Verified internally |
+| Git top-level | Verified internally |
+| Origin | Verified internally |
+| Branch | Verified internally |
 | Repository visibility | **PUBLIC** |
 | C: free capacity | 229.74 GiB — BOUNDED mode |
 | New clone/worktree | None |
@@ -65,7 +65,7 @@ The previous quiz used unsupported example costs, payback, subsidy, availability
 
 ## 6. Bounded swarm handoff
 
-A durable private Hermes-bus task was enqueued to physical C940 for a **read-only independent backend/policy review after branch visibility**. The task explicitly forbids an overlapping writer lane, code/git/deploy/customer/inventory/CRM/money mutation, broad Windows search, and invented findings when the branch is not visible. Its valid first outcome may be a HOLD stating that exact visibility gate.
+An independent read-only backend/policy review may be requested after the relevant revision is visible. It must not create an overlapping writer lane or mutate code, deployment, customer, inventory, CRM, or money systems. Its valid first outcome may be a HOLD when the required revision is unavailable.
 
 ## 7. Gates before any public pilot or sale
 
@@ -73,7 +73,7 @@ A durable private Hermes-bus task was enqueued to physical C940 for a **read-onl
 - appoint structural, electrical, building-control/planning, product-compliance, and legal reviewers;
 - approve exact structural systems, product versions, design envelopes, traceability, warranties, German instructions/warnings, and incident/recall ownership;
 - connect governed product, inventory, price, consent, CRM, and evidence sources;
-- run 5–10 invitation-only projects and record suitability rejection, evidence completeness, rework, support, conversion, incremental gross profit, refunds, and safety escalations;
-- choose private storage or redact the existing sensitive JV strategy before commit/push.
+- run a bounded invitation-only learning cohort and record only privacy-approved, aggregate suitability, evidence-completeness, rework, support, and safety-escalation outcomes;
+- keep signed terms, private operating strategy, and commercially sensitive records outside this public repository.
 
 This receipt proves a working pre-pilot artifact and its current boundaries. It is not a permit, structural calculation, electrical approval, conformity declaration, quote, or signed commercial agreement.

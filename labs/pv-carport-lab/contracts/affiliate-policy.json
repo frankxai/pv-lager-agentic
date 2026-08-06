@@ -20,14 +20,14 @@
       "id": "pv-lager-host-share",
       "event": "paid-starlight-digital-product-from-pv-lager-owned-audience",
       "basis": "net-digital-revenue",
-      "hypothesisPercent": { "min": 15, "max": 25 },
+      "hypothesisPercent": null,
       "payAfter": ["payment-settled", "withdrawal-refund-window-closed", "reconciliation-approved"]
     },
     {
       "id": "starlight-hardware-growth-share",
       "event": "lab-attributed-hardware-order",
       "basis": "incremental-gross-profit",
-      "hypothesisPercent": { "min": 10, "max": 20 },
+      "hypothesisPercent": null,
       "alternative": "fixed-qualified-project-fee",
       "payAfter": ["payment-settled", "returns-cancellations-closed", "direct-costs-confirmed", "reconciliation-approved"]
     },

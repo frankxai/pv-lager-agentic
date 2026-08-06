@@ -125,7 +125,7 @@ No agent receives checkout, payment, contract-signing, public-publish, electrica
 ## 7. Development lane ownership
 
 - **Yogabook / Frontend Queen:** customer prototype, UX, content, visual QA, local product contracts.
-- **C940 / Backend Queen:** after a branch or PR exists, read-only contract review first; then a separate backend lane for persistence, APIs, audit logs, and CI if explicitly assigned.
+- **Independent backend reviewer:** after a branch or PR exists, read-only contract review first; then a separate backend lane for persistence, APIs, audit logs, and CI if explicitly assigned.
 - **PV Lager/RIAL technical owner:** product data, compatibility, stock, warranty, and fulfillment truth.
 - **Professional partners:** jurisdiction, structure, electrical, installation, and commissioning decisions.
 

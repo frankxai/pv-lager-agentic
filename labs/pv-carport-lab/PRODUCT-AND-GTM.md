@@ -1,171 +1,67 @@
-# Product, Joint Offer, Affiliate Model, and GTM
+# Product and Go-to-Market Boundary
 
-**Decision status:** operating hypothesis for a bounded pilot; not a signed commercial agreement.  
+**Decision status:** public-safe pre-pilot product outline; not a commercial agreement, offer, quote, or launch authorization.
 **Date:** 2026-07-18
 
 ## 1. Strategic position
 
-Do not launch another generic solar shop. Build the **decision and project layer** around a high-consideration physical product.
+The Lab is a governed decision and project-preparation layer for a high-consideration PV-carport project. Its customer promise is:
 
-The customer promise is:
+> Learn what must be evidenced, collect the right project facts, and prepare an engineer-, authority-, installer-, and supplier-ready brief without presenting AI as a certifier.
 
-> Understand what is feasible, collect the right evidence, and reach an engineer-, authority-, installer-, and supplier-ready PV carport brief without pretending AI is the certifier.
+The Lab may improve evidence quality and reduce avoidable rework. It does not determine whether a project proceeds, who supplies it, or what commercial terms apply.
 
-This creates value before a hardware sale and gives the joint venture measurable digital revenue, attributable leads, better project data, fewer avoidable quote cycles, and a continuity path after installation.
+## 2. Public product roles
 
-## 2. Who sells what
+| Role | Public-safe responsibility | Boundary |
+|---|---|---|
+| Education and workspace provider | Readiness learning, project evidence, concept drafts, and handoff preparation | No structural, permit, electrical, product, or commercial approval |
+| Product and fulfillment provider | Current product data, compatibility, availability, warranty, delivery, and support | Human verification from approved source data only |
+| Qualified professional | Site, structure, foundations, electrical work, grid connection, installation, and commissioning | Accountable human/firm evidence required |
+| Customer or maker | Site facts, goals, learning, and documented decisions | No assumption that a project is suitable or authorised |
 
-### FrankX / Starlight sells
+The initial credible outcome is a **Build Passport plus a human-reviewed project brief**: digital preparation followed by named human and firm reviews for regulated or irreversible decisions.
 
-1. **PV Carport Readiness Scan** — free acquisition and qualification product.
-2. **PV Carport Build Passport** — paid digital planning dossier with site evidence checklist, pathway, open decisions, and partner-ready brief. It is not a structural calculation, permit, or electrical plan.
-3. **Maker Workshop** — cohort or self-paced education on carport anatomy, parametric concept design, safe prototyping, evidence collection, and procurement literacy.
-4. **Project Workspace / Pro Desk** — recurring software for installers, makerspaces, or resellers: intake, evidence, approvals, versioned BOMs, handoffs, and attribution.
-5. **Implementation services** — private integrations, agent workflows, catalog/CRM normalization, analytics, and content systems for RIAL/PV Lager.
-6. **Qualified introductions** — only where the commercial relationship and disclosure are explicit.
+## 3. Public-facing offer boundary
 
-### PV Lager / RIAL sells
+The following concepts are not currently offered for public sale. Pricing, availability, commercial counterparties, support commitments, and attribution terms are intentionally omitted until written human approval and the relevant release gates exist.
 
-1. Modules, inverters, batteries, EV charging, approved mounting/structural systems, and documented accessories.
-2. Human-verified compatibility and current stock/pricing.
-3. Fulfillment, warranty, returns, and product support.
-4. A curated PV-carport kit only after structural/product responsibilities are contractually clear.
+| Concept | Customer value | Minimum release gate |
+|---|---|---|
+| Readiness Scan | Learning pathway, missing-evidence list, and human gates | Factual-copy and accessibility review |
+| Build Passport | Versioned project dossier for professional and supplier review | Legal copy, support, withdrawal, and data-protection review |
+| Maker Workshop | Guided learning, concept modelling, safe prototyping, and evidence collection | Curriculum, facilitator, safety, and terms review |
+| Human-Reviewed Kit Brief | Supplier-ready brief with documented open conditions | Named structural, installer, technical-owner, and commercial gates |
+| Project workspace | Governed intake, evidence, approvals, BOM drafts, and handoffs | Working software, security review, support process, and pilot partner |
 
-### Qualified partners sell
+No concept above is a structural calculation, permit decision, wiring plan, guaranteed quote, or automatic approval.
 
-1. Site survey and geotechnical/ground assessment when needed.
-2. Structural design/statics and foundation specification.
-3. Local permit/building-control services.
-4. Electrical planning, grid connection, commissioning, and registration support.
-5. Installation, inspection, and maintenance.
+## 4. Commercial and attribution boundary
 
-### Joint offer
+Commercial relationships, referral arrangements, and any attribution model remain inactive until a written agreement names the responsible entities, disclosures, consent basis, cancellation/return treatment, reconciliation process, and human approvers. The public Lab does not contain private terms, margin models, compensation percentages, customer records, supplier terms, signed contracts, or live inventory/pricing.
 
-The first credible joint product is **Build Passport + Human-Reviewed Kit Brief**. It joins digital preparation with product and professional review while keeping regulated responsibilities with named humans and firms.
+An agent may organize evidence and prepare a draft handoff. It may not sign a contract, activate an affiliate arrangement, move money, determine a technical recommendation from compensation, or publish an offer.
 
-## 3. Offer ladder and price hypotheses
+## 5. Safe go-to-market sequence
 
-Prices are hypotheses for customer interviews and unit-economics testing, not published prices.
+1. **Internal proof:** verify prototype safety, source boundaries, and human ownership without public commerce.
+2. **Invitation-only learning:** test whether customers and professionals understand the evidence and safety gates; no promise that a project proceeds.
+3. **Human-reviewed handoff:** admit only projects with named owners and documented jurisdiction, structural, electrical, product/BOM, and commercial gates.
+4. **Release decision:** a named human owner records legal, product-compliance, support, privacy, accessibility, and commercial approval before any public offer or publication.
 
-| Offer | Price hypothesis | Conversion job | Release gate |
-|---|---:|---|---|
-| Readiness Scan | free | qualify project and teach the gates | prototype QA |
-| Build Passport | €39–€99 | fund better evidence and a partner-ready brief | legal copy + support process |
-| Live Maker Workshop | €79–€249 | education, community, and guided concept work | curriculum + facilitator |
-| Human-Reviewed Kit Brief | €249–€750 plus third-party fees | reduce quote/rework risk | named engineer/installer/supplier pathway |
-| Engineered Supply Package | project-priced | hardware gross profit | approved BOM, contract, warranty, stock |
-| Pro Desk | €99–€399/month | repeat B2B intake and handoffs | working software + support SLA |
-| Private Ops Integration | scoped project/retainer | operate the digital layer for the family business | signed scope and data access |
+## 6. Content boundary
 
-Credit all or part of the Build Passport against a qualifying hardware order only if the margin model supports it. Do not advertise “free planning” if professional costs are merely hidden elsewhere.
+Public educational content may explain project questions: site evidence, module dimensions, drainage, shading, wind, snow, foundations, corrosion, and what qualified reviewers need. It must state the source, jurisdiction, verification date, known limits, and responsible reviewer.
 
-## 4. Two-way affiliate and JV economics
+It must not publish unsafe installation instructions, unreviewed structural parts, live pricing or stock, customer evidence without consent, hidden commercial arrangements, or claims that a project is permit-free, engineered, certified, or ready to build.
 
-### Attribution contract
+## 7. Human decisions required before a pilot or sale
 
-Every lead and order needs:
+1. Name the invoicing and accountable entities.
+2. Record commercial, attribution, cancellation/return, support, and privacy terms in private governed records.
+3. Appoint structural, electrical, building-control/planning, product-compliance, and legal reviewers.
+4. Approve exact products, versions, design envelopes, traceability, warranties, German instructions/warnings, and incident/recall ownership.
+5. Connect governed product, inventory, price, consent, CRM, and evidence sources.
+6. Define the initial project envelope and explicit exclusions.
 
-- immutable source ID;
-- first-touch and last-meaningful-touch timestamps;
-- consent and communication basis;
-- offer and campaign ID;
-- Build Passport/project ID;
-- quote, order, return, and cancellation status;
-- net revenue, direct costs, and attributable gross profit;
-- payout status and reason.
-
-### Starting commercial hypotheses
-
-Use these only to negotiate a pilot agreement:
-
-- **FrankX digital product:** FrankX retains digital-product revenue; PV Lager receives a 15–25% host/beneficiary share when its owned audience originated the paid sale.
-- **Lab-attributed hardware:** FrankX receives either a fixed qualified-project fee or 10–20% of **incremental gross profit**, not total order revenue, after payment and the cancellation/return window.
-- **Partner service referral:** a disclosed fixed fee or percentage permitted by the partner’s professional/commercial rules; no hidden recommendation ranking.
-- **Platform operations:** RIAL/PV Lager pays a base implementation/operations fee so Frank is not financing the whole system through uncertain future commissions.
-- **Reverse distribution:** when Frank’s audience buys PV products, PV Lager owns fulfillment and pays the agreed attributable gross-profit share; when PV Lager’s audience buys Frank’s education/software, Frank fulfills and pays the host share.
-
-### Payout controls
-
-- No payout on VAT, shipping pass-through, refunded items, chargebacks, or cancelled work.
-- Define direct costs and gross profit in the agreement.
-- Lock attribution before quote acceptance; record manual overrides with reason and approver.
-- Pay after an agreed cooling-off/return period and reconciliation.
-- Disclose commercial relationships wherever recommendations or introductions could affect trust.
-- Never let an agent transfer money or activate an affiliate agreement autonomously.
-
-## 5. Go-to-market sequence
-
-### Phase 0 — internal proof (2–3 weeks)
-
-- Replace unsafe calculator claims with the readiness/passport prototype.
-- Interview the brother, one sales operator, one installer, one structural engineer, and three target customers.
-- Normalize five representative carport BOMs using real module dimensions and supplier evidence.
-- Agree ownership, warranties, support, attribution, and data access.
-
-### Phase 1 — invitation-only Lab cohort (5–10 projects)
-
-Target homeowners, makers, and small installers with real sites but no promise that every project proceeds.
-
-Deliver:
-
-- one live “Can I build a PV carport?” workshop;
-- readiness scan;
-- Build Passport;
-- expert office hour;
-- optional reviewed supplier/partner handoff.
-
-Measure completion, evidence quality, quote-cycle reduction, suitability rejection rate, gross profit, refunds, support time, and safety escalations.
-
-### Phase 2 — repeatable education-led funnel
-
-1. Search/video answer to a real question.
-2. Readiness Scan.
-3. Build Passport.
-4. Human review or workshop.
-5. Verified kit/partner quote.
-6. Installation/commissioning.
-7. Monitoring, maintenance, upgrades, and referral.
-
-### Phase 3 — B2B distribution
-
-Offer Pro Desk and co-branded workshops to installers, timber/aluminum fabricators, makerspaces, vocational programs, architects, and EV/energy partners. Start with host-beneficiary distribution; do not promise territorial exclusivity until real demand and service capacity exist.
-
-## 6. Content and acquisition
-
-Build an evidence library, not mass AI pages:
-
-- “DIY, kit, or turnkey: which work can you safely own?”
-- module-size-to-bay planning without structural claims;
-- aluminum versus timber decision guide;
-- drainage, shading, snow, wind, foundations, and corrosion questions to ask;
-- what a structural engineer and electrician need from you;
-- safe 3D-print projects: scale model, spacing jig, label, assembly organizer;
-- teardown of a rejected concept and why rejection protected the buyer;
-- real before/after project evidence with consent.
-
-Each page records author/reviewer, sources, jurisdiction, verification date, and next review date.
-
-## 7. Inventory and old-stock opportunity
-
-The Lab can convert older stock only when the stock is genuinely suitable:
-
-- module dimensions and electrical properties must fit the reviewed system;
-- warranty and documentation remain clear;
-- substitutions trigger renewed compatibility review;
-- discount reasons are stated honestly;
-- stock quantity and timestamp come from the operating system;
-- the customer is told when a current product is the better choice.
-
-A “maker edition” must never become a channel for shifting incompatible or weakly documented stock.
-
-## 8. Pilot decisions required
-
-1. Which entity invoices each offer?
-2. Who owns the education IP, software, customer relationship, and derived data?
-3. Who is manufacturer/importer/distributor for any bundled kit?
-4. Who signs structural, electrical, permit, and product-compliance gates?
-5. Which exact costs define incremental gross profit?
-6. What is the attribution window and override process?
-7. Who handles support, withdrawal, returns, defects, and warranty?
-8. Which project types and German states are admitted to the first cohort?
-9. What is explicitly excluded from the pilot?
+This document deliberately excludes inactive commercial hypotheses and private partner strategy. Those decisions require a separate human-owned, private record.

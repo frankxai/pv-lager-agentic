@@ -10,7 +10,7 @@
       "owner": "starlight",
       "status": "prototype",
       "salesAllowed": false,
-      "priceHypothesis": { "min": 0, "max": 0 },
+      "priceHypothesis": null,
       "promise": "A learning pathway, missing-evidence list, and required human gates.",
       "excludes": ["permit decision", "structural design", "electrical design", "product approval"],
       "releaseGates": ["factual-copy-review", "accessibility-qa", "privacy-review"]
@@ -21,7 +21,7 @@
       "owner": "starlight",
       "status": "prototype",
       "salesAllowed": false,
-      "priceHypothesis": { "min": 39, "max": 99 },
+      "priceHypothesis": null,
       "promise": "A versioned project dossier that prepares a customer for professional and supplier review.",
       "excludes": ["statics", "foundation design", "permit", "wiring plan", "guaranteed quote"],
       "releaseGates": ["legal-copy-review", "support-process", "withdrawal-process", "data-protection-review"]
@@ -32,7 +32,7 @@
       "owner": "joint",
       "status": "concept",
       "salesAllowed": false,
-      "priceHypothesis": { "min": 79, "max": 249 },
+      "priceHypothesis": null,
       "promise": "Guided learning, concept modelling, safe prototyping, and evidence collection.",
       "excludes": ["construction supervision", "trade qualification", "certification"],
       "releaseGates": ["curriculum-review", "facilitator", "safety-review", "terms-review"]
@@ -43,7 +43,7 @@
       "owner": "joint",
       "status": "concept",
       "salesAllowed": false,
-      "priceHypothesis": { "min": 249, "max": 750 },
+      "priceHypothesis": null,
       "promise": "A supplier-ready brief with named professional review paths and documented open conditions.",
       "excludes": ["automatic approval", "fixed third-party fees", "guaranteed permit"],
       "releaseGates": ["structural-partner", "registered-installer", "technical-owner", "commercial-contract"]
@@ -65,7 +65,7 @@
       "owner": "starlight",
       "status": "concept",
       "salesAllowed": false,
-      "priceHypothesis": { "min": 99, "max": 399, "period": "month" },
+      "priceHypothesis": null,
       "promise": "A governed intake, evidence, approval, BOM, handoff, and attribution workspace for partners.",
       "excludes": ["professional certification", "autonomous contracting", "autonomous money movement"],
       "releaseGates": ["working-software", "security-review", "support-sla", "pilot-partner"]
