@@ -3,93 +3,93 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
-  }
-
   body {
-    background-color: #080C14;
+    background-color: #050811;
     color: #F8FAFC;
-    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display), var(--font-sans), sans-serif;
+  h1, h2, h3, h4 {
+    text-wrap: balance;
     letter-spacing: -0.025em;
   }
 }
 
-/* UI Pro Max Design Tokens & Luxury Effects */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #FFF5D6 0%, #F59E0B 45%, #D4AF37 80%, #92400E 100%);
+/* Apple-Grade Luxury UI/UX Pro Max Utilities */
+
+.glow-card {
+  position: relative;
+  background: rgba(11, 18, 32, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: 0 25px 70px rgba(245, 158, 11, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.glow-card-emerald {
+  position: relative;
+  background: rgba(11, 18, 32, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card-emerald:hover {
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 25px 70px rgba(16, 185, 129, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF5D6 30%, #F59E0B 70%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-emerald-gradient {
-  background: linear-gradient(135deg, #A7F3D0 0%, #10B981 50%, #059669 100%);
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #FFFFFF 0%, #A7F3D0 40%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.glass-panel {
-  background: rgba(13, 19, 34, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+.text-gradient-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.glass-gold-card {
-  background: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(245, 158, 11, 0.15);
-}
-
-.glass-emerald-card {
-  background: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(16, 185, 129, 0.15);
-}
-
-.glow-amber {
-  box-shadow: 0 0 40px -5px rgba(245, 158, 11, 0.35);
-}
-
-.glow-emerald {
-  box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.35);
-}
-
-/* Touch targets and mobile scrollbar */
+/* Custom Smooth Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080C14;
+  background: #050811;
 }
 ::-webkit-scrollbar-thumb {
   background: #1E293B;
-  border-radius: 9999px;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #F59E0B;
 }
 
-/* Fade in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.animate-float {
+  animation: float-subtle 6s ease-in-out infinite;
 }
