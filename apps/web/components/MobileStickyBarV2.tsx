@@ -4,8 +4,8 @@ import React from 'react';
 import { Zap, PhoneCall, Sparkles, BookOpen } from 'lucide-react';
 
 interface MobileStickyBarV2Props {
-  onOpenLeadMagnet: () => void;
-  onOpenCopilot: () => void;
+  onOpenLeadMagnet?: () => void;
+  onOpenCopilot?: () => void;
 }
 
 export function MobileStickyBarV2({ onOpenLeadMagnet, onOpenCopilot }: MobileStickyBarV2Props) {
@@ -29,7 +29,7 @@ export function MobileStickyBarV2({ onOpenLeadMagnet, onOpenCopilot }: MobileSti
         </a>
 
         <button
-          onClick={onOpenCopilot}
+          onClick={onOpenCopilot || (() => {})}
           className="flex flex-col items-center justify-center p-2 rounded-2xl bg-slate-900 border border-cyan-500/40 text-cyan-300 active:scale-95 transition"
         >
           <Sparkles className="w-4 h-4 text-cyan-400 mb-0.5" />
@@ -37,7 +37,7 @@ export function MobileStickyBarV2({ onOpenLeadMagnet, onOpenCopilot }: MobileSti
         </button>
 
         <button
-          onClick={onOpenLeadMagnet}
+          onClick={onOpenLeadMagnet || (() => {})}
           className="flex flex-col items-center justify-center p-2 rounded-2xl bg-slate-900 border border-emerald-500/40 text-emerald-300 active:scale-95 transition"
         >
           <BookOpen className="w-4 h-4 text-emerald-400 mb-0.5" />

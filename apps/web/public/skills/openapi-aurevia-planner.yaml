@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Aurevia Sovereign Estate Planner API
+  description: Live inventory and estate dossier validation API for Aurevia Sovereign / RIAL Energy Group Zentrallager Seesen.
+  version: 1.0.0
+servers:
+  - url: https://aurevia-solar.vercel.app/api
+paths:
+  /stock:
+    get:
+      summary: Query live warehouse stock in Seesen
+      description: Returns available quantities for Trina bifacial modules, Zola Pod carport kits, and BYD batteries.
+      operationId: getLiveStock
+      responses:
+        '200':
+          description: Stock status object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  warehouse:
+                    type: string
+                  inventory:
+                    type: array
+                    items:
+                      type: object
+  /dossier:
+    post:
+      summary: Validate an AI-generated Estate Dossier
+      description: Ingests an AureviaEstateDossier_v1 JSON payload and returns real-time inventory allocation, statutory check, and quote.
+      operationId: submitEstateDossier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - configuration
+                - client
+              properties:
+                client:
+                  type: object
+                configuration:
+                  type: object
+      responses:
+        '200':
+          description: Validated quote and allocation receipt
+          content:
+            application/json:
+              schema:
+                type: object

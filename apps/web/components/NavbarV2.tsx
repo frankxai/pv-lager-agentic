@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { BrandLogoV2 } from './BrandLogoV2';
-import { PhoneCall, Sparkles, Mic, Zap } from 'lucide-react';
+import { PhoneCall, Sparkles, Mic, Zap, Layers, Cpu } from 'lucide-react';
 
 interface NavbarV2Props {
   onOpenLeadMagnet?: () => void;
@@ -16,28 +16,29 @@ export function NavbarV2({ onOpenLeadMagnet, onOpenCopilot, onOpenVoice }: Navba
       {/* Floating Apple-Grade Glass Container */}
       <div className="bg-[#070B14]/85 backdrop-blur-3xl border border-amber-500/30 rounded-3xl shadow-2xl p-4 sm:px-7 flex items-center justify-between transition-all">
         {/* Brand Monogram */}
-        <a href="#hero" className="hover:opacity-95 transition">
+        <a href="/v2" className="hover:opacity-95 transition">
           <BrandLogoV2 variant="full" />
         </a>
 
         {/* Center Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 text-xs font-semibold text-slate-300">
-          <a href="#hero" className="hover:text-amber-300 transition">
+        <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold text-slate-300">
+          <a href="/v2" className="hover:text-amber-300 transition">
             Souveränität
           </a>
-          <a href="#configurator-v2" className="hover:text-amber-300 transition text-amber-300 flex items-center gap-1.5 font-bold">
+          <a href="/atelier" className="hover:text-amber-300 transition text-amber-300 flex items-center gap-1.5 font-bold">
+            <Layers className="w-3.5 h-3.5 text-amber-400" />
+            <span>Hardware Atelier</span>
+          </a>
+          <a href="/v2#configurator-v2" className="hover:text-amber-300 transition flex items-center gap-1.5">
             <Zap className="w-3.5 h-3.5 text-amber-400 fill-current" />
-            <span>3D Konfigurator</span>
+            <span>3D Planer</span>
           </a>
-          <a href="#showcase-v2" className="hover:text-amber-300 transition">
-            Portfolio
+          <a href="/v2#showcase-v2" className="hover:text-amber-300 transition">
+            Lagerware
           </a>
-          <a href="#bento-v2" className="hover:text-amber-300 transition">
-            Ingenieurkunst
-          </a>
-          <a href="#gemini-omni" className="hover:text-amber-300 transition text-emerald-300 font-bold flex items-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Gemini Omni AI</span>
+          <a href="/dossier" className="hover:text-emerald-300 transition text-emerald-300 font-bold flex items-center gap-1">
+            <Cpu className="w-3.5 h-3.5 text-emerald-400" />
+            <span>AI Skill Dossier</span>
           </a>
         </nav>
 
@@ -74,10 +75,10 @@ export function NavbarV2({ onOpenLeadMagnet, onOpenCopilot, onOpenVoice }: Navba
           </a>
 
           <a
-            href="#configurator-v2"
+            href="/atelier"
             className="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs shadow-xl shadow-amber-500/25 transition border border-amber-300/40"
           >
-            Anfrage Starten ➔
+            Atelier Öffnen ➔
           </a>
         </div>
       </div>
