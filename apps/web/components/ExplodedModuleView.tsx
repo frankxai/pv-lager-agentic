@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Layers, ShieldCheck, Sun, Zap, Info, ChevronRight, Sliders, Maximize2 } from 'lucide-react';
+import { Layers, ShieldCheck, Sun, Zap, Info, ChevronRight, Sliders, RotateCw } from 'lucide-react';
 
 interface LayerData {
   id: number;
@@ -11,14 +11,16 @@ interface LayerData {
   material: string;
   benefit: string;
   specs: { [key: string]: string };
-  offsetDesktop: number; // Y/Z offset multiplier
+  offsetDesktop: number;
   color: string;
   borderColor: string;
 }
 
 export function ExplodedModuleView() {
-  const [explosionProgress, setExplosionProgress] = useState(65); // 0 (assembled) to 100 (fully exploded)
-  const [activeLayerId, setActiveLayerId] = useState<number>(3); // Default to solar cells
+  const [explosionProgress, setExplosionProgress] = useState(65);
+  const [activeLayerId, setActiveLayerId] = useState<number>(3);
+  const [rotationX, setRotationX] = useState(55);
+  const [rotationZ, setRotationZ] = useState(-30);
   const [autoRotate, setAutoRotate] = useState(false);
 
   const layers: LayerData[] = [
@@ -127,31 +129,44 @@ export function ExplodedModuleView() {
             Trina Vertex S+ 440W Bifazial
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-xl">
-            Interaktive Schichten-Zerlegung des N-Type Doppelglas-Moduls. Ingenieurskunst auf 140 µm Silizium-Ebene.
+            Interaktive Schichten-Zerlegung des N-Type Doppelglas-Moduls. 3D Orbit-Steuerung und Toleranz-Prüfung.
           </p>
         </div>
 
-        {/* Explosion Scrub Slider */}
-        <div className="bg-slate-900/90 border border-white/15 p-4 rounded-2xl space-y-2 min-w-[280px] shadow-xl backdrop-blur-md">
-          <div className="flex justify-between text-xs text-slate-300 font-mono">
-            <span className="flex items-center gap-1.5 font-semibold text-amber-300">
-              <Sliders className="w-3.5 h-3.5" />
-              <span>Explosions-Grad:</span>
-            </span>
-            <span className="font-bold text-white">{explosionProgress} %</span>
+        {/* Multi-Control Suite */}
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Explosion Scrub Slider */}
+          <div className="bg-slate-900/90 border border-white/15 p-3.5 rounded-2xl space-y-2 min-w-[240px] shadow-xl backdrop-blur-md">
+            <div className="flex justify-between text-xs text-slate-300 font-mono">
+              <span className="flex items-center gap-1.5 font-semibold text-amber-300">
+                <Sliders className="w-3.5 h-3.5" />
+                <span>Explosion:</span>
+              </span>
+              <span className="font-bold text-white">{explosionProgress} %</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={explosionProgress}
+              onChange={(e) => setExplosionProgress(Number(e.target.value))}
+              className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400"
+            />
           </div>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={explosionProgress}
-            onChange={(e) => setExplosionProgress(Number(e.target.value))}
-            className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400"
-          />
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-            <span>0% (Montiert)</span>
-            <span>50% (Schnitt)</span>
-            <span>100% (Zerlegt)</span>
+
+          {/* 3D Orbit Controls */}
+          <div className="bg-slate-900/90 border border-white/15 p-3.5 rounded-2xl flex items-center gap-3 shadow-xl backdrop-blur-md text-xs font-mono">
+            <button
+              onClick={() => {
+                setRotationX(rotationX === 55 ? 35 : 55);
+                setRotationZ(rotationZ === -30 ? 15 : -30);
+              }}
+              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold flex items-center gap-1.5 transition"
+              title="3D Ansicht wechseln"
+            >
+              <RotateCw className="w-3.5 h-3.5" />
+              <span>3D Orbit</span>
+            </button>
           </div>
         </div>
       </div>
@@ -165,7 +180,7 @@ export function ExplodedModuleView() {
             style={{
               perspective: '1200px',
               transformStyle: 'preserve-3d',
-              transform: 'rotateX(55deg) rotateZ(-30deg)'
+              transform: `rotateX(${rotationX}deg) rotateZ(${rotationZ}deg)`
             }}
           >
             {layers.map((layer) => {
@@ -184,7 +199,6 @@ export function ExplodedModuleView() {
                     isSelected ? 'ring-4 ring-amber-400 ring-offset-2 ring-offset-slate-950 scale-105 shadow-amber-500/30' : 'hover:scale-[1.02]'
                   }`}
                 >
-                  {/* Layer Header Label */}
                   <div className="flex justify-between items-center">
                     <span className="px-2 py-0.5 rounded bg-slate-950/90 text-amber-300 text-[10px] font-mono font-bold border border-white/10">
                       Schicht 0{layer.id}
@@ -194,7 +208,6 @@ export function ExplodedModuleView() {
                     </span>
                   </div>
 
-                  {/* Core Cell Pattern Visual (if layer 3) */}
                   {layer.id === 3 && (
                     <div className="grid grid-cols-6 grid-rows-4 gap-1 p-2 bg-slate-950/60 rounded-xl border border-amber-400/40 my-auto">
                       {Array.from({ length: 24 }).map((_, idx) => (
@@ -205,7 +218,6 @@ export function ExplodedModuleView() {
                     </div>
                   )}
 
-                  {/* Layer Bottom Name */}
                   <div className="bg-slate-950/85 p-2 rounded-xl border border-white/10 flex items-center justify-between">
                     <span className="text-xs font-bold text-white truncate max-w-[220px]">
                       {layer.name}
@@ -237,7 +249,6 @@ export function ExplodedModuleView() {
             </p>
           </div>
 
-          {/* Technical Specs Table */}
           <div className="space-y-2">
             <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wide block">
               Technische Kennwerte & Toleranzen:
@@ -252,7 +263,6 @@ export function ExplodedModuleView() {
             </div>
           </div>
 
-          {/* Layer Quick Selector Tabs */}
           <div className="space-y-2 pt-2 border-t border-white/10">
             <span className="text-[10px] font-mono text-slate-500 uppercase block">Schicht auswählen:</span>
             <div className="grid grid-cols-4 sm:grid-cols-7 gap-1.5">
@@ -272,7 +282,6 @@ export function ExplodedModuleView() {
             </div>
           </div>
 
-          {/* CTA Link to Atelier / Stock */}
           <div className="pt-2">
             <a
               href="/atelier"

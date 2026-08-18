@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Layers, ShieldCheck, Zap, Info, Sliders, BatteryCharging, ChevronRight } from 'lucide-react';
+import { Layers, ShieldCheck, Zap, Info, Sliders, BatteryCharging, ChevronRight, RotateCw } from 'lucide-react';
 
 interface BatteryLayer {
   id: number;
@@ -17,6 +17,8 @@ interface BatteryLayer {
 export function ExplodedBatteryView() {
   const [explosionProgress, setExplosionProgress] = useState(60);
   const [activeLayerId, setActiveLayerId] = useState<number>(3);
+  const [rotationX, setRotationX] = useState(60);
+  const [rotationZ, setRotationZ] = useState(-25);
 
   const layers: BatteryLayer[] = [
     {
@@ -100,31 +102,42 @@ export function ExplodedBatteryView() {
             BYD Battery-Box Premium HVS 10.2
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-xl">
-            Modulare Hochvolt-Architektur (LiFePO4). Analyse von BMS-Controller, Steckkontakten und Sicherheitsmatrix.
+            Modulare Hochvolt-Architektur (LiFePO4). 3D Orbit-Steuerung und Analyse von BMS-Controller und Sicherheitsmatrix.
           </p>
         </div>
 
-        {/* Scrub Slider */}
-        <div className="bg-slate-900/90 border border-white/15 p-4 rounded-2xl space-y-2 min-w-[280px] shadow-xl backdrop-blur-md">
-          <div className="flex justify-between text-xs text-slate-300 font-mono">
-            <span className="flex items-center gap-1.5 font-semibold text-emerald-400">
-              <Sliders className="w-3.5 h-3.5" />
-              <span>Explosions-Grad:</span>
-            </span>
-            <span className="font-bold text-white">{explosionProgress} %</span>
+        {/* Multi-Control Suite */}
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="bg-slate-900/90 border border-white/15 p-3.5 rounded-2xl space-y-2 min-w-[240px] shadow-xl backdrop-blur-md">
+            <div className="flex justify-between text-xs text-slate-300 font-mono">
+              <span className="flex items-center gap-1.5 font-semibold text-emerald-400">
+                <Sliders className="w-3.5 h-3.5" />
+                <span>Explosion:</span>
+              </span>
+              <span className="font-bold text-white">{explosionProgress} %</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={explosionProgress}
+              onChange={(e) => setExplosionProgress(Number(e.target.value))}
+              className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
+            />
           </div>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={explosionProgress}
-            onChange={(e) => setExplosionProgress(Number(e.target.value))}
-            className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
-          />
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-            <span>0% (Kompakt)</span>
-            <span>50% (Schnitt)</span>
-            <span>100% (Zerlegt)</span>
+
+          <div className="bg-slate-900/90 border border-white/15 p-3.5 rounded-2xl flex items-center gap-3 shadow-xl backdrop-blur-md text-xs font-mono">
+            <button
+              onClick={() => {
+                setRotationX(rotationX === 60 ? 40 : 60);
+                setRotationZ(rotationZ === -25 ? 20 : -25);
+              }}
+              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-300 font-bold flex items-center gap-1.5 transition"
+              title="3D Ansicht wechseln"
+            >
+              <RotateCw className="w-3.5 h-3.5" />
+              <span>3D Orbit</span>
+            </button>
           </div>
         </div>
       </div>
@@ -137,7 +150,7 @@ export function ExplodedBatteryView() {
             style={{
               perspective: '1200px',
               transformStyle: 'preserve-3d',
-              transform: 'rotateX(60deg) rotateZ(-25deg)'
+              transform: `rotateX(${rotationX}deg) rotateZ(${rotationZ}deg)`
             }}
           >
             {layers.map((layer) => {

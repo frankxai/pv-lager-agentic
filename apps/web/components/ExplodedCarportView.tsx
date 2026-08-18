@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Layers, ShieldCheck, Car, Sliders, Info, ChevronRight, Zap } from 'lucide-react';
+import { Layers, ShieldCheck, Car, Sliders, Info, ChevronRight, Zap, RotateCw } from 'lucide-react';
 
 interface CarportLayer {
   id: number;
@@ -17,6 +17,8 @@ interface CarportLayer {
 export function ExplodedCarportView() {
   const [explosionProgress, setExplosionProgress] = useState(65);
   const [activeLayerId, setActiveLayerId] = useState<number>(4);
+  const [rotationX, setRotationX] = useState(55);
+  const [rotationZ, setRotationZ] = useState(-30);
 
   const layers: CarportLayer[] = [
     {
@@ -100,31 +102,42 @@ export function ExplodedCarportView() {
             Zola Pod Sovereign 100 × 100 mm
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-xl">
-            Struktur-Aluminium Bausatz für 2 PKW. Vollständige Analyse von Rinnenführung, Modulklemmung und Statikankern.
+            Struktur-Aluminium Bausatz für 2 PKW. 3D Orbit-Steuerung und Analyse von Rinnenführung und Statikankern.
           </p>
         </div>
 
-        {/* Scrub Slider */}
-        <div className="bg-slate-900/90 border border-white/15 p-4 rounded-2xl space-y-2 min-w-[280px] shadow-xl backdrop-blur-md">
-          <div className="flex justify-between text-xs text-slate-300 font-mono">
-            <span className="flex items-center gap-1.5 font-semibold text-amber-300">
-              <Sliders className="w-3.5 h-3.5" />
-              <span>Explosions-Grad:</span>
-            </span>
-            <span className="font-bold text-white">{explosionProgress} %</span>
+        {/* Multi-Control Suite */}
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="bg-slate-900/90 border border-white/15 p-3.5 rounded-2xl space-y-2 min-w-[240px] shadow-xl backdrop-blur-md">
+            <div className="flex justify-between text-xs text-slate-300 font-mono">
+              <span className="flex items-center gap-1.5 font-semibold text-amber-300">
+                <Sliders className="w-3.5 h-3.5" />
+                <span>Explosion:</span>
+              </span>
+              <span className="font-bold text-white">{explosionProgress} %</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={explosionProgress}
+              onChange={(e) => setExplosionProgress(Number(e.target.value))}
+              className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400"
+            />
           </div>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={explosionProgress}
-            onChange={(e) => setExplosionProgress(Number(e.target.value))}
-            className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-amber-400"
-          />
-          <div className="flex justify-between text-[10px] text-slate-400 font-mono">
-            <span>0% (Montiert)</span>
-            <span>50% (Schnitt)</span>
-            <span>100% (Zerlegt)</span>
+
+          <div className="bg-slate-900/90 border border-white/15 p-3.5 rounded-2xl flex items-center gap-3 shadow-xl backdrop-blur-md text-xs font-mono">
+            <button
+              onClick={() => {
+                setRotationX(rotationX === 55 ? 35 : 55);
+                setRotationZ(rotationZ === -30 ? 15 : -30);
+              }}
+              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 font-bold flex items-center gap-1.5 transition"
+              title="3D Ansicht wechseln"
+            >
+              <RotateCw className="w-3.5 h-3.5" />
+              <span>3D Orbit</span>
+            </button>
           </div>
         </div>
       </div>
@@ -137,7 +150,7 @@ export function ExplodedCarportView() {
             style={{
               perspective: '1200px',
               transformStyle: 'preserve-3d',
-              transform: 'rotateX(55deg) rotateZ(-30deg)'
+              transform: `rotateX(${rotationX}deg) rotateZ(${rotationZ}deg)`
             }}
           >
             {layers.map((layer) => {
