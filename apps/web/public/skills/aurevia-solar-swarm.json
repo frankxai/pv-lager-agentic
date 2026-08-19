@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "swarmName": "AureviaSolarEngineeringCluster_v2",
+  "version": "2.0.0",
+  "provenance": "German Physical Engineering (Zentrallager Seesen / RIAL Energy GmbH)",
+  "runtime": "Claude Code / Antigravity / AgentDB",
+  "description": "5-Agent multi-agent autonomous swarm for residential and estate solar engineering, 3D carport calculation, CAD exploded statics, BOM generation, and client dossier synthesis.",
+  "invariants": {
+    "moduleStandard": "Trina Vertex S+ 440W N-Type Bifacial Dual-Glass (1762 x 1134 x 30 mm, 21.0 kg)",
+    "carportStructure": "Zola Pod 100x100x4.0mm Extruded Aluminium EN AW-6063 T6 (DIN EN 1090-3)",
+    "batteryStandard": "BYD Battery-Box Premium HVS (Modular 5.1 - 12.8 kWh, LiFePO4)",
+    "taxRateGermany": 0.0,
+    "snowLoadZone": "DIN EN 1991-1-3 Zone 3 Harz (up to 5.4 kN/m²)",
+    "legalDisclaimer": "AI-assisted engineering reference. Final structural calculations and electrical grid approvals must be executed by local certified contractors of record."
+  },
+  "agents": [
+    {
+      "role": "SiteArchitect",
+      "purpose": "Analyzes satellite/cadastral imagery, property boundaries, azimuth, tilt angles, and tree/building shading obstacles.",
+      "tools": ["satellite_lookup", "cadastral_boundary_scan", "shading_matrix_calc"],
+      "output": "PropertyGeoModel_v1"
+    },
+    {
+      "role": "StaticsEngineer",
+      "purpose": "Calculates dead load, snow load (Zone 1-3), wind suction zones (1-4), and foundation point sizing (80x80cm depth 80cm frost-free).",
+      "tools": ["din_en_1991_calc", "wind_load_simulator", "anchor_tensile_checker"],
+      "output": "StructuralIntegrityCertificate_v1"
+    },
+    {
+      "role": "ElectricalModeler",
+      "purpose": "Models string voltages (MPPT 200-800V), inverter sizing ratios (1.10 - 1.25), battery round-trip efficiency, and 22kW wallbox load management.",
+      "tools": ["mppt_string_calculator", "inverter_matching_engine", "battery_degradation_model"],
+      "output": "ElectricalEngineeringSchema_v1"
+    },
+    {
+      "role": "CostEstimator",
+      "purpose": "Generates complete Bill of Materials (BOM), cutting schedules, fastener matrices, § 12 Abs. 3 UStG tax verification, and warehouse allocation.",
+      "tools": ["bom_generator", "seesen_stock_validator", "tax_compliance_check"],
+      "output": "AureviaBOMMatrix_v1"
+    },
+    {
+      "role": "DossierSynthesizer",
+      "purpose": "Runs the Santa Method convergence review and compiles the formal client dossier, CAD schematics, and binding 72h quotation hold.",
+      "tools": ["pdf_dossier_compiler", "santa_loop_evaluator", "signature_hash_gen"],
+      "output": "AureviaEstateDossier_v1"
+    }
+  ],
+  "executionPipeline": [
+    { "step": 1, "agent": "SiteArchitect", "dependsOn": [] },
+    { "step": 2, "agent": "StaticsEngineer", "dependsOn": ["SiteArchitect"] },
+    { "step": 3, "agent": "ElectricalModeler", "dependsOn": ["SiteArchitect", "StaticsEngineer"] },
+    { "step": 4, "agent": "CostEstimator", "dependsOn": ["ElectricalModeler", "StaticsEngineer"] },
+    { "step": 5, "agent": "DossierSynthesizer", "dependsOn": ["CostEstimator"] }
+  ]
+}

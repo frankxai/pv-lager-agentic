@@ -71,6 +71,9 @@ export function NavV2() {
             <Link href="/v2/analyse" className="hover:text-white transition font-normal">
               Autarkie
             </Link>
+            <Link href="/v2/shop" className="hover:text-amber-300 transition text-amber-300 font-medium">
+              Shop &amp; B2B
+            </Link>
             <Link href="/v2/referenzen" className="hover:text-white transition font-normal">
               Referenzen
             </Link>
@@ -145,6 +148,13 @@ export function NavV2() {
               className="block text-slate-300 hover:text-amber-400 py-2 border-b border-white/5"
             >
               Autarkie-Analyse (€190)
+            </Link>
+            <Link
+              href="/v2/shop"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-amber-400 font-medium py-2 border-b border-white/5"
+            >
+              Shop &amp; B2B Großhandel
             </Link>
             <Link
               href="/v2/referenzen"

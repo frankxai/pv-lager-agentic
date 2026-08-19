@@ -1,0 +1,29 @@
+{
+  "packName": "Solar & Carport Architectural Prompt Masterpack (Sample)",
+  "version": "2.1.0",
+  "engineTarget": "Midjourney v6.1 / FLUX.1 / NanoBanana / SDXL",
+  "totalPromptsInFullPack": 100,
+  "samplePrompts": [
+    {
+      "id": "prompt-01-bauhaus-double-carport",
+      "category": "Modern Luxury Residential",
+      "title": "Minimalist Bauhaus Villa with Zola Pod Double Carport",
+      "prompt": "Architectural photograph of a luxury minimalist Bauhaus residence with an integrated double solar carport made of heavy-duty black anodized aluminum 100x100mm beams. The canopy features semi-transparent bifacial glass-glass solar panels casting geometric soft shadows on a polished dark concrete driveway. A sleek matte grey electric Porsche charges underneath via an integrated wallbox. Soft overcast Northern European afternoon light, shot on Hasselblad H6D-100c, 35mm lens, f/4.0, ultra-sharp realistic textures, subtle rain water reflection, architectural digest magazine quality --ar 16:9 --v 6.1 --style raw",
+      "recommendedSettings": { "aspectRatio": "16:9", "stylize": 150, "chaos": 0, "engine": "Midjourney v6.1" }
+    },
+    {
+      "id": "prompt-02-harz-timber-estate-pv",
+      "category": "Alpine & Harz Mountain Estate",
+      "title": "Harz Estate Residence with Black Glass Solar Roof & Snow-Load Carport",
+      "prompt": "Elevated drone photograph of a modern timber and slate estate in the Harz mountains during early winter dusk. The roof and matching detached solar carport are outfitted with all-black bifacial glass-glass solar panels with warm amber interior lights glowing through floor-to-ceiling windows. Snow dusted pine trees in the background, crisp 8k atmospheric clarity, ultra-fine architectural detail, cinematic lighting --ar 16:9 --v 6.1 --style raw",
+      "recommendedSettings": { "aspectRatio": "16:9", "stylize": 200, "chaos": 5, "engine": "FLUX.1 Pro" }
+    },
+    {
+      "id": "prompt-03-cad-exploded-hardware",
+      "category": "Hardware Studio & CAD Dissection",
+      "title": "Exploded Architectural Dissection of 100x100mm Solar Carport",
+      "prompt": "Studio technical exploded CAD view of a modular aluminum solar carport structure floating in clean dark space with studio rim lighting. Individual layers separated vertically: 440W bifacial solar glass modules at top, EPDM sealing gaskets, rain gutter crossbeams, heavy-duty 100x100mm extruded structural posts, and stainless steel anchor bolts at bottom. Precision technical blueprint aesthetics, 8k resolution, photorealistic metallic finish, industrial design catalog --ar 16:9 --v 6.1 --style raw",
+      "recommendedSettings": { "aspectRatio": "16:9", "stylize": 100, "chaos": 0, "engine": "Midjourney v6.1" }
+    }
+  ]
+}
