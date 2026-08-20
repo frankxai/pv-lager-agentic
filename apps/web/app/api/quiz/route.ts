@@ -13,7 +13,7 @@ export async function POST(request: Request) {
 
     // Lead intent classification
     const isTurnkey = budgetRange?.includes('12.000') || projectType === 'carport';
-    const recommendedBrand = isTurnkey ? 'Aurevia Solar' : 'PV Lager Seesen';
+    const recommendedBrand = isTurnkey ? 'RIAL Energy Turnkey' : 'PV Lager Seesen Direkt';
 
     const dossier = {
       projectId,

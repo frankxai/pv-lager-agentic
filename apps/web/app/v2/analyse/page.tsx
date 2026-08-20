@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'Autarkie-Analyse | Aurevia Manor Solar',
+  title: 'Autarkie-Analyse | PV Lager Seesen · RIAL Energy',
   description: 'Stufe 1: 190€ Autarkie-Analyse. 100% Anrechnung bei Beauftragung von Konzept oder Realisierung.',
 };
 
@@ -23,7 +23,7 @@ export default function V2AnalysePage() {
             Wirtschaftlichkeits- &amp; Autarkie-Analyse
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
-            Fundierte Potenzialanalyse für Ihr Privatanwesen oder Gewerbeareal bevor Sie in die bauliche Detailplanung investieren.
+            Fundierte Potenzialanalyse für Ihr Privatanwesen oder Gewerbeareal vor der Detailplanung. Berechnet durch die Ingenieure der {COMPANY.legalName}.
           </p>
         </div>
 

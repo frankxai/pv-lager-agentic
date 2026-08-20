@@ -11,7 +11,7 @@ export function NavV2() {
   const [conciergeOpen, setConciergeOpen] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [messages, setMessages] = useState([
-    { sender: 'ai', text: 'Willkommen bei Aurevia Manor. Wie kann ich Ihr Anwesen bei der Planung von Solar-Carports und Alu-Bauwerken unterstützen?' },
+    { sender: 'ai', text: 'Willkommen beim PV Lager Seesen (RIAL Energy GmbH). Wie kann ich Sie bei der Auswahl von Solar-Carports, Bifazial-Modulen oder Speichern unterstützen?' },
   ]);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
@@ -28,7 +28,7 @@ export function NavV2() {
         ...prev,
         {
           sender: 'ai',
-          text: `Für Ihre Anfrage zu "${userMsg}" empfehlen wir den Zola Manor Executive Carport. Statisch geprüft für Harzer Schneelastzone 3, gefertigt aus massivem Aluminium 100x100mm. Gerne berechnen wir Ihre Stückliste im Konfigurator.`,
+          text: `Für Ihre Anfrage zu "${userMsg}" empfehlen wir den Zola Pod Aluminium-Carport. Statisch geprüft für Harzer Schneelastzone 3, gefertigt aus massivem 100x100mm Aluminium. Direkt lieferbar ab Zentrallager Seesen.`,
         },
       ]);
     }, 600);
@@ -187,7 +187,7 @@ export function NavV2() {
             </div>
 
             <div>
-              <span className="text-xs font-sans text-emerald-400 font-normal block">Aurevia Sprach-Assistent</span>
+              <span className="text-xs font-sans text-emerald-400 font-normal block">PV Lager Sprach-Berater</span>
               <h3 className="font-serif text-2xl font-bold text-white mt-1">Interaktive Erstberatung</h3>
               <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                 Stellen Sie Ihre Fragen zu Statik, Schneelastzone 3, Aluminium-Profilen und Lieferzeiten aus dem Zentrallager Seesen.
@@ -227,8 +227,8 @@ export function NavV2() {
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-sm">Aurevia KI-Concierge</h3>
-                  <span className="text-[10px] text-slate-400 font-sans block">Architektur-Beratung Seesen</span>
+                  <h3 className="font-bold text-white text-sm">PV Lager KI-Fachberater</h3>
+                  <span className="text-[10px] text-slate-400 font-sans block">Technik &amp; Großhandelsberatung Seesen</span>
                 </div>
               </div>
               <button onClick={() => setConciergeOpen(false)} className="text-slate-400 hover:text-white p-1">

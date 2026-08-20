@@ -7,7 +7,7 @@ import { COMPANY } from '@/lib/company';
 
 export const metadata: Metadata = {
   title: 'Herkunft',
-  description: `Aurevia ist eine Marke der ${COMPANY.legalName} in ${COMPANY.city} — mit eigenem Zentrallager, eigener Montage und eigener Gebäudetechnik.`,
+  description: `PV Lager Seesen ist das Zentrallager der ${COMPANY.legalName} in ${COMPANY.city} — mit eigenem Lager, eigener Montage und Meister-Gebäudetechnik.`,
 };
 
 export default function Herkunft() {
@@ -16,7 +16,7 @@ export default function Herkunft() {
       <PageHeader
         label="Herkunft"
         title="Seesen, am Nordrand des Harzes."
-        lead={`Aurevia ist keine Vermittlungsplattform. Hinter der Marke steht die ${COMPANY.legalName} — ein Betrieb mit eigenem Zentrallager, eigener Montage und eigener Gebäudetechnik.`}
+        lead={`PV Lager Seesen ist keine Vermittlungsplattform. Dahinter steht die ${COMPANY.legalName} — ein Fachbetrieb mit eigenem Zentrallager, eigener Montage und eigener Meister-Gebäudetechnik.`}
       />
 
       <section className="border-y border-rule">
@@ -59,8 +59,7 @@ export default function Herkunft() {
               keine Platzhalter — und warum ein Phasenplan überhaupt belastbar sein kann.
             </p>
             <p className="text-ink">
-              Aurevia übernimmt Planung und Verantwortung gegenüber dem Bauherrn. Die{' '}
-              {COMPANY.legalName} liefert und baut. Für Sie bleibt es ein Ansprechpartner.
+              Die {COMPANY.legalName} übernimmt Planung, Beschaffung und schlüsselfertige Ausführung. Für Sie bleibt es ein fester regionaler Ansprechpartner.
             </p>
           </div>
         </div>

@@ -32,19 +32,11 @@ export default function V2Page() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-10 opacity-80 hover:opacity-100 transition">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#D4AF37] to-amber-600 text-slate-950 font-serif font-bold flex items-center justify-center text-sm">
-                A
-              </div>
-              <span className="font-serif font-bold text-base text-white tracking-tight">
-                Aurevia<span className="text-amber-400 font-sans text-xs ml-1 font-normal">Manor</span>
-              </span>
+              <img src="https://static.wixstatic.com/media/fab3ae_2a52989356354450890bfae642c49cef~mv2.png" alt="PV Lager Seesen Logo" className="h-7 w-auto" />
+              <span className="text-xs font-bold text-white font-sans uppercase tracking-wider">PV Lager Seesen</span>
             </div>
             <div className="flex items-center gap-2">
-              <img src="https://static.wixstatic.com/media/fab3ae_2a52989356354450890bfae642c49cef~mv2.png" alt="PV Lager Seesen Logo" className="h-6 w-auto" />
-              <span className="text-xs font-medium text-slate-200 font-sans">PV Lager Seesen</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <img src="https://le-cdn.website-editor.net/s/40ba10645f184fabbd7e8191cbbeb355/dms3rep/multi/opt/logo_website_w-1920w.png" alt="SolarCarport.tech Logo" className="h-6 w-auto" />
+              <img src="https://le-cdn.website-editor.net/s/40ba10645f184fabbd7e8191cbbeb355/dms3rep/multi/opt/logo_website_w-1920w.png" alt="SolarCarport.tech Logo" className="h-7 w-auto" />
               <span className="text-xs font-medium text-slate-200 font-sans">SolarCarport.tech</span>
             </div>
             <span className="text-xs font-medium text-slate-300 font-sans">Trina Solar</span>
@@ -70,8 +62,8 @@ export default function V2Page() {
       <footer className="border-t border-white/10 bg-[#000000] py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mt-24 text-xs text-slate-400 space-y-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-white/10 pb-8">
           <div className="flex items-center gap-3">
-            <span className="font-serif font-bold text-base text-white tracking-tight">Aurevia Manor</span>
-            <span className="text-xs font-sans text-amber-400">Solar Architektur Seesen</span>
+            <span className="font-sans font-black text-base text-white tracking-tight uppercase">PV Lager Seesen</span>
+            <span className="text-xs font-sans text-amber-400">RIAL Energy GmbH · Zentrallager Harz</span>
           </div>
           <div className="flex flex-wrap items-center gap-6 font-sans text-xs">
             <Link href="/v2/impressum" className="hover:text-amber-400">Impressum</Link>

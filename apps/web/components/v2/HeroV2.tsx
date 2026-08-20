@@ -15,7 +15,7 @@ export function HeroV2() {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/estate-mansion.jpg"
-            alt="Aurevia Manor Anwesen Solar Carport"
+            alt="PV Lager Seesen Solar Carport"
             className="w-full h-full object-cover filter brightness-[0.25] contrast-110 scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#000000] via-[#000000]/90 to-transparent"></div>
@@ -98,7 +98,7 @@ export function HeroV2() {
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
               />
               <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur border border-amber-500/30 text-amber-300 font-sans text-xs font-medium">
-                Zola Manor Executive Edition
+                Zola Pod Executive Edition
               </div>
               <div className="absolute bottom-3 right-3 p-2.5 rounded-full bg-black/80 text-amber-400 border border-amber-500/20">
                 <Maximize2 className="w-4 h-4" />
@@ -107,7 +107,7 @@ export function HeroV2() {
 
             <div className="flex justify-between items-center text-xs px-1">
               <div>
-                <span className="text-slate-400 block font-sans text-xs">Aurevia Manor Bestseller</span>
+                <span className="text-slate-400 block font-sans text-xs">PV Lager Seesen Bestseller</span>
                 <span className="font-serif font-bold text-white text-base">Alu-Carport 100x100mm mit Bifazial-Dach</span>
               </div>
               <span className="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-sans text-xs font-medium">

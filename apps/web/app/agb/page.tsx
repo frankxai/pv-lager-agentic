@@ -30,8 +30,7 @@ export default function AGB() {
         <p>
           Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge, die über diese Website
           zwischen Ihnen und der {COMPANY.legalName}, {COMPANY.street}, {COMPANY.postalCode}{' '}
-          {COMPANY.city} (nachfolgend „wir") geschlossen werden. Aurevia ist eine Marke der{' '}
-          {COMPANY.legalName}.
+          {COMPANY.city} (nachfolgend „wir") geschlossen werden.
         </p>
         <p>
           Abweichende Bedingungen des Kunden werden nicht Vertragsbestandteil, es sei denn, wir

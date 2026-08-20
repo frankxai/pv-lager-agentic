@@ -37,35 +37,31 @@ export function BrandLogo({ variant = 'full', className = '' }: BrandLogoProps) 
   if (variant === 'dual') {
     return (
       <div className={`flex items-center gap-6 ${className}`}>
-        {/* Aurevia Brand */}
         <div className="flex items-center gap-3">
-          <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 flex items-center justify-center shadow-md border border-amber-300/40">
-            <svg viewBox="0 0 100 100" className="w-5 h-5 text-slate-950 fill-current">
-              <polygon points="50,12 90,85 10,85" />
-              <polygon points="50,28 75,75 25,75" fill="#080C14" />
-              <polygon points="50,42 63,68 37,68" fill="#F59E0B" />
-            </svg>
-          </div>
+          <img
+            src="https://static.wixstatic.com/media/fab3ae_2a52989356354450890bfae642c49cef~mv2.png"
+            alt="PV Lager Seesen"
+            className="h-8 w-auto"
+          />
           <div>
-            <span className="font-serif font-black text-base text-white tracking-wider block leading-none">
-              AUREVIA<span className="text-amber-400 font-sans font-light text-xs ml-1">SOLAR</span>
+            <span className="font-sans font-black text-base text-white tracking-wider block leading-none uppercase">
+              PV LAGER<span className="text-amber-400 font-bold text-xs ml-1">SEESEN</span>
             </span>
-            <span className="text-[9px] font-mono text-slate-400 tracking-wider uppercase block mt-0.5">Architectural Estate Solar</span>
+            <span className="text-[9px] font-mono text-slate-400 tracking-wider uppercase block mt-0.5">Zentrallager Harz</span>
           </div>
         </div>
 
         <div className="h-6 w-px bg-white/20 hidden sm:block" />
 
-        {/* PV Lager Brand */}
         <div className="hidden sm:flex items-center gap-2">
           <img
-            src="https://static.wixstatic.com/media/fab3ae_2a52989356354450890bfae642c49cef~mv2.png"
-            alt="PV Lager"
+            src="https://le-cdn.website-editor.net/s/40ba10645f184fabbd7e8191cbbeb355/dms3rep/multi/opt/logo_website_w-1920w.png"
+            alt="SolarCarport.tech"
             className="h-6 w-auto"
           />
           <div className="flex flex-col">
-            <span className="font-mono font-bold text-xs text-slate-200">PV LAGER SEESEN</span>
-            <span className="text-[8px] font-mono text-emerald-400 uppercase tracking-wider">Direkt-Großhandel</span>
+            <span className="font-mono font-bold text-xs text-slate-200">SOLARCARPORT.TECH</span>
+            <span className="text-[8px] font-mono text-emerald-400 uppercase tracking-wider">RIAL Energy</span>
           </div>
         </div>
       </div>
@@ -74,19 +70,17 @@ export function BrandLogo({ variant = 'full', className = '' }: BrandLogoProps) 
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-500/25 border border-amber-300/50">
-        <svg viewBox="0 0 100 100" className="w-6 h-6 text-slate-950 fill-current">
-          <polygon points="50,12 90,85 10,85" />
-          <polygon points="50,28 75,75 25,75" fill="#080C14" />
-          <polygon points="50,42 63,68 37,68" fill="#F59E0B" />
-        </svg>
-      </div>
+      <img
+        src="https://static.wixstatic.com/media/fab3ae_2a52989356354450890bfae642c49cef~mv2.png"
+        alt="PV Lager Seesen"
+        className="h-9 w-auto"
+      />
       <div>
-        <span className="font-serif font-black text-xl text-white tracking-wider block leading-none">
-          AUREVIA<span className="bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent font-sans font-medium text-xs ml-1.5">SOLAR</span>
+        <span className="font-sans font-black text-lg text-white tracking-wider block leading-none uppercase">
+          PV LAGER<span className="bg-gradient-to-r from-amber-400 to-amber-200 bg-clip-text text-transparent font-bold text-sm ml-1">SEESEN</span>
         </span>
         <span className="text-[10px] font-mono text-amber-400/90 tracking-widest uppercase block mt-1">
-          RIAL Energy Group · Harz
+          RIAL Energy GmbH · Harz
         </span>
       </div>
     </div>

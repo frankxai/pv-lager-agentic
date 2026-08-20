@@ -1,28 +1,59 @@
 import React from 'react';
 
-export function BrandLogoV2({ className = '' }: { className?: string }) {
-  return (
-    <div className={`flex items-center gap-3.5 ${className}`}>
-      {/* Minimal Warm Gold Emblem */}
-      <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-[#D4AF37] via-amber-500 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-500/10 border border-amber-300/30 group-hover:scale-105 transition-transform duration-300">
-        <svg viewBox="0 0 100 100" className="w-4.5 h-4.5 text-slate-950 fill-current">
-          <polygon points="50,12 88,82 12,82" />
-          <polygon points="50,28 73,73 27,73" fill="#000000" />
-          <polygon points="50,42 63,67 37,67" fill="#D4AF37" />
-        </svg>
+interface BrandLogoV2Props {
+  variant?: 'full' | 'icon' | 'badge';
+  className?: string;
+}
+
+export function BrandLogoV2({ variant = 'full', className = '' }: BrandLogoV2Props) {
+  if (variant === 'icon') {
+    return (
+      <div className={`relative w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 p-0.5 shadow-xl shadow-amber-500/20 border border-amber-300/40 ${className}`}>
+        <div className="w-full h-full rounded-[10px] bg-[#000000] flex items-center justify-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 via-transparent to-emerald-500/10" />
+          <svg viewBox="0 0 100 100" className="w-5 h-5 text-amber-400 fill-current relative z-10">
+            <polygon points="50,10 90,32 90,68 50,90 10,68 10,32" fill="none" stroke="currentColor" strokeWidth="6" />
+            <polygon points="50,22 80,72 20,72" fill="#F59E0B" />
+            <circle cx="50" cy="52" r="5" fill="#000000" />
+          </svg>
+        </div>
       </div>
-      
+    );
+  }
+
+  if (variant === 'badge') {
+    return (
+      <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/90 border border-amber-400/35 text-amber-300 text-[11px] font-medium tracking-wide ${className}`}>
+        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+        <span>PV Lager Seesen · Zentrallager Harz</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`flex items-center gap-3 ${className}`}>
+      <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 p-0.5 shadow-xl shadow-amber-500/20 border border-amber-300/40">
+        <div className="w-full h-full rounded-[10px] bg-[#000000] flex items-center justify-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 via-transparent to-emerald-500/10" />
+          <svg viewBox="0 0 100 100" className="w-5 h-5 text-amber-400 fill-current relative z-10">
+            <polygon points="50,10 90,32 90,68 50,90 10,68 10,32" fill="none" stroke="currentColor" strokeWidth="6" />
+            <polygon points="50,22 80,72 20,72" fill="#F59E0B" />
+            <circle cx="50" cy="52" r="5" fill="#000000" />
+          </svg>
+        </div>
+      </div>
+
       <div>
-        <div className="flex items-center gap-2">
-          <span className="font-serif text-base font-semibold text-white tracking-tight leading-none">
-            Aurevia Manor
+        <div className="flex items-baseline gap-1.5">
+          <span className="font-sans font-black text-lg text-white tracking-tight leading-none uppercase">
+            PV Lager<span className="text-amber-400 font-black ml-1">Seesen</span>
           </span>
-          <span className="text-[10px] font-sans font-medium text-amber-300/90 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
-            Estate
+          <span className="text-emerald-400 font-sans font-semibold text-[10px] tracking-wider uppercase bg-emerald-500/10 px-1.5 py-0.2 rounded border border-emerald-500/20">
+            Harz
           </span>
         </div>
-        <span className="text-[10px] font-sans text-slate-400 font-normal block mt-0.5 tracking-wide">
-          Solar Architektur · Seesen
+        <span className="text-[10px] text-slate-400 tracking-wide font-normal block mt-0.5">
+          RIAL Energy GmbH · Zentrallager
         </span>
       </div>
     </div>

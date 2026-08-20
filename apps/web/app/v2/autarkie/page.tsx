@@ -1,111 +1,79 @@
 import React from 'react';
 import { NavV2 } from '@/components/v2/NavV2';
+import { AutarkieCalculatorV2 } from '@/components/v2/AutarkieCalculatorV2';
 import { COMPANY } from '@/lib/company';
-import Link from 'next/link';
-import { Cpu, Sun, Battery, Flame, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Zap, Sun, Battery, Flame, Car } from 'lucide-react';
 
 export const metadata = {
-  title: 'Technologie & Autarkie | Aurevia Manor Solar',
-  description: 'Bifaziale Glas-Glas Module, Hochvolt-Batteriespeicher und SG Ready Wärmepumpen-Kopplung.',
+  title: 'Sektorkopplung & Autarkie | PV Lager Seesen · RIAL Energy',
+  description: 'Solar-Carports, Wärmepumpen, Batteriespeicher und AC/DC-Klima im harmonisierten Gesamtsystem.',
 };
 
-export default function V2AutarkieTechPage() {
-  const techPillars = [
-    {
-      icon: Sun,
-      title: 'Bifaziale Glas-Glas Photovoltaik',
-      badge: 'N-Type i-TOPCon',
-      desc: 'Doppelglas-Module fangen direktes Sonnenlicht von oben und reflektierte Albedo-Strahlung vom Boden ein. Ergebnis: Bis zu 25% Mehrertrag im Jahresverlauf.',
-      stats: '440W Modulleistung · 30 Jahre Leistungsgarantie',
-    },
-    {
-      icon: Battery,
-      title: 'BYD HVS Hochvolt-Speicher',
-      badge: 'Lithium-Eisenphosphat (LFP)',
-      desc: 'Eigensichere Zellchemie ohne Kobalt. Ermöglicht 100% Entladetiefe, ultraschnelles Laden bei Spitzenertrag und vollwertige Notstrom-Inselfähigkeit.',
-      stats: '10.2 kWh bis 22.1 kWh modular skalierbar',
-    },
-    {
-      icon: Flame,
-      title: 'Wärmepumpen & AC/DC Sektorkopplung',
-      badge: 'SG Ready & Direkt-PV',
-      desc: 'Intelligente Ansteuerung von Panasonic Aquarea Wärmepumpen und Direkt-Klimasystemen zur thermischen Speicherung von Solarüberschuss.',
-      stats: 'Heizung & Kühlung zum Nulltarif',
-    },
-  ];
-
+export default function V2AutarkiePage() {
   return (
-    <div className="min-h-screen bg-[#000000] text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950">
+    <div className="min-h-screen bg-[#000000] text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950 pb-24">
       <NavV2 />
-      <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 space-y-16">
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <span className="text-xs font-sans text-amber-400 font-medium tracking-wide flex items-center justify-center gap-2">
-            <Cpu className="w-4 h-4 text-amber-400" />
-            Spitzentechnologie &amp; Systemkopplung 2026
-          </span>
+      <main className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="text-center space-y-4 max-w-3xl mx-auto border-b border-white/10 pb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-white/10 text-xs text-amber-300 font-sans">
+            <Zap className="w-4 h-4 text-amber-400" />
+            <span>Sektorkopplung &amp; Energie-Autarkie</span>
+          </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-white">
-            Autarkie durch intelligente Werkstoffe &amp; Elektronik
+            Das vernetzte Solar-Gesamtsystem
           </h1>
           <p className="text-slate-300 text-sm sm:text-base font-normal leading-relaxed">
-            Ein harmonisch abgestimmtes Gesamtsystem: Von bifazialer Solarenergie über dynamische Speicher bis zur direkten E-Mobilitäts-Ladung.
+            Ein Solar-Carport ist mehr als nur ein Unterstand: Er ist das regenerative Kraftwerk für Ihr E-Fahrzeug, Ihre Wärmepumpe und Ihren Hausspeicher.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {techPillars.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-slate-950/80 border border-white/10 rounded-3xl p-8 flex flex-col justify-between space-y-6 hover:border-amber-500/30 transition shadow-2xl group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-[11px] font-sans text-amber-300/90 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
-                      {item.badge}
-                    </span>
-                  </div>
+        {/* 4 Pillars of Energy Autarky */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-xs font-sans">
+          <div className="bg-slate-950/80 border border-white/10 rounded-3xl p-6 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20">
+              <Sun className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm">Bifaziale PV-Erzeugung</h3>
+            <p className="text-slate-400 leading-relaxed">
+              Trina Vertex S+ Doppelglas-Module wandeln auch reflektiertes Bodenlicht auf der Modulunterseite in wertvollen Solarstrom um.
+            </p>
+          </div>
 
-                  <h2 className="font-serif font-bold text-xl text-white group-hover:text-amber-300 transition">
-                    {item.title}
-                  </h2>
+          <div className="bg-slate-950/80 border border-white/10 rounded-3xl p-6 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+              <Battery className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm">Hochvolt-Speicherung</h3>
+            <p className="text-slate-400 leading-relaxed">
+              BYD Battery-Box HVS und Huawei LUNA halten den tagsüber erzeugten Sonnenstrom für die Nacht- und Spitzenlasten bereit.
+            </p>
+          </div>
 
-                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
-                    {item.desc}
-                  </p>
-                </div>
+          <div className="bg-slate-950/80 border border-white/10 rounded-3xl p-6 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
+              <Car className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm">22kW Smart EV Charging</h3>
+            <p className="text-slate-400 leading-relaxed">
+              Dynamisches PV-Überschussladen speist ausschließlich reinen Sonnenstrom in Ihr Elektrofahrzeug ein.
+            </p>
+          </div>
 
-                <div className="pt-4 border-t border-white/10 text-xs text-slate-400 font-mono">
-                  {item.stats}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="bg-slate-950/90 border border-white/10 rounded-3xl p-8 sm:p-12 text-center space-y-6 max-w-4xl mx-auto shadow-2xl">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-            Berechnen Sie Ihre persönliche Autarkiequote
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto font-normal">
-            Erfahren Sie in 60 Sekunden, wie viel Prozent Ihres Jahresstrombedarfs für Haushalt, Wärmepumpe und E-Fahrzeuge durch einen Aurevia Solar-Carport gedeckt werden.
-          </p>
-          <div className="pt-2 flex justify-center">
-            <Link
-              href="/v2#configurator"
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-semibold text-xs transition shadow-xl shadow-amber-500/20 flex items-center gap-2"
-            >
-              <span>Autarkie-Rechner starten</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="bg-slate-950/80 border border-white/10 rounded-3xl p-6 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center border border-rose-500/20">
+              <Flame className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm">Wärmepumpe &amp; AC/DC Klima</h3>
+            <p className="text-slate-400 leading-relaxed">
+              Direkte Sektorkopplung mit Panasonic T-CAP Wärmepumpen und RIAL Direct-PV AC/DC Klimasystemen ohne Netzverluste.
+            </p>
           </div>
         </div>
+
+        <AutarkieCalculatorV2 />
       </main>
 
-      <footer className="border-t border-white/10 bg-[#000000] py-10 px-4 max-w-7xl mx-auto mt-20 text-xs text-slate-500 text-center">
+      <footer className="border-t border-white/10 bg-[#000000] py-12 px-4 max-w-6xl mx-auto mt-20 text-xs text-slate-500 text-center">
         © {new Date().getFullYear()} {COMPANY.legalName} · {COMPANY.address}, {COMPANY.postalCode} {COMPANY.city}. Alle Rechte vorbehalten.
       </footer>
     </div>

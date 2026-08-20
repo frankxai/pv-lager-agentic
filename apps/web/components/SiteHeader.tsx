@@ -18,9 +18,9 @@ export function SiteHeader() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
         <Link
           href="/"
-          className="font-display text-xl font-semibold tracking-tight text-ink transition-opacity duration-micro ease-au hover:opacity-70"
+          className="font-sans text-xl font-bold tracking-tight text-ink transition-opacity duration-micro ease-au hover:opacity-70 uppercase"
         >
-          Aurevia
+          PV Lager Seesen
         </Link>
 
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-8 md:flex">

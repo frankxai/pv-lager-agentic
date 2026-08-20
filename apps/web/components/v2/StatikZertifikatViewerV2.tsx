@@ -70,7 +70,7 @@ export function StatikZertifikatViewerV2() {
                 Extremlasten bis zu 300 kg/m² Nassschnee im Harz
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Der Harz gehört zu den schneereichsten Regionen Deutschlands. Standard-Baumarkt-Carports kollabieren unter schweren Schneelasten. Unsere Aurevia 100x100mm Alu-Tragwerke halten einer Dauerlast von bis zu 3.0 kN/m² stand.
+                Der Harz gehört zu den schneereichsten Regionen Deutschlands. Standard-Baumarkt-Carports kollabieren unter schweren Schneelasten. Unsere PV Lager 100x100mm Alu-Tragwerke halten einer Dauerlast von bis zu 3.0 kN/m² stand.
               </p>
               <div className="p-5 rounded-2xl bg-slate-950 border border-white/10 space-y-2 text-xs">
                 <div className="flex justify-between text-slate-300">
@@ -158,7 +158,7 @@ export function StatikZertifikatViewerV2() {
                 <thead>
                   <tr className="border-b border-white/10 text-slate-400">
                     <th className="py-3 px-4 font-semibold">Eigenschaft</th>
-                    <th className="py-3 px-4 text-amber-300 font-bold">Aurevia 6063-T6 Aluminium</th>
+                    <th className="py-3 px-4 text-amber-300 font-bold">PV Lager 6063-T6 Aluminium</th>
                     <th className="py-3 px-4 text-slate-400">Leimholz (BSH / KVH)</th>
                     <th className="py-3 px-4 text-slate-400">Stahl verzinkt</th>
                   </tr>

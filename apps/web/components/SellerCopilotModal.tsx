@@ -12,7 +12,7 @@ export function SellerCopilotModal({ isOpen, onClose }: SellerCopilotModalProps)
   const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant'; text: string }>>([
     {
       role: 'assistant',
-      text: 'Guten Tag. Ich bin Ihr KI-Concierge für RIAL Energy & Aurevia Sovereign. Wie kann ich Ihre Autarkie-Planung oder Statikfragen unterstützen?'
+      text: 'Guten Tag. Ich bin Ihr technischer Fachberater für PV Lager Seesen & RIAL Energy GmbH. Wie kann ich Sie bei Solar-Carports, Modulpreisen oder Statikfragen unterstützen?'
     }
   ]);
   const [input, setInput] = useState('');

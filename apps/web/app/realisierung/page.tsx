@@ -7,7 +7,7 @@ import { PRICING } from '@/lib/pricing';
 
 export const metadata: Metadata = {
   title: 'Realisierung',
-  description: `Stufe 3: Beschaffung, Montage, Netzanmeldung und Inbetriebnahme durch die ${COMPANY.legalName} — mit Aurevia als einzigem Ansprechpartner.`,
+  description: `Stufe 3: Beschaffung, Montage, Netzanmeldung und Inbetriebnahme durch die ${COMPANY.legalName} — alles aus einer Hand.`,
 };
 
 const phasen = [
@@ -35,7 +35,7 @@ export default function Realisierung() {
       <PageHeader
         label={`Stufe 3 · ${PRICING.realisierung.display}`}
         title="Realisierung"
-        lead={`Ausgeführt durch die ${COMPANY.legalName} mit eigenem Lager, eigener Montage und eigener Gebäudetechnik. Aurevia bleibt Ihr einziger Ansprechpartner — auch dann, wenn mehrere Gewerke beteiligt sind.`}
+        lead={`Ausgeführt durch die ${COMPANY.legalName} mit eigenem Zentrallager, eigener Montage und eigener Meister-Gebäudetechnik. Ein einziger regionaler Ansprechpartner für alle Gewerke.`}
       />
 
       <section className="mx-auto w-full max-w-6xl px-5 pb-block sm:px-8">

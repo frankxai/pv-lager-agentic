@@ -24,7 +24,7 @@ export default function Impressum() {
         </address>
 
         <p>
-          Aurevia ist eine Marke der {COMPANY.legalName}. Verantwortlich für alle über diese
+          PV Lager Seesen ist ein Geschäftsbereich der {COMPANY.legalName}. Verantwortlich für alle über diese
           Website angebotenen Leistungen ist die {COMPANY.legalName}.
         </p>
 

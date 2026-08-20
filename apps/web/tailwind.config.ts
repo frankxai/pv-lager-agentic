@@ -12,7 +12,13 @@ const config: Config = {
           800: '#0F172A',
           700: '#1E293B',
         },
-        aurevia: {
+        solar: {
+          300: '#FDE68A',
+          400: '#F59E0B',
+          500: '#D4AF37',
+          600: '#B48E28',
+        },
+        gold: {
           300: '#FDE68A',
           400: '#F59E0B',
           500: '#D4AF37',

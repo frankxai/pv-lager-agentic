@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Compass, CheckCircle2, ShieldCheck, ArrowRight, FileCheck, Layers } from 'lucide-react';
 
 export const metadata = {
-  title: 'Autarkie-Konzept & Ausführungsplanung | Aurevia Manor Solar',
+  title: 'Autarkie-Konzept & Ausführungsplanung | PV Lager Seesen · RIAL Energy',
   description: 'Stufe 2: 490€ Ingenieur-Entwurfsplanung, 3D CAD und Vor-Ort-Statik.',
 };
 

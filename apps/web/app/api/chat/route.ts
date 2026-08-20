@@ -18,12 +18,12 @@ export async function POST(req: Request) {
         'Unsere 100x100mm Aluminium-Tragwerke sind nach DIN EN 1991-1-3 statisch für Schneelastzone 3 (bis zu 3.0 kN/m² Schneelast im Harz) sowie Windlastzone 2/3 zertifiziert. 30 Jahre Garantie auf das Alu-Profil.';
     } else {
       responseText =
-        'Guten Tag! Ich bin der KI-Concierge von Aurevia Solar & Zentrallager Seesen. Ich berate Sie zu bifazialen Glas-Glas Modulen, Alu-Carport Statik und 0% MwSt. Steuerfreistellungen. Wie kann ich Ihr Anwesen unterstützen?';
+        'Guten Tag! Ich bin der KI-Fachberater vom PV Lager Seesen (RIAL Energy GmbH). Ich berate Sie zu bifazialen Glas-Glas Modulen, Solar-Carport Statik für Harzer Schneelastzone 3 und B2B/B2C Konditionen. Wie kann ich Ihnen helfen?';
     }
 
     return NextResponse.json({
       reply: responseText,
-      agent: 'Aurevia Sovereign AI Copilot',
+      agent: 'PV Lager Seesen AI Copilot',
       timestamp: new Date().toISOString(),
     });
   } catch (error) {

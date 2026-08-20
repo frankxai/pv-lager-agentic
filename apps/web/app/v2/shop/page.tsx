@@ -5,7 +5,7 @@ import { COMPANY } from '@/lib/company';
 import { ShoppingBag, ShieldCheck, Truck, Warehouse, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Hardware Großhandel & Solar-Carport Shop | Aurevia Manor Seesen',
+  title: 'Hardware Großhandel & Solar-Carport Shop | PV Lager Seesen · RIAL Energy',
   description: 'Bifaziale PV-Module, Zola Pod Solar-Carport Kits, Speicher & Inverter direkt ab Zentrallager Seesen (Harz).',
 };
 
