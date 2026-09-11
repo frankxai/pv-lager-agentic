@@ -1,0 +1,49 @@
+'use client';
+
+import React from 'react';
+import { Zap, PhoneCall, Sparkles, BookOpen } from 'lucide-react';
+
+interface MobileStickyBarProps {
+  onOpenLeadMagnet: () => void;
+  onOpenCopilot: () => void;
+}
+
+export function MobileStickyBar({ onOpenLeadMagnet, onOpenCopilot }: MobileStickyBarProps) {
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-[#080C14]/95 backdrop-blur-2xl border-t border-amber-500/30 p-2.5 shadow-2xl px-4">
+      <div className="grid grid-cols-4 gap-2 items-center text-center">
+        <a
+          href="#configurator"
+          className="flex flex-col items-center justify-center p-2 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 font-bold active:scale-95 transition shadow-lg"
+        >
+          <Zap className="w-4 h-4 fill-current mb-0.5" />
+          <span className="text-[10px] font-mono uppercase tracking-tight">Konfigurator</span>
+        </a>
+
+        <a
+          href="tel:+49538198000"
+          className="flex flex-col items-center justify-center p-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 active:scale-95 transition"
+        >
+          <PhoneCall className="w-4 h-4 text-amber-400 mb-0.5" />
+          <span className="text-[10px] font-mono uppercase tracking-tight">Anrufen</span>
+        </a>
+
+        <button
+          onClick={onOpenCopilot}
+          className="flex flex-col items-center justify-center p-2 rounded-xl bg-slate-900 border border-cyan-500/40 text-cyan-300 active:scale-95 transition"
+        >
+          <Sparkles className="w-4 h-4 text-cyan-400 mb-0.5" />
+          <span className="text-[10px] font-mono uppercase tracking-tight">AI Copilot</span>
+        </button>
+
+        <button
+          onClick={onOpenLeadMagnet}
+          className="flex flex-col items-center justify-center p-2 rounded-xl bg-slate-900 border border-emerald-500/40 text-emerald-300 active:scale-95 transition"
+        >
+          <BookOpen className="w-4 h-4 text-emerald-400 mb-0.5" />
+          <span className="text-[10px] font-mono uppercase tracking-tight">Kaufkompass</span>
+        </button>
+      </div>
+    </div>
+  );
+}
