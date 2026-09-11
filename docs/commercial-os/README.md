@@ -23,6 +23,7 @@ This package is a specification, not a connected dashboard or deployed integrati
 9. [GitHub / Linear tracking](tracking.md)
 10. [Plugin connection plan and validation](plugin-and-validation.md)
 11. [Skills-only plugin package](../../plugins/solar-commercial-os/README.md)
+12. [Dashboard architecture and delivery formats](dashboard-architecture.md)
 
 The earlier [architecture](../architecture.md) and [strategy](../strategy.md) remain historical inputs. This specification is the proposed next design; it does not imply those earlier agent descriptions were implemented.
 

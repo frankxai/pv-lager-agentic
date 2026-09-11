@@ -14,7 +14,7 @@ Read AGENTS.md, GitHub epic #4, the selected issue and its dependencies. The arc
 
 Start with issue #5 unless live evidence proves it is complete. Recover a clean application baseline by comparing agent/hermes/rial-energy-growth-system and agent/claude/pvlager-decontamination, both under apps/web. Preserve unrelated work and record the source choice. Use an isolated issue branch. Do not blindly merge either branch or replace existing work.
 
-Implement the selected issue through a focused, tested PR. Complete useful work with synthetic fixtures when live access is absent, but leave live-data acceptance open. Follow reusable-product.md, architecture.md, data-and-metrics.md, workflows.md, tracking.md, the decision schema and policy template.
+Implement the selected issue through a focused, tested PR. Complete useful work with synthetic fixtures when live access is absent, but leave live-data acceptance open. Follow reusable-product.md, dashboard-architecture.md, architecture.md, data-and-metrics.md, workflows.md, tracking.md, the decision schema and policy template.
 
 Success: satisfy the selected issue's checkboxes with reproducible evidence; make data freshness and unknown costs visible; preserve tenant/customer authorization; avoid duplicate external effects; document operational ownership and recovery. Link the PR and evidence to the issue and update the Linear milestone record when justified.
 
