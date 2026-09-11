@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commercial OS Delivery"
+  short_description: "Implement scoped issues with evidence and clear ownership"
+  default_prompt: "Use $deliver-commercial-os to take the next ready implementation issue through a tested pull request."

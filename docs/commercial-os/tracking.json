@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-09-11",
+  "repository": "frankxai/pv-lager-agentic",
+  "epic_url": "https://github.com/frankxai/pv-lager-agentic/issues/4",
+  "design_pr_url": "https://github.com/frankxai/pv-lager-agentic/pull/3",
+  "handover_ref": "codex/commercial-os-architecture-20260911",
+  "linear_project_id": "5986af1c-9647-41ee-98f9-2c8289c0cbe1",
+  "linear_project_url": "https://linear.app/arcanea/project/solar-commercial-os-pv-lager-pilot-d77a2e324652",
+  "status_authority": {
+    "engineering": "GitHub issues and accepted PR evidence",
+    "business": "Linear project description and milestones",
+    "automated_sync": false,
+    "remote_codex_task_started": false
+  },
+  "linear_issue_creation": {
+    "status": "blocked_by_workspace_free_issue_limit",
+    "created_issues": [],
+    "fallback": "Business readiness checklist B1–B3 in project description"
+  },
+  "milestones": [
+    {
+      "id": "1c5ab43a-caa3-46a8-80b6-7ec6de4a8459",
+      "name": "M1 — Trusted foundation",
+      "acceptance_status": "pending",
+      "github_issues": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "ddc98fad-683e-41b8-884f-371fd2429e91",
+      "name": "M2 — Staff decisions and customer quotes",
+      "acceptance_status": "pending",
+      "github_issues": [
+        8,
+        1
+      ]
+    },
+    {
+      "id": "55f057df-cede-4a44-aaf3-907038cc6e3c",
+      "name": "M3 — Authenticated AI and controlled actions",
+      "acceptance_status": "pending",
+      "github_issues": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "43754131-0902-460e-a442-571f09d27900",
+      "name": "M4 — Repeatable business rollout",
+      "acceptance_status": "pending",
+      "github_issues": [
+        11
+      ]
+    }
+  ],
+  "workstreams": [
+    {
+      "key": "actions",
+      "issue_number": 10,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/10",
+      "title": "[Automation] Execute commercial actions through mandates and durable jobs",
+      "depends_on": [
+        8
+      ],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / technical coordinator",
+      "assigned_person": null
+    },
+    {
+      "key": "decisions",
+      "issue_number": 8,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/8",
+      "title": "[Intelligence] Build deterministic economics and staff decision workbench",
+      "depends_on": [
+        7
+      ],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / technical coordinator",
+      "assigned_person": null
+    },
+    {
+      "key": "identity",
+      "issue_number": 6,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/6",
+      "title": "[Platform] Implement business tenancy and staff/customer authorization",
+      "depends_on": [
+        5
+      ],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / technical coordinator",
+      "assigned_person": null
+    },
+    {
+      "key": "ingestion",
+      "issue_number": 7,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/7",
+      "title": "[Data] Add ERP/export adapters with reconciliation and freshness",
+      "depends_on": [
+        6
+      ],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / technical coordinator",
+      "assigned_person": null
+    },
+    {
+      "key": "mcp",
+      "issue_number": 9,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/9",
+      "title": "[Plugin] Deploy authenticated commercial MCP tools and register ChatGPT connection",
+      "depends_on": [
+        6,
+        8
+      ],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / technical coordinator",
+      "assigned_person": null
+    },
+    {
+      "key": "rollout",
+      "issue_number": 11,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/11",
+      "title": "[Rollout] Prove second-business onboarding and operator handover",
+      "depends_on": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        1
+      ],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / technical coordinator",
+      "assigned_person": null
+    },
+    {
+      "key": "source",
+      "issue_number": 5,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/5",
+      "title": "[Foundation] Recover canonical app source and document business ownership",
+      "depends_on": [],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / technical coordinator",
+      "assigned_person": null
+    },
+    {
+      "key": "commerce",
+      "issue_number": 1,
+      "url": "https://github.com/frankxai/pv-lager-agentic/issues/1",
+      "title": "Mobile commerce: build an inventory-first PV Lager experience",
+      "depends_on": [
+        5,
+        6,
+        7
+      ],
+      "live_handoff_depends_on": [
+        10
+      ],
+      "status_at_creation": "open",
+      "suggested_executor": "Codex / commerce engineer",
+      "assigned_person": null
+    }
+  ],
+  "business_readiness": [
+    {
+      "id": "B1",
+      "state": "pending",
+      "owner_role": "business administrator and finance",
+      "needs": "Private data access, mappings, control totals, reconciliation owner"
+    },
+    {
+      "id": "B2",
+      "state": "pending",
+      "owner_role": "business owner and delegated administrator",
+      "needs": "Account ownership, billing, operator roles, metrics and mandates"
+    },
+    {
+      "id": "B3",
+      "state": "pending",
+      "owner_role": "pilot operator and business owner",
+      "needs": "Staff/customer review, baseline, second pilot and training"
+    }
+  ]
+}

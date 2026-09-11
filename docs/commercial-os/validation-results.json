@@ -1,0 +1,67 @@
+{
+  "as_of": "2026-09-11",
+  "package_version": "0.1.0",
+  "checks": [
+    {
+      "check": "personal_skill_structure",
+      "skill": "operate-solar-commerce",
+      "result": "passed",
+      "output": "Skill is valid!"
+    },
+    {
+      "check": "personal_skill_structure",
+      "skill": "assist-solar-customers",
+      "result": "passed",
+      "output": "Skill is valid!"
+    },
+    {
+      "check": "personal_skill_structure",
+      "skill": "deliver-commercial-os",
+      "result": "passed",
+      "output": "Skill is valid!"
+    },
+    {
+      "check": "codex_compatibility_plugin_validator",
+      "result": "passed",
+      "output": "Plugin validation passed"
+    },
+    {
+      "check": "portable_identity_and_interface_parity",
+      "result": "passed",
+      "scope": "Local consistency checks; not full remote registry/schema ingestion"
+    },
+    {
+      "check": "packaged_core_skill_source_parity",
+      "result": "passed",
+      "sha256": {
+        "assist-solar-customers/SKILL.md": "524ed1a25f2746807ed238c52076300182b4c2026de1656e023d7aff8ee0abfb",
+        "deliver-commercial-os/SKILL.md": "1834c0174d6be511e427167b2664df7a4f2ebec59a7d9c38fb0ca37512edd440",
+        "operate-solar-commerce/SKILL.md": "4c6c3cbd9f74db302bca4eea0126e98e18543341e64c95bb353ea6a15a736705",
+        "operate-solar-commerce/references/decision-rules.md": "96146b01ab4821bd2a926dcb6e724fff93389320af079de200e90b29c1e29490"
+      }
+    },
+    {
+      "check": "json_syntax",
+      "result": "passed"
+    }
+  ],
+  "behavior_evaluation": {
+    "scenarios": 1,
+    "data": "synthetic",
+    "result": "passed with documented improvements",
+    "external_actions": 0,
+    "record": "plugin-and-validation.md"
+  },
+  "not_run": [
+    "Production application build",
+    "Live ERP reconciliation",
+    "MCP protocol and authentication tests",
+    "Multi-tenant backend penetration tests",
+    "ChatGPT server registration or marketplace publication"
+  ],
+  "installation": {
+    "personal_skills": "All three canonical remote skill paths and content verified",
+    "plugin_package": "Source package only; not account-installed or publicly listed",
+    "remote_codex_task": "Not started"
+  }
+}

@@ -2,6 +2,8 @@
 
 Architecture and workflow specification · 2026-09-11 · proposed implementation
 
+This design now includes **Solar Commercial OS**, a reusable product with PV-Lager as its first pilot. The original workflow/metric specification below remains the pilot foundation; [reusable-product.md](reusable-product.md) defines the cross-business boundary.
+
 ## Decision
 
 Build one commercial operating system for PV-Lager / RIAL Energy: turn sales, inventory, purchasing and campaign evidence into a short, owned queue of decisions. Help the team become category owners who understand demand, contribution and capital. Automate data preparation, diagnosis, drafts and measurement; extend execution authority only through recorded business mandates.
@@ -16,6 +18,11 @@ This package is a specification, not a connected dashboard or deployed integrati
 4. [Implementation and acceptance plan](delivery.md)
 5. [Decision record schema](../../contracts/commercial-decision.schema.json)
 6. [Execution policy template](../../config/commercial-policy.template.json)
+7. [Reusable multi-business product](reusable-product.md)
+8. [Codex execution handover](CODEX-HANDOVER.md)
+9. [GitHub / Linear tracking](tracking.md)
+10. [Plugin connection plan and validation](plugin-and-validation.md)
+11. [Skills-only plugin package](../../plugins/solar-commercial-os/README.md)
 
 The earlier [architecture](../architecture.md) and [strategy](../strategy.md) remain historical inputs. This specification is the proposed next design; it does not imply those earlier agent descriptions were implemented.
 
