@@ -1,0 +1,4 @@
+interface:
+  display_name: "Solar Customer Assistant"
+  short_description: "Help customers find verified products and manage their orders"
+  default_prompt: "Use $assist-solar-customers to help this customer choose suitable products and prepare a quote."

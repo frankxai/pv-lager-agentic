@@ -1,0 +1,19 @@
+{
+  "name": "solar-commercial-os",
+  "version": "0.1.0",
+  "description": "Reusable solar commerce workflows for staff, customers and Codex delivery.",
+  "author": {
+    "name": "Starlight Intelligence"
+  },
+  "repository": "https://github.com/frankxai/pv-lager-agentic",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Solar Commercial OS",
+    "shortDescription": "Commercial decisions, customer assistance and delivery skills.",
+    "longDescription": "Evidence-backed workflows for solar businesses: stock and contribution priorities, customer product and quote assistance, and issue-based software delivery. Skills-only package; a live ERP/MCP connection is a separate integration.",
+    "developerName": "Starlight Intelligence",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use Solar Commercial OS to prepare evidence-backed business priorities or help a customer with the published catalog."
+  }
+}
