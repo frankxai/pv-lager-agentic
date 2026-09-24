@@ -1,0 +1,57 @@
+{
+  "rial-energy": {
+    "name": "RIAL Energy",
+    "descriptor": "Energie & Gebäudetechnik",
+    "accent": "#9b6100",
+    "ink": "#17232b",
+    "muted": "#52616a",
+    "rule": "#bbc5c9",
+    "wash": "#f4f6f6",
+    "paper": "#ffffff",
+    "headingFont": "Arial, Helvetica, sans-serif"
+  },
+  "pv-lager": {
+    "name": "PV Lager",
+    "descriptor": "Photovoltaik aus Seesen",
+    "accent": "#22634b",
+    "ink": "#182b26",
+    "muted": "#536a60",
+    "rule": "#c2d0c8",
+    "wash": "#f0f5f1",
+    "paper": "#ffffff",
+    "headingFont": "Arial, Helvetica, sans-serif"
+  },
+  "solarcarport-tech": {
+    "name": "SolarCarport.tech",
+    "descriptor": "Modulare Solarüberdachungen",
+    "accent": "#a76418",
+    "ink": "#18232a",
+    "muted": "#59666a",
+    "rule": "#c8ced0",
+    "wash": "#f5f5f2",
+    "paper": "#ffffff",
+    "headingFont": "Arial, Helvetica, sans-serif"
+  },
+  "vr-gebaeudetechnik": {
+    "name": "VR Gebäudetechnik",
+    "descriptor": "Installation & Service",
+    "accent": "#315a78",
+    "ink": "#1b303e",
+    "muted": "#5d6f79",
+    "rule": "#bdcbd2",
+    "wash": "#f1f5f7",
+    "paper": "#ffffff",
+    "headingFont": "Arial, Helvetica, sans-serif"
+  },
+  "aurevia": {
+    "name": "Aurevia",
+    "descriptor": "Digital engineering tools",
+    "accent": "#704a29",
+    "ink": "#191a17",
+    "muted": "#65685f",
+    "rule": "#aaa69b",
+    "wash": "#ebe5da",
+    "paper": "#faf8f2",
+    "headingFont": "Georgia, 'Times New Roman', serif"
+  }
+}
