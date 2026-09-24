@@ -1,0 +1,62 @@
+@page { size: A4; margin: 16mm 17mm 18mm; }
+* { box-sizing: border-box; }
+html { background: #e8ecee; }
+body { margin: 0; color: __INK__; font: 11px/1.48 Arial, Helvetica, sans-serif; }
+.sheet { width: 210mm; min-height: 297mm; margin: 18px auto; padding: 16mm 17mm 18mm; background: __PAPER__; box-shadow: 0 12px 36px rgba(0,0,0,.13); }
+.accent-rule { height: 3px; margin-bottom: 13mm; background: __ACCENT__; }
+.masthead, .address-row, .meta-row, .bottom-row { width: 100%; border-collapse: collapse; }
+.masthead td { vertical-align: top; }
+.masthead td:first-child { width: 60%; }
+.masthead td:last-child { width: 40%; }
+.wordmark { font: bold 24px/1.12 __HEADING_FONT__; letter-spacing: -.025em; }
+.brand-pv-lager .wordmark { font-size: 27px; letter-spacing: -.045em; }
+.brand-solarcarport-tech .wordmark { font-size: 22px; letter-spacing: -.035em; }
+.brand-vr-gebaeudetechnik .wordmark { font-size: 23px; letter-spacing: -.02em; }
+.brand-aurevia .wordmark { font-weight: normal; font-size: 30px; letter-spacing: -.055em; }
+.brand-aurevia .accent-rule { height: 1px; }
+.brand-aurevia .document-kind { font-weight: normal; }
+.descriptor { margin-top: 3px; color: __MUTED__; font-size: 10px; }
+.document-kind { text-align: right; font: bold 23px/1.1 __HEADING_FONT__; }
+.document-number { margin-top: 5px; text-align: right; font-size: 11px; }
+.document-number strong { color: __ACCENT__; }
+.section-label { margin: 0 0 5px; color: __MUTED__; font-size: 9px; letter-spacing: .035em; }
+.address-row { margin-top: 16mm; }
+.address-row td { width: 50%; vertical-align: top; }
+.address-row td + td { padding-left: 12mm; }
+.party-name { margin-bottom: 4px; font-weight: bold; font-size: 13px; }
+.address-line { white-space: pre-wrap; }
+.meta { margin-top: 12mm; padding: 7mm 0 6mm; border-top: 1px solid __RULE__; border-bottom: 1px solid __RULE__; }
+.meta-row td { width: 25%; vertical-align: top; padding-right: 7px; }
+.meta-value { font-weight: bold; overflow-wrap: anywhere; }
+.items { width: 100%; margin-top: 13mm; border-collapse: collapse; table-layout: fixed; }
+.items th { padding: 9px 5px; border-bottom: 1.5px solid __INK__; text-align: left; color: __MUTED__; font-size: 9px; font-weight: bold; }
+.items td { padding: 10px 5px; border-bottom: 1px solid __RULE__; vertical-align: top; overflow-wrap: anywhere; }
+.items th:first-child, .items td:first-child { padding-left: 0; }
+.items th:last-child, .items td:last-child { padding-right: 0; }
+.items .num { text-align: right; white-space: nowrap; }
+.item-detail { margin-top: 3px; color: __MUTED__; font-size: 10px; }
+.item-heading { font-weight: bold; }
+.summary { width: 75mm; margin: 10mm 0 0 auto; border-collapse: collapse; }
+.summary td { padding: 4px 0; }
+.summary td:last-child { text-align: right; white-space: nowrap; font-weight: bold; }
+.summary .gross td { padding-top: 9px; border-top: 2px solid __ACCENT__; font-size: 15px; color: __INK__; }
+.tax-detail { color: __MUTED__; font-size: 10px; }
+.tax-detail td { padding: 2px 0; font-weight: normal !important; }
+.payment { margin-top: 15mm; padding: 7mm 8mm; background: __WASH__; border-left: 3px solid __ACCENT__; }
+.payment-title { margin: 0 0 4px; font-weight: bold; font-size: 12px; }
+.bottom-row { margin-top: 13mm; }
+.bottom-row td { width: 50%; vertical-align: top; }
+.bottom-row td + td { padding-left: 9mm; }
+.foot { margin-top: 17mm; padding-top: 5mm; border-top: 1px solid __RULE__; color: __MUTED__; font-size: 9px; }
+.foot strong { color: __INK__; }
+.muted { color: __MUTED__; }
+.preserve-lines { white-space: pre-wrap; }
+tr { page-break-inside: avoid; }
+.items thead { display: table-header-group; }
+.summary, .payment, .foot { page-break-inside: avoid; }
+@media print {
+  html { background: #fff; }
+  .sheet { width: auto; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+  .payment { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .accent-rule { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
