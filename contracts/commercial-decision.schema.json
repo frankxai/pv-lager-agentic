@@ -1,0 +1,661 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:pvlager:commercial-decision:v1",
+  "title": "Commercial decision record",
+  "description": "Proposed record contract. JSON validation does not grant authority or replace service-side revalidation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "tenant_id",
+    "workflow",
+    "state",
+    "created_at",
+    "expires_at",
+    "owner_role",
+    "owner_id",
+    "action",
+    "rationale",
+    "evidence",
+    "quality",
+    "calculation_version",
+    "policy_version",
+    "forecast_basis",
+    "expected_impact",
+    "authority",
+    "execution",
+    "outcome"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workflow": {
+      "enum": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W05",
+        "W06",
+        "W07",
+        "W08"
+      ]
+    },
+    "state": {
+      "enum": [
+        "observed",
+        "blocked",
+        "proposed",
+        "approved",
+        "rejected",
+        "expired",
+        "executing",
+        "reconcile",
+        "verified",
+        "measured"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "owner_role": {
+      "enum": [
+        "business_owner",
+        "category_owner",
+        "sales",
+        "purchasing",
+        "campaigns",
+        "operations",
+        "technical"
+      ]
+    },
+    "owner_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "summary",
+        "scope",
+        "business_key",
+        "external_effect",
+        "payload_ref",
+        "payload_hash"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "internal_brief",
+            "category_review",
+            "purchase_order_draft",
+            "purchase_order_submit",
+            "clearance_draft",
+            "price_change",
+            "campaign_draft",
+            "campaign_publish",
+            "campaign_budget_change",
+            "quote_draft",
+            "customer_message",
+            "supplier_message",
+            "assortment_review"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "product_ids",
+            "warehouse_ids",
+            "account_ids"
+          ],
+          "properties": {
+            "product_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "warehouse_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "account_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "business_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "external_effect": {
+          "type": "boolean"
+        },
+        "payload_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "payload_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "rationale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "why_now",
+        "alternative",
+        "downside",
+        "assumptions"
+      ],
+      "properties": {
+        "why_now": {
+          "type": "string"
+        },
+        "alternative": {
+          "type": "string"
+        },
+        "downside": {
+          "type": "string"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_system",
+          "record_ref",
+          "observed_at",
+          "source_updated_at",
+          "import_run_id",
+          "status"
+        ],
+        "properties": {
+          "source_system": {
+            "type": "string",
+            "minLength": 1
+          },
+          "record_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_updated_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "import_run_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "verified",
+              "partial",
+              "stale",
+              "missing",
+              "synthetic"
+            ]
+          }
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "confidence_basis",
+        "blockers"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "sufficient",
+            "partial",
+            "blocked"
+          ]
+        },
+        "confidence_basis": {
+          "type": "string"
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "calculation_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "forecast_basis": {
+      "enum": [
+        "not_applicable",
+        "total_demand",
+        "residual_uncommitted_demand",
+        "unknown"
+      ]
+    },
+    "expected_impact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "horizon_days",
+        "contribution_before_ads",
+        "contribution_after_ads",
+        "net_cash_effect",
+        "inventory_cost_released",
+        "spend_committed",
+        "measurement_plan"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "horizon_days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "contribution_before_ads": {
+          "$ref": "#/$defs/amountRange"
+        },
+        "contribution_after_ads": {
+          "$ref": "#/$defs/amountRange"
+        },
+        "net_cash_effect": {
+          "$ref": "#/$defs/amountRange"
+        },
+        "inventory_cost_released": {
+          "$ref": "#/$defs/amountRange"
+        },
+        "spend_committed": {
+          "$ref": "#/$defs/amountRange"
+        },
+        "measurement_plan": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "receipt_ref",
+        "approved_by",
+        "approved_at",
+        "policy_checked_at"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "none",
+            "human",
+            "mandate"
+          ]
+        },
+        "receipt_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "policy_checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attempts",
+        "external_reference",
+        "verified_at",
+        "error"
+      ],
+      "properties": {
+        "attempts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "external_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "measured_at",
+        "record_ref",
+        "lesson"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "not_applicable",
+            "measured",
+            "unmeasurable"
+          ]
+        },
+        "measured_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "record_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lesson": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "amountRange": {
+      "description": "Decimal amounts in stated currency. Null explicitly means unknown. Service validates low <= base <= high and measurement semantics.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "low",
+            "base",
+            "high",
+            "basis"
+          ],
+          "properties": {
+            "low": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]{1,4})?$"
+            },
+            "base": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]{1,4})?$"
+            },
+            "high": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]{1,4})?$"
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "enum": [
+              "approved",
+              "executing",
+              "verified",
+              "measured"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "owner_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "authority": {
+            "properties": {
+              "mode": {
+                "enum": [
+                  "human",
+                  "mandate"
+                ]
+              },
+              "receipt_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "approved_by": {
+                "type": "string",
+                "minLength": 1
+              },
+              "approved_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "enum": [
+              "executing"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "quality": {
+            "properties": {
+              "status": {
+                "const": "sufficient"
+              },
+              "blockers": {
+                "maxItems": 0
+              }
+            }
+          },
+          "evidence": {
+            "minItems": 1,
+            "items": {
+              "properties": {
+                "status": {
+                  "const": "verified"
+                }
+              }
+            }
+          },
+          "authority": {
+            "properties": {
+              "policy_checked_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
+          "action": {
+            "properties": {
+              "payload_ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "payload_hash": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "enum": [
+              "verified",
+              "measured"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "execution": {
+            "properties": {
+              "verified_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "measured"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "outcome": {
+            "properties": {
+              "status": {
+                "const": "measured"
+              },
+              "measured_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "record_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

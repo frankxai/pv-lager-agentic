@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "status": "template_not_an_authorisation",
+  "mode": "observe_and_draft",
+  "tenant_id": null,
+  "policy_owner_id": null,
+  "effective_from": null,
+  "effective_until": null,
+  "currency": "EUR",
+  "business_timezone": "Europe/Berlin",
+  "internal_actions": [
+    "internal_brief",
+    "category_review",
+    "purchase_order_draft",
+    "clearance_draft",
+    "campaign_draft",
+    "quote_draft",
+    "assortment_review"
+  ],
+  "external_actions_enabled": false,
+  "external_action_types": [
+    "purchase_order_submit",
+    "price_change",
+    "campaign_publish",
+    "campaign_budget_change",
+    "customer_message",
+    "supplier_message"
+  ],
+  "mandates": [],
+  "limits": {
+    "purchase_commitment_per_action": "0.00",
+    "purchase_commitment_rolling_30_days": "0.00",
+    "advertising_spend_daily": "0.00",
+    "advertising_spend_rolling_30_days": "0.00",
+    "minimum_cash_reserve": null,
+    "minimum_retained_contribution_per_order": null,
+    "maximum_discount_percent": null,
+    "null_means": "unset_and_blocks_dependent_execution",
+    "aggregate_pending_and_executed_actions": true
+  },
+  "scope": {
+    "allowed_supplier_ids": [],
+    "allowed_product_ids": [],
+    "allowed_warehouse_ids": [],
+    "allowed_campaign_account_ids": [],
+    "outbound_audience_mandate_refs": []
+  },
+  "draft_service_level_targets": {
+    "inventory_max_age_minutes": 15,
+    "cost_max_age_hours": 24,
+    "advertising_max_age_hours": 24,
+    "note": "Provisional targets to validate against actual tenant capability. Revalidate stock at commitment."
+  },
+  "required_execution_checks": [
+    "owner_assigned",
+    "source_quality_sufficient",
+    "source_freshness_valid",
+    "no_synthetic_evidence",
+    "calculation_recomputed",
+    "payload_hash_matches_approval",
+    "mandate_or_human_receipt_valid",
+    "expiry_valid",
+    "scope_allowed",
+    "cash_and_margin_constraints_pass",
+    "aggregate_budget_reserved",
+    "business_key_locked",
+    "external_effect_reconciled_before_retry"
+  ],
+  "control": {
+    "pause_all_external_actions": true,
+    "require_external_readback": true,
+    "require_outcome_measurement_plan": true,
+    "pause_on_unknown_external_result": true
+  },
+  "notes": [
+    "This file does not activate any workflow.",
+    "The executing service must enforce policy and typed action semantics; JSON validation alone is insufficient.",
+    "No purchase, paid campaign, public pricing change or outbound message is authorised by the current conversation.",
+    "A new business mandate requires an explicit recorded owner decision; it is not inferred from model confidence."
+  ]
+}

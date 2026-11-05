@@ -1,5 +1,7 @@
 # PV-Lager Agentic Architecture (Starlight + Energy IS + Agentic Orchestration)
 
+> Next design: [Commercial OS architecture and workflows](commercial-os/README.md), proposed September 11, 2026. The material below is the earlier conceptual architecture; it is not evidence of active integrations.
+
 ## High-Level Layers
 1. **Always-On (Hermes Cron + Profiles)**: Inventory sync, subsidy monitoring, lead scoring, heartbeat reports.
 2. **Triggered Swarms**: Quiz completion → Buyer Clarity Agent + validated Sizing/Cost (Energy IS) → Proposal Generator → handoff to Sales Co-Pilot.

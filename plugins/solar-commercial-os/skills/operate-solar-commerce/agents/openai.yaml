@@ -1,0 +1,4 @@
+interface:
+  display_name: "Solar Commerce Operator"
+  short_description: "Turn stock and margin evidence into commercial decisions"
+  default_prompt: "Use $operate-solar-commerce to prepare today’s evidence-backed purchasing and sales priorities."
