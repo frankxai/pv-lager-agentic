@@ -1,0 +1,38 @@
+{
+  "brand": "pv-lager",
+  "locale": "de-DE",
+  "documentType": "invoice",
+  "number": "MUSTER-2026-001",
+  "issueDate": "24.09.2026",
+  "dueDate": "08.10.2026",
+  "serviceDate": "23.09.2026",
+  "reference": "Bestellung TEST-42",
+  "seller": {
+    "name": "Muster Solar GmbH",
+    "address": ["Beispielstraße 1", "12345 Musterstadt", "Deutschland"],
+    "vatId": "DE000000000",
+    "register": "Musterregister HRB 0000",
+    "email": "beispiel@example.invalid"
+  },
+  "buyer": {
+    "name": "Beispielkunde GmbH",
+    "address": ["Einkauf", "Testweg 2", "54321 Teststadt", "Deutschland"]
+  },
+  "lines": [
+    {"description": "PV-Modul Muster 460 Wp", "detail": "Demonstrationsposition – kein echtes Produkt", "quantity": "4 Stk.", "unitPrice": "100,00 €", "taxLabel": "19 %", "amount": "400,00 €"},
+    {"description": "Montagematerial", "detail": "Schienen und Klemmen", "quantity": "1 Set", "unitPrice": "50,00 €", "taxLabel": "19 %", "amount": "50,00 €"}
+  ],
+  "totals": {
+    "net": "450,00 €",
+    "tax": "85,50 €",
+    "gross": "535,50 €",
+    "breakdown": [{"label": "19 % auf 450,00 €", "amount": "85,50 €"}]
+  },
+  "payment": {
+    "iban": "DE00 0000 0000 0000 0000 00",
+    "bic": "TESTDE00XXX",
+    "reference": "MUSTER-2026-001",
+    "terms": "Zahlbar innerhalb von 14 Tagen"
+  },
+  "notes": "Dieses Dokument enthält ausschließlich synthetische Testdaten."
+}
