@@ -1,0 +1,12 @@
+{
+  "weclappInvoices": [
+    {"sellerKey":"demo-company", "invoiceNumber":"OLD-1001", "currency":"EUR", "brand":"pv-lager", "documentType":"invoice", "openMinor":53550, "status":"open"},
+    {"sellerKey":"demo-company", "invoiceNumber":"OLD-1002", "currency":"EUR", "brand":"rial-energy", "documentType":"credit_note", "openMinor":0, "status":"closed"}
+  ],
+  "odooOpenings": [
+    {"sellerKey":"demo-company", "invoiceNumber":"NEW-9001", "legacyInvoiceNumber":"OLD-1001", "currency":"EUR", "brand":"pv-lager", "documentType":"invoice", "openMinor":53550}
+  ],
+  "shopOrders": [
+    {"source":"wix", "siteId":"demo-site", "orderId":"demo-order", "eventId":"approved-1", "eventType":"order_approved", "occurredAt":"2026-09-24T10:00:00Z", "brand":"pv-lager", "currency":"EUR", "totalMinor":53550, "paymentStatus":"paid", "lineItems":[{"sku":"DEMO-SKU", "quantity":1, "lineTotalMinor":53550}]}
+  ]
+}
