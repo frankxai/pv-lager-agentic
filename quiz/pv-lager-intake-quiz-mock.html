@@ -7,6 +7,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
         :root { --primary: #0a66c2; }
+        *, *::before, *::after { box-sizing: border-box; }
         body { font-family: 'Inter', system_ui, sans-serif; margin: 0; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); color: #1e2937; line-height: 1.6; }
         .container { max-width: 820px; margin: 40px auto; padding: 0 20px; }
         .header { text-align: center; margin-bottom: 40px; }
@@ -23,7 +24,9 @@
         .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
         .option { border: 2px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; cursor: pointer; transition: all 0.2s; text-align: center; font-weight: 500; }
         .option:hover { border-color: #0a66c2; background: #f8fafc; }
-        .option.selected { border-color: #0a66c2; background: #eff6ff; color: #0a66c2; }
+        .option input { width: auto; margin-right: .4rem; }
+        .option:focus-within { outline: 3px solid #0a66c2; outline-offset: 2px; }
+        .option:has(:checked) { border-color: #0a66c2; background: #eff6ff; color: #0a66c2; }
         .btn { background: #0a66c2; color: white; border: none; padding: 14px 28px; font-size: 16px; font-weight: 600; border-radius: 10px; cursor: pointer; width: 100%; transition: all 0.2s; }
         .btn:hover { background: #0758a8; transform: translateY(-1px); }
         .result { display: none; background: #f8fafc; border: 2px solid #0a66c2; border-radius: 16px; padding: 28px; margin-top: 24px; }
@@ -42,117 +45,139 @@
                 <span class="badge">Zola Car Pods</span>
             </div>
             <h1>Finden Sie Ihre perfekte Solar-Lösung</h1>
-            <p class="subtitle">Zola Car Pods • PV-Terrassen • Hybrid-Klima • Volle Förderung</p>
-            <p class="small">Lagernde Ware • Sofort verfügbar • Seesen</p>
+            <p class="subtitle">Zola Car Pods • PV-Terrassen • Hybrid-Klima</p>
+            <p class="small">Konfigurationsstudie für Seesen</p>
         </div>
 
         <div class="card" id="quiz-card">
             <h2 style="margin-top:0; margin-bottom:20px;">Intelligenter Konfigurator (Demo)</h2>
             
             <div class="step">
-                <label>Postleitzahl</label>
+                <label for="postcode">Postleitzahl</label>
                 <input type="text" id="postcode" value="38723" placeholder="z.B. 38723">
             </div>
 
             <div class="step">
-                <label>Hauptprojekt</label>
-                <div class="options" id="use-case">
-                    <div class="option" data-value="carport">🚗 Zola Car Pod / Carport</div>
-                    <div class="option" data-value="terrace">🏠 PV-Terrasse</div>
-                    <div class="option" data-value="hybrid">❄️ PV + Hybrid-Klima</div>
-                    <div class="option" data-value="components">📦 Komponenten</div>
+                <span id="use-case-label">Hauptprojekt</span>
+                <div class="options" id="use-case" role="group" aria-labelledby="use-case-label">
+                    <label class="option"><input type="radio" name="use-case" value="carport" checked>🚗 Zola Car Pod / Carport</label>
+                    <label class="option"><input type="radio" name="use-case" value="terrace">🏠 PV-Terrasse</label>
+                    <label class="option"><input type="radio" name="use-case" value="hybrid">❄️ PV + Hybrid-Klima</label>
+                    <label class="option"><input type="radio" name="use-case" value="components">📦 Komponenten</label>
                 </div>
             </div>
 
             <div class="step">
-                <label>Größe &amp; Bedarf</label>
+                <p>Stellplätze und Jahresverbrauch (kWh)</p>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-                    <input type="number" id="cars" value="2" placeholder="Autos / Plätze">
-                    <input type="text" id="consumption" value="8000" placeholder="kWh/Jahr oder €/Monat">
+                    <input type="number" id="cars" aria-label="Anzahl Stellplätze" min="1" value="2" placeholder="Autos / Plätze">
+                    <input type="number" id="consumption" aria-label="Jährlicher Stromverbrauch in Kilowattstunden" min="1" value="8000" placeholder="kWh pro Jahr">
                 </div>
             </div>
 
             <div class="step">
-                <label>Heizsystem (für KfW/BEG)</label>
+                <label for="heating">Heizsystem</label>
                 <select id="heating">
-                    <option value="gas">Gas/Öl (hohe Förderung möglich)</option>
+                    <option value="gas">Gas/Öl</option>
                     <option value="heatpump">Bereits Wärmepumpe</option>
                     <option value="other">Andere</option>
                 </select>
             </div>
 
             <div class="step">
-                <label>Prioritäten (mehrere möglich)</label>
-                <div class="options" id="priorities">
-                    <div class="option" data-value="savings">💰 Max. Ersparnis</div>
-                    <div class="option" data-value="roi">📈 Schneller ROI</div>
-                    <div class="option" data-value="climate">❄️ Klimatisierung</div>
-                    <div class="option" data-value="ev">🔌 E-Auto</div>
+                <span id="priorities-label">Prioritäten (mehrere möglich)</span>
+                <div class="options" id="priorities" role="group" aria-labelledby="priorities-label">
+                    <label class="option"><input type="checkbox" name="priorities" value="savings">💰 Max. Ersparnis</label>
+                    <label class="option"><input type="checkbox" name="priorities" value="roi">📈 Schneller ROI</label>
+                    <label class="option"><input type="checkbox" name="priorities" value="climate">❄️ Klimatisierung</label>
+                    <label class="option"><input type="checkbox" name="priorities" value="ev">🔌 E-Auto</label>
                 </div>
             </div>
 
             <button class="btn" onclick="generateRecommendation()">Empfehlung berechnen (Demo)</button>
         </div>
 
-        <div class="result" id="result">
-            <h2 style="margin-top:0; color:#0a66c2;">Ihre maßgeschneiderte Empfehlung</h2>
+        <div class="result" id="result" tabindex="-1" role="region" aria-labelledby="result-title">
+            <h2 id="result-title" style="margin-top:0; color:#0a66c2;">Ihre Beispielkonfiguration</h2>
             <div id="rec-content"></div>
+            <p id="brief-summary"></p>
+            <button type="button" class="btn" onclick="downloadBrief()">Konfigurationsbrief herunterladen</button>
             <div style="margin-top:20px; display:flex; gap:12px;">
-                <button class="btn" onclick="simulateReserve()" style="flex:1; background:#059669;">Konfiguration reservieren</button>
-                <button class="btn" onclick="simulateConsult()" style="flex:1;">Beratung mit Team buchen</button>
+                <button class="btn" onclick="simulateReserve()" style="flex:1; background:#059669;">Reservierung simulieren</button>
+                <button class="btn" onclick="simulateConsult()" style="flex:1;">Beratung simulieren</button>
             </div>
-            <p class="small" style="text-align:center; margin-top:12px;">Demo — echte Version mit Live-Bestand (Wix MCP) + validierten Rechnern (Energy IS)</p>
+            <p class="small" style="text-align:center; margin-top:12px;">Die Simulation läuft lokal. Der Download speichert Ihre Eingaben als Textdatei.</p>
         </div>
     </div>
 
     <script>
-        function setupOptions(id) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            el.querySelectorAll('.option').forEach(opt => {
-                opt.addEventListener('click', () => {
-                    if (id === 'use-case') {
-                        el.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
-                        opt.classList.add('selected');
-                    } else {
-                        opt.classList.toggle('selected');
-                    }
-                });
-            });
+        let currentBrief = '';
+        const quiz = document.getElementById('quiz-card');
+        const result = document.getElementById('result');
+        quiz.addEventListener('input', () => {
+            currentBrief = '';
+            result.classList.remove('show');
+        });
+
+        function downloadBrief() {
+            if (!currentBrief) return;
+            const url = URL.createObjectURL(new Blob([currentBrief], {type: 'text/plain;charset=utf-8'}));
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'pv-lager-konfigurationsbrief.txt';
+            link.click();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
         }
-        setupOptions('use-case');
-        setupOptions('priorities');
 
         function generateRecommendation() {
-            const pc = document.getElementById('postcode').value || '38723';
-            const ucEl = document.querySelector('#use-case .option.selected');
-            const uc = ucEl ? ucEl.dataset.value : 'carport';
-            const cars = parseInt(document.getElementById('cars').value) || 2;
-            const cons = document.getElementById('consumption').value || '8000';
-            const heat = document.getElementById('heating').value;
+            for (const id of ['cars', 'consumption']) {
+                const field = document.getElementById(id);
+                field.required = true;
+                if (!field.reportValidity()) return;
+            }
+            const postcode = document.getElementById('postcode').value.trim();
+            const project = quiz.querySelector('input[name="use-case"]:checked');
+            const cars = document.getElementById('cars').valueAsNumber;
+            const cons = document.getElementById('consumption').valueAsNumber;
+            const heating = document.getElementById('heating');
+            const heat = heating.value;
+            const priorities = Array.from(quiz.querySelectorAll('input[name="priorities"]:checked'),
+                input => input.parentElement.textContent.trim());
+            const priorityText = priorities.join(', ') || 'Keine angegeben';
+            const config = project.parentElement.textContent.trim();
 
             let kWp = Math.max(4, cars * 2.2);
             let estCost = Math.round(kWp * 1850);
-            let savings = Math.round(parseInt(cons) * 0.28);
+            let savings = Math.round(cons * 0.28);
             let payback = (estCost * 0.7 / savings).toFixed(1);
-            let config = uc === 'carport' ? `Zola Car Pod ${cars}-Stellplätze (Bifacial)` : uc === 'hybrid' ? 'PV + AC/DC Hybrid-Klima Multi-Split' : 'PV-Terrassen Kit';
             if (heat === 'gas') estCost = Math.round(estCost * 0.6);
 
             const html = `
                 <div class="rec-item"><strong>Empfohlene Lösung:</strong> <span style="font-size:18px;font-weight:700;">${config}</span><br>
                 <span class="small">${kWp.toFixed(1)} kWp Bifacial + Speicher + optionales Hybrid-Klima</span></div>
-                <div class="rec-item"><strong>Geschätzte Kosten:</strong> ca. <span style="font-size:22px;font-weight:700;">${estCost.toLocaleString('de-DE')} €</span> (nach 0% MwSt &amp; Lager-Vorteil)</div>
+                <div class="rec-item"><strong>Geschätzte Kosten:</strong> ca. <span style="font-size:22px;font-weight:700;">${estCost.toLocaleString('de-DE')} €</span> (Demowert)</div>
                 <div class="rec-item"><strong>Ersparnis &amp; ROI:</strong> ca. ${savings.toLocaleString('de-DE')} €/Jahr • Amortisation ~<strong>${payback} Jahre</strong></div>
-                <div class="rec-item" style="background:#ecfdf5;border-left-color:#059669;"><strong>Förderung 2026:</strong> 0% MwSt + EEG + KfW/BEG bis 70% (bei Gas-Heizung besonders stark)</div>
-                <div style="margin-top:12px;font-size:13px;color:#475569;">Nächster Schritt: Reservieren oder direkt mit dem Team sprechen. Viele Teile lagernd in Seesen.</div>
+                <div class="rec-item" style="background:#ecfdf5;border-left-color:#059669;"><strong>Modellannahmen:</strong> Die Demo verwendet feste Beispielwerte. Förderfähigkeit und Bestand sind ungeprüft.</div>
+                <div style="margin-top:12px;font-size:13px;color:#475569;">Der Brief enthält Ihre Eingaben für die weitere Planung.</div>
             `;
             document.getElementById('rec-content').innerHTML = html;
-            document.getElementById('result').classList.add('show');
-            document.getElementById('result').scrollIntoView({behavior:'smooth'});
+            document.getElementById('brief-summary').textContent = 'Prioritäten im Brief: ' + priorityText;
+            currentBrief = [
+                'PV Lager · Konfigurationsbrief (Demo)',
+                'Projekt: ' + config,
+                'PLZ: ' + (postcode || 'Nicht angegeben'),
+                'Stellplätze: ' + cars,
+                'Jahresverbrauch: ' + cons + ' kWh',
+                'Heizsystem: ' + heating.selectedOptions[0].textContent,
+                'Prioritäten: ' + priorityText,
+                'Lokal erstellt. Es wurde keine Anfrage versendet.',
+            ].join('\n') + '\n';
+            result.classList.add('show');
+            result.focus();
         }
 
-        function simulateReserve() { alert('✅ Demo: Konfiguration reserviert.\n\nEcht: Wix MCP + Agent reserviert Bestand, erzeugt PDF + sendet an Cousin/Team.'); }
-        function simulateConsult() { alert('✅ Demo: Termin angefragt.\n\nEcht: Agent bereitet Briefing vor, bucht Slot, schickt Kontext.'); }
+        function simulateReserve() { alert('Demo: Eine Reservierung wurde simuliert.'); }
+        function simulateConsult() { alert('Demo: Eine Terminanfrage wurde simuliert.'); }
     </script>
 </body>
 </html>
